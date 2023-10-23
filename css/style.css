@@ -5,21 +5,19 @@
 .header {
     position: fixed;
     width: 100%;
-    padding: 20px 100px;
+    padding: 20px 10px;
     display: flex;
     position: relative;
     background-color: #fff;
+    margin: auto;
 }
 .navbar{
     display: flex;
-    border:2px solid;
-    padding: 10px;
-    margin: auto;
+    padding: 5px;
     background-color: #fff;
     align-items: baseline;
     width: 100%;
     justify-content: space-between;
-    text-decoration: none;
     color: rgb(28, 28, 59); 
 }
 
@@ -28,8 +26,42 @@
     color: rgb(28, 28, 59);
     text-decoration: none;
     font-weight: 700;
-    -webkit-text-stroke: .5px;
     cursor: pointer;
     transition: .5s ease;
-    margin-right: 40px;
+    margin: auto;
+}
+.resources, 
+.contact, 
+.pricing,
+.login, 
+.signup {
+font-size: 1rem;
+text-decoration: none;
+cursor: pointer;
+margin: auto;
+font-weight: 500;
+color: rgb(28, 28, 59);
+text-align: center; 
+}
+.heroSection {
+    background-image:url(/img/daniel-leone-g30P1zcOzXo-unsplash.jpg);
+    height: 75vh;
+    display: flex;
+}
+.heroSection h1{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #fff;
+    margin:auto; 
+
+}
+.footer{
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.subscriptionForm{
+    border: 2px solid rgb(28, 28, 59);
+    width: 100%;
 }
