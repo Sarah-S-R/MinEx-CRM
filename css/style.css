@@ -2,7 +2,8 @@
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
 }
-.header {
+
+header {
     position: fixed;
     width: 100%;
     padding: 20px 10px;
@@ -131,5 +132,6 @@ text-align: center;
     padding: 8px;
     color: rgb(28, 28, 59);
     font-weight: 700;
-
 }
+
+
