@@ -47,12 +47,14 @@ text-align: center;
     background-image:url(/img/daniel-leone-g30P1zcOzXo-unsplash.jpg);
     height: 75vh;
     display: flex;
+    background-image: cover;
 }
 .heroSection h1{
     font-size: 1.5rem;
-    line-height: 1.5;
+    line-height: 1.75;
     color: #fff;
-    margin:auto; 
+    margin:auto;
+    text-align: justify; 
 
 }
 .footer{
