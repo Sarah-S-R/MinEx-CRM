@@ -48,14 +48,14 @@ text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height:100vh;
+    height:75vh;
     width: 100%;
     margin: 0;
 }
 .heroContent{
     display:block;
     margin: auto;
-    max-width: 65%;
+    max-width: 75%;
     height: 100%;
     padding: 1%;
 }
@@ -76,25 +76,60 @@ text-align: center;
     line-height: 1.5;
     font-weight: 400;
     text-align: center;
+    width: 65%;
+    margin: auto;
 }
-.heroContent button{
+.getStarted {
     border-radius: 20px;
     background-color: #fff;
     padding: 8px;
     color: rgb(28, 28, 59);
     font-weight: 700;
     width: 150px;
+    margin-top: 50px;
+    transition: 0.5s;
 }
+.getStarted :hover{
+    color: black;
+    transition: 0.5s;
+}
+/*footer section*/
 .footer{
+    display: flex;
     width: 100%;
-    height: auto;
     justify-content: space-between;
+    margin: auto;
+    align-items: last baseline;
 }
-
+.socialIcons{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.linkedin,
+.instagram, 
+.meta{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: rgb(28, 28, 59);
+    font-weight: 700;
+} 
+.newsletter h4{
+    font-size: 1rem;
+    margin-bottom: 0;
+    text-align: center;
+}
 .subscriptionForm{
-    border: 2px solid rgb(28, 28, 59);
     width: 100%;
 }
 .subscriptionForm input{
+    border: 2px solid rgb(28, 28, 59);
+    border-radius: 10px;
+    justify-content: space-between;
+    width: 225px;
+    padding: 8px;
+    color: rgb(28, 28, 59);
+    font-weight: 700;
 
 }
