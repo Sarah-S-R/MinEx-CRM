@@ -82,17 +82,21 @@ text-align: center;
 }
 .getStarted {
     border-radius: 20px;
-    background-color: #fff;
     padding: 8px;
-    color: rgb(28, 28, 59);
+    color: #fff;
     font-weight: 700;
     width: 150px;
     margin-top: 50px;
     transition: 0.5s;
 }
-.getStarted :hover{
+
+.heroContent .getStarted {
+    background-color: #7C715E;
+}
+.getStarted:hover{
     color: black;
     transition: 0.5s;
+    cursor: pointer;
 }
 /*footer section*/
 .footer{
