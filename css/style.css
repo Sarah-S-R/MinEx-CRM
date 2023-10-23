@@ -109,7 +109,8 @@ text-align: center;
 }
 .linkedin,
 .instagram, 
-.meta{
+.meta,
+.twitter{
     padding: 10px;
     text-decoration: none;
     font-size: 1rem;
@@ -128,7 +129,7 @@ text-align: center;
     border: 2px solid rgb(28, 28, 59);
     border-radius: 10px;
     justify-content: space-between;
-    width: 225px;
+    width: 200px;
     padding: 8px;
     color: rgb(28, 28, 59);
     font-weight: 700;

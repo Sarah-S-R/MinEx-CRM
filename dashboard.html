@@ -8,15 +8,27 @@
     <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
     <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>MinEx CRM</title>
+    <title>MinEx CRM: Dashboard</title>
 
     <!--MATERIAL ICONS-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
     <div class="grid-container">
         <!---Header--->
-        <header class="header"></header>
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+        <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">email</span>
+        <span class="material-icons-outlined">account_circle</span>  
+        </div>
+        </header>
         <!---End Header-->
 
         <!--Sidebar-->
@@ -35,7 +47,7 @@
     
 
 </footer>
-<script src="./js/main.js"></script>
+<script src="./js/scripts.js"></script>
 
 </body>
 
