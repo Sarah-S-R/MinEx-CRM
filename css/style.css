@@ -44,25 +44,29 @@ color: rgb(28, 28, 59);
 text-align: center; 
 }
 .heroSection {
-    background-image:url(/img/daniel-leone-g30P1zcOzXo-unsplash.jpg);
+    background-image:url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    position: bottom center;
-    height: 60vh;
+    background-position: center;
+    height:100vh;
+    width: 100%;
+    margin: 0;
 }
 .heroContent{
     display:block;
     margin: auto;
     max-width: 65%;
-    border: 2px solid #fff;
-    padding: 2%;
+    height: 100%;
+    padding: 1%;
 }
  
 .heroContent h1{
-    font-size: 1.75rem;
+    font-size: 2rem;
+    font-weight: 700;
     line-height: 1.75;
     color: #fff;
-    margin:auto;
+    margin-top: 30px;
+    margin-bottom: auto;
     text-align: center;
 
 }
@@ -72,7 +76,6 @@ text-align: center;
     line-height: 1.5;
     font-weight: 400;
     text-align: center;
-    
 }
 .heroContent button{
     border-radius: 20px;
@@ -81,7 +84,6 @@ text-align: center;
     color: rgb(28, 28, 59);
     font-weight: 700;
     width: 150px;
-    
 }
 .footer{
     width: 100%;
@@ -92,4 +94,7 @@ text-align: center;
 .subscriptionForm{
     border: 2px solid rgb(28, 28, 59);
     width: 100%;
+}
+.subscriptionForm input{
+
 }
