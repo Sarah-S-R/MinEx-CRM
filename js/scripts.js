@@ -1,6 +1,6 @@
 // SIDEBAR TOGGLE
 let sidebarOpen=false;
-let sidebar=document.getElementById("sidebar");
+let sidebar = document.getElementById("sidebar");
 
 function openSidebar () {
     if (sidebarOpen) {
@@ -17,14 +17,12 @@ function closeSidebar() {
 }
 
 //---------CHARTS------------
-
-//BAR CHART
 // BAR CHART
 var barChartOptions = {
     series: [
       {
         data: [10, 8, 6, 4, 2],
-        name: 'Products',
+        name: 'Services',
       },
     ],
     chart: {
