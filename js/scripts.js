@@ -3,16 +3,17 @@ let sidebarOpen=false;
 let sidebar = document.getElementById("sidebar");
 
 function openSidebar () {
-    if (sidebarOpen) {
+    if (!sidebarOpen) {
         sidebar.classList.add("sidebar-responsive");
         sidebarOpen =true;
     }
 }
 
-function closeSidebar() {
+function closeSidebar () {
     if (sidebarOpen) {
-        sidebar.classList.remove ("sidebar-responsive");
+        sidebar.classList.remove("sidebar-responsive");
         sidebarOpen = false;
+        console.log ("Close sidebar clicked");
     }
 }
 
