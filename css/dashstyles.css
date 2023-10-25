@@ -141,6 +141,14 @@ body{
     justify-content: space-between;
 }
 
+.welcome-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .main-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
