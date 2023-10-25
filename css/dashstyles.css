@@ -36,6 +36,41 @@ box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
     display: none;
 }
 
+.header-left input {
+    background-color: #fff;
+    color:rgba(0, 0, 0, 0.35);
+    padding: 6px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.accountSubmenu {
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    border: 1px solid #ccc;
+    
+  }
+  .header-right{
+    display: flex;
+  }
+
+  .dropdown {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+    color:  #9e9ea4;
+  }
+
 /*----------------SIDEBAR--------------*/
 #sidebar{
 grid-area: sidebar;
@@ -50,8 +85,8 @@ transition: all 0.5s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px 30px 30px;
-    margin-bottom: 30px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 20px;
 }
 
 .sidebar-title > span {
@@ -66,13 +101,13 @@ transition: all 0.5s;
 
 .sidebar-list{
     padding: 0;
-    margin-top: 15px;
+    margin-top: 10px;
    list-style-type: none;
 }
 
 .sidebar-list-item {
-    padding: 20px 20px 20px 20px;
-    font-size: 1.2rem;
+    padding: 15px 15px 15px 15px;
+    font-size: 1rem;
 }
 
 .sidebar-list-item:hover {
@@ -101,8 +136,8 @@ background-color: rgba(0, 0, 0, 0.35);
 
 .main-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
     margin: 20px 0;
 }
 
@@ -124,8 +159,10 @@ background-color: rgba(0, 0, 0, 0.35);
 .card:nth-child(3) {
     background-color: #2e7d32;
 }
-
 .card:nth-child(4) {
+    background-color: #aa176f;
+}
+.card:nth-child(5) {
     background-color: #d50000;
 }
 

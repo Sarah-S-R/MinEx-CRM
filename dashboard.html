@@ -23,12 +23,51 @@
             </div>
             <div class="header-left">
                 <span class="material-icons-outlined">search</span>
+                <input type="search" autofocus placeholder="Search...">
             </div>
             <div class="header-right">
-                <span class="material-icons-outlined">notifications</span>
-                <span class="material-icons-outlined">email</span>
-                <span class="material-icons-outlined">account_circle</span>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" >  
+                        <span class="material-icons-outlined">notifications</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!--ADD NOTIFICATION CONTENT HERE-->
+                        <ul>
+                            <li><a heref="#">Notification 1</a></li>
+                            <li><a heref="#">Notification 2</a></li>
+                            <li><a heref="#">Notification 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#">
+                        <span class="material-icons-outlined">email</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!--ADD EMAIL CONTENT HERE-->
+                        <ul>
+                            <li><a href="#">Email 1</a></li>
+                            <li><a href="#">Email 2</a></li>
+                            <li><a href="#">Email 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="accountSubmenu-dropdown">
+                <a class="dropdown-toggle" href="#">
+                    <span class="material-icons-outlined">account_circle</span> 
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
         </header>
         <!---End Header-->
 
@@ -46,19 +85,22 @@
                     <span class="material-icons-outlined">dashboard</span>Dashboard
                 </li>
                 <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">inventory_2</span>Products
+                    <span class="material-icons-outlined">inventory_2</span>Services
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">category</span>Categories
                 </li>
                 <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">groups</span>Customers
+                    <span class="material-icons-outlined">groups</span>Clients
                 </li>
                 <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">fact_check</span>Inventory
+                    <span class="material-icons-outlined">fact_check</span>Projects
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">poll</span>Reports
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">poll</span>Accounting
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">settings</span>Settings
@@ -100,6 +142,13 @@
                 </div>
                 <div class="card">
                     <div class="card-inner">
+                        <h3>PROPERTIES</h3>
+                        <span class="material-icons-outlined">perm_media</span>
+                    </div>
+                    <h1>175</h1>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
                         <h3>ALERTS</h3>
                         <span class="material-icons-outlined">notification_important</span>
                     </div>
@@ -107,29 +156,29 @@
                 </div>
             </div>
 
-    <!--CHARTS-->
-                <div class="charts">
+            <!--CHARTS-->
+            <div class="charts">
 
-                 <div class="charts-card">
-                     <h2 class="chart-title">Top 5 Products</h2>
+                <div class="charts-card">
+                    <h2 class="chart-title">Top 5 Products</h2>
                     <div id="bar-chart"></div>
                 </div>
 
                 <div class="charts-card">
                     <h2 class="chart-title">Purchase and Sales Orders</h2>
-                <div id="area-chart"></div>
+                    <div id="area-chart"></div>
                 </div>
 
-        </div>
-    </main>
-    <!--End Main----->
+            </div>
+        </main>
+        <!--End Main----->
 
-    <!--------JAVASCRIPTS-------->
-    <!--APEX CHARTS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>"
+        <!--------JAVASCRIPTS-------->
+        <!--APEX CHARTS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>"
 
-    <!--CUSTOM-->
-    <script src="js/scripts.js"></script>
+        <!--CUSTOM-->
+        <script src="js/scripts.js"></script>
 </body>
 
 </html>
