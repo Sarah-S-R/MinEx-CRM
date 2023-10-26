@@ -45,7 +45,7 @@ color: rgb(28, 28, 59);
 text-align: center; 
 }
 .heroSection {
-    background-image:url(img/mainphoto.jpeg);
+    background-image:url(img/mainphoto.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
