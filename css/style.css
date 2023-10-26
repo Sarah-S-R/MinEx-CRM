@@ -138,5 +138,73 @@ text-align: center;
     color: rgb(28, 28, 59);
     font-weight: 700;
 }
+/* login page----*/
+.main-login-body {
+    display: flex;
+    grid-template-columns: 1fr;
+    height: 70vh;
+}
 
+.main-login-body .login {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
 
+.login-container {
+    display: flex;
+    max-width: 375px;
+    margin: auto;
+    padding: 20px;
+    height: 40vh;
+    justify-content: space-between;
+    box-shadow: #fff;
+    text-align: center;
+    position: relative;
+
+}
+.login-form {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+   
+}
+.login-form h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+.login-input-box {
+    margin: auto;
+    padding: 5px;
+    width: 1005;
+  
+    background-color: transparent;
+    
+}
+.login-form button {
+    border-radius: 10px;
+    width: 75px;
+    margin-top: 15px;
+    padding: 2px;
+}
+.remember-forgot  {
+    margin: auto;
+    padding: 10px;
+  
+}
+.remember-forgot a {
+    text-decoration: none;
+}
+.register-link a {
+    text-decoration: none;
+    margin: auto;
+    padding: 10px;
+}
+.register-link {
+    display: flex;
+}
+.remember-forgot checkbox {
+    border-radius: 6px;
+    padding: 10px;
+    margin: 2px;
+}
