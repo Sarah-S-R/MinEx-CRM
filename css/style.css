@@ -45,7 +45,7 @@ color: rgb(28, 28, 59);
 text-align: center; 
 }
 .heroSection {
-    background-image:url("/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg");
+    background-image:url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -218,3 +218,13 @@ text-align: center;
 .resources-main-body {
     height: 65vh;
 }
+
+
+
+
+/* Use WebP background image for modern browsers */
+@media (min-width: 768px) {
+    .my-element {
+      background-image: url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
+    }
+  }
