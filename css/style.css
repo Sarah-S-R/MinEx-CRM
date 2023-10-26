@@ -139,19 +139,23 @@ text-align: center;
     font-weight: 700;
 }
 /* login page----*/
-.main-login-body {
+.main-login-body,
+.main-create-account-body {
     display: flex;
     height: 70vh;
     color: rgb(28, 28, 59);
 }
 
-.main-login-body .login {
+.main-login-body .login, 
+.main-create-account-body {
     display: flex;
     align-content: center;
     align-items: center;
+    margin: auto;
 }
 
-.login-container {
+.login-container,
+.create-account-container {
     display: flex;
     max-width: 375px;
     margin: auto;
@@ -162,23 +166,27 @@ text-align: center;
     position: relative;
 
 }
-.login-form {
+.login-form,
+.create-account-form {
     margin: auto;
     padding: 10px;
     width: 100%;
    
 }
-.login-form h1 {
+.login-form h1,
+.create-account-form h1 {
     text-align: center;
     font-size: 2rem;
 }
-.login-input-box {
+.login-input-box, 
+.create-account-input-box {
     margin: auto;
     padding: 5px;
     width: 1005;
     background-color: transparent;
 }
-.login-form button {
+.login-form button, 
+.create-account-btn {
     border-radius: 10px;
     width: 75px;
     margin-top: 15px;
@@ -191,12 +199,14 @@ text-align: center;
 .remember-forgot a {
     text-decoration: none;
 }
-.register-link a {
+.register-link a, 
+.login-link a {
     text-decoration: none;
     margin: auto;
     padding: 10px;
 }
-.register-link {
+.register-link, 
+.login-link {
     display: flex;
 }
 .remember-forgot checkbox {
