@@ -204,3 +204,7 @@ text-align: center;
     padding: 10px;
     margin: 2px;
 }
+/*Ressources Page*/
+.resources-main-body {
+    height: 65vh;
+}
