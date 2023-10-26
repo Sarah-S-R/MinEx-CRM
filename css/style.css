@@ -141,8 +141,8 @@ text-align: center;
 /* login page----*/
 .main-login-body {
     display: flex;
-    grid-template-columns: 1fr;
     height: 70vh;
+    color: rgb(28, 28, 59);
 }
 
 .main-login-body .login {
@@ -158,7 +158,6 @@ text-align: center;
     padding: 20px;
     height: 40vh;
     justify-content: space-between;
-    box-shadow: #fff;
     text-align: center;
     position: relative;
 
@@ -177,9 +176,7 @@ text-align: center;
     margin: auto;
     padding: 5px;
     width: 1005;
-  
     background-color: transparent;
-    
 }
 .login-form button {
     border-radius: 10px;
@@ -190,7 +187,6 @@ text-align: center;
 .remember-forgot  {
     margin: auto;
     padding: 10px;
-  
 }
 .remember-forgot a {
     text-decoration: none;
