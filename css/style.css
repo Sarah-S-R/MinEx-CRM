@@ -45,7 +45,7 @@ color: rgb(28, 28, 59);
 text-align: center; 
 }
 .heroSection {
-    background-image:url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
+    background-image:url(img/mainphoto.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
