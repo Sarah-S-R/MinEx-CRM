@@ -176,7 +176,7 @@ text-align: center;
 .login-form h1,
 .create-account-form h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .login-input-box, 
 .create-account-input-box {
@@ -187,18 +187,38 @@ text-align: center;
 }
 .login-form button, 
 .create-account-btn {
+    background-color: #0074D9; /* Button background color */
+    color: #fff; /* Text color */
+    border: none;
     border-radius: 10px;
-    width: 75px;
-    margin-top: 15px;
-    padding: 2px;
+    padding: 10px 20px; /* Increase padding for a larger button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-weight: 700;
+    width: auto; /* Adjust the button width as needed */
 }
-.remember-forgot  {
-    margin: auto;
-    padding: 10px;
+
+.login-form button:hover {
+    background-color: #0056b3; /* Hover color */
 }
+
+
+.remember-forgot {
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0; /* Increase margin for spacing */
+}
+
 .remember-forgot a {
     text-decoration: none;
+    font-size: 0.9rem; /* Adjust the font size as needed */
+    margin-left: 10px; /* Increase left margin for spacing */
 }
+
+
 .register-link a, 
 .login-link a {
     text-decoration: none;
@@ -228,3 +248,72 @@ text-align: center;
       background-image: url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
     }
   }
+
+
+  /* Add the following styles for the login area */
+body.login {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2.text-center {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0074D9;
+    margin-bottom: 20px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0074D9;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+}
+
+.button {
+    background-color: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
