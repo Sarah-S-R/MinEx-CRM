@@ -28,25 +28,26 @@
         <div class="login-container" id="login-container">
             <form  action="/dashboard.html" class="login-form" id="login-form">
                 <h1 class="login-form-title">Login to your Account</h1>
-                <div class="form-message-error"></div>
+                <span class="error-message"></span>
                 
-                <div class="login-input-box">
-                <span class="icon"><i class='bx bx-envelope'></i></span>
-                <input type= "text" class="login-form-input" id="email-form-input" autofocus placeholder="Enter email...">
-                <span class="login-form-input-error-message"></span>
+                <div class="input-group">
+                    <span class="icon"><i class='bx bx-envelope'></i></span>
+                    <input type="text" class="input" id="email" autofocus placeholder="Enter email..." autocomplete="email">
+                    <span class="error-message"></span>
                 </div>
                 
-                <div class="login-input-box">
+                <div class="input-group">
                 <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                <input type="password" class="login-form-input" id="password" autofocus placeholder ="Enter password...">
-                </div>
+                <input type="password" class="input" id="password" autofocus placeholder ="Enter password..." autocomplete="curr">
+                <span class="error-message"></span>
+              </div>
                 
-                <span class="login-form-input-error-message"></span>
+
 
                 <button type = "submit" class="login-btn" id="login-btn">Submit</button>
                 
                 <div class="remember-forgot">
-                    <label><input type="checkbox"> Remember me </label>
+                    <label><input type="checkbox" id="checkbox"> Remember me </label>
                     <a href="#"> Forgot password?</a>
                 </div>
 
@@ -69,7 +70,7 @@
     <div class="newsletter" id="newsletter">
         <h4>Subscribe to our newsletter</h4>
         <form action="submit" class="subscriptionForm" id="subscriptionForm">
-            <input type="email" autofocus placeholder="Enter your email...">
+            <input type="email" id="subscribe"  autofocus placeholder="Enter your email..." autocomplete="email">
         </form>
     </div>
 
