@@ -82,9 +82,7 @@ text-align: center;
     margin: 20px;
     width: 100%;
 }
-.material-icons-outlined {
-    padding-left: 5px;
-}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -92,7 +90,6 @@ text-align: center;
     padding:  25px;
     border-radius: 5px;
     align-items: center;
-    font: 1.5rem;
     margin: 0;
 }
 .card:first-child {
@@ -113,6 +110,15 @@ text-align: center;
 .card:nth-child(4) {
     /*background-color:  #d50000;*/
     border:#d50000 solid 4px;
+}
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.material-icons-outlined {
+    font-size: 2.5rem;
+    padding: 10px;
 }
 
 .getStarted {
