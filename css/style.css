@@ -19,14 +19,12 @@ header {
     align-items: baseline;
     width: 100%;
     justify-content: space-between;
-    color: rgb(28, 28, 59); 
-    border: black solid;
+    color: rgb(28, 28, 59);
 }
 .navbar-left {
     cursor: pointer;
     margin-left: 70%;
     margin-right: auto;
-
 }
 .navbar-right  {
     cursor: pointer;
@@ -36,7 +34,7 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    color: rgb(28, 28, 59);
+    color: #2962ff;;
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
@@ -44,9 +42,37 @@ header {
     padding: 10px;
     justify-content: space-between;
 }
+.logo:hover{
+    color:#ff6d00
+}
+
+#resources:hover{
+    color: #ff6d00;
+}
+#contact:hover{
+    color: #d50000;
+}
+#pricing:hover{
+    color: #2962ff;
+}
+#login:hover{
+    color: #d50000;
+}
+#signup:hover {
+    color: #aa176f;
+}
 #resources, 
-#contact, 
-#pricing,
+#contact, #pricing
+{
+font-size: 1rem;
+text-decoration: none;
+cursor: pointer;
+margin: auto;
+font-weight: 700;
+color: #2e7d32;
+padding: 20px;
+}
+
 #login, 
 #signup {
 font-size: 1rem;
@@ -54,9 +80,10 @@ text-decoration: none;
 cursor: pointer;
 margin: auto;
 font-weight: 700;
-color: rgb(28, 28, 59);
 padding: 20px;
+color: #ff6d00
 }
+
 .heroSection {
     height: 80vh;
     width: 100%;
