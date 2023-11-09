@@ -160,7 +160,9 @@ body{
     padding: 20px;
     border-radius: 10px;
 }
-
+.material-icons-outlined {
+    padding-left: 10px;
+}
 .main-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -174,6 +176,7 @@ body{
     justify-content: space-around;
     padding:  25px;
     border-radius: 5px;
+    align-items: center;
 }
 .card:first-child {
     background-color: #2962ff;
