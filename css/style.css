@@ -45,10 +45,7 @@ color: rgb(28, 28, 59);
 text-align: center; 
 }
 .heroSection {
-    background-image:url(img/mainphoto.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
     height:75vh;
     width: 100%;
     margin: 0;
@@ -65,14 +62,13 @@ text-align: center;
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.75;
-    color: #fff;
     margin-top: 30px;
     margin-bottom: auto;
     text-align: center;
 
 }
 .heroContent p{
-    color: #fff;
+    
     font-size: 1.25rem;
     line-height: 1.5;
     font-weight: 400;
@@ -91,7 +87,7 @@ text-align: center;
 }
 
 .heroContent .getStarted {
-    background-color: #7C715E;
+    background-color:#0074D9;;
 }
 .getStarted:hover{
     color: black;
