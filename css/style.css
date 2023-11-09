@@ -6,20 +6,32 @@
 header {
     position: fixed;
     width: 100%;
-    padding: 20px 10px;
+  
     display: flex;
     position: relative;
     background-color: #fff;
     margin: auto;
+    justify-content: space-between;
 }
 .navbar{
     display: flex;
-    padding: 5px;
     background-color: #fff;
     align-items: baseline;
     width: 100%;
     justify-content: space-between;
     color: rgb(28, 28, 59); 
+    border: black solid;
+}
+.navbar-left {
+    cursor: pointer;
+    margin-left: 70%;
+    margin-right: auto;
+
+}
+.navbar-right  {
+    cursor: pointer;
+    margin: auto;
+    margin-right: 0;
 }
 
 .logo {
@@ -29,20 +41,21 @@ header {
     font-weight: 700;
     cursor: pointer;
     transition: .5s ease;
-    margin: auto;
+    padding: 10px;
+    justify-content: space-between;
 }
-.resources, 
-.contact, 
-.pricing,
-.login, 
-.signup {
+#resources, 
+#contact, 
+#pricing,
+#login, 
+#signup {
 font-size: 1rem;
 text-decoration: none;
 cursor: pointer;
 margin: auto;
 font-weight: 700;
 color: rgb(28, 28, 59);
-text-align: center; 
+padding: 20px;
 }
 .heroSection {
     height: 80vh;
@@ -156,11 +169,11 @@ text-align: center;
 .instagram, 
 .meta,
 .twitter{
-    padding: 10px;
     text-decoration: none;
     font-size: 1rem;
     color: rgb(28, 28, 59);
     font-weight: 700;
+    padding: 20px;
 } 
 .newsletter h4{
     font-size: 1rem;
@@ -169,21 +182,22 @@ text-align: center;
 }
 .subscriptionForm{
     width: 100%;
+    margin-right: 20px;
 }
 .subscriptionForm input{
     border: 2px solid rgb(28, 28, 59);
     border-radius: 10px;
     justify-content: space-between;
-    width: 200px;
+    width: 300px;
     padding: 8px;
     color: rgb(28, 28, 59);
-    font-weight: 700;
 }
+
 /* login page----*/
 .main-login-body,
 .main-create-account-body {
     display: flex;
-    height: 70vh;
+    height: 80vh;
     color: rgb(28, 28, 59);
 }
 

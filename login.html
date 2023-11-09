@@ -13,18 +13,27 @@
 </head>
 <body>
     <header class="header" id="header">
-        <nav class="navbar" id="navbar">
-            <a href="./index.html" class="logo" id="logo">Logo</a>
-            <a href="./resources.html" class="resources" id="resources">Resources</a>
-            <a href="./contact.html" class="contact" id="contact">Contact</a>
-            <a href="./pricing.html" class="pricing" id="pricing">Pricing</a>
-            <a href="./signup.html" class="signup" id="signup">Signup</a>
-            </nav>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html" class="logo" id="logo">Logo</a>
+            </div>
+            <div class= "navbar-left">
+                <ul>
+                    <a href="./resources.html"  id="resources">Resources</a>
+                    <a href="./contact.html" id="contact">Contact</a>
+                    <a href="./pricing.html" id="pricing">Pricing</a
+                </ul>
+            </div>
+            <div class= "navbar-right">
+                <ul>
+                <a href="./login.html" id="login">Login</a>
+                <a href="./signup.html" id="signup">Signup</a>
+            </ul>
+            </div>
+        </nav>
         </header>
         <hr>
-    
     <div class="main-login-body" id="main-login-body">
-
         <div class="login-container" id="login-container">
             <form  action="/dashboard.html" class="login-form" id="login-form">
                 <h1 class="login-form-title">Login to your Account</h1>
@@ -35,28 +44,21 @@
                     <input type="text" class="input" id="email" autofocus placeholder="Enter email..." autocomplete="email">
                     <span class="error-message"></span>
                 </div>
-                
                 <div class="input-group">
                     <span></span>
-                <input type="password" class="input" id="password" autofocus placeholder ="Enter password..." autocomplete="curr">
-                <span class="error-message"></span>
-              </div>
-                
-
-
+                    <input type="password" class="input" id="password" autofocus placeholder ="Enter password..." autocomplete="curr">
+                    <span class="error-message"></span>
+                </div>
                 <button type = "submit" class="login-btn" id="login-btn">Login</button>
-                
                 <div class="remember-forgot">
                     <label><input type="checkbox" id="checkbox"> Remember me </label>
                     <a href="#"> Forgot password?</a>
                 </div>
-
                 <div class="register-link">
                     <a href="./signup.html" class="login-form-link" id="login-form-reg-link">Create account</a>
                 </div>
             </form>
         </div>
-        
     </div>
 </body>
 <hr>
@@ -73,7 +75,6 @@
             <input type="email" id="subscribe"  autofocus placeholder="Enter your email..." autocomplete="email">
         </form>
     </div>
-
 </footer>
 <script src="./js/main.js"></script>
 
