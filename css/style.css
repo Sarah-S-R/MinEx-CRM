@@ -42,23 +42,29 @@ header {
     justify-content: space-between;
 }
 .logo:hover{
-    color:#ff6d00
+    color:#ff6d00;
+    transition: ease 0.5s;
 }
 
 #resources:hover{
     color: #ff6d00;
+    transition: ease 0.5s;
 }
 #contact:hover{
     color: #d50000;
+    transition: ease 0.5s;
 }
 #pricing:hover{
     color: #2962ff;
+    transition: ease 0.5s;
 }
 #login:hover{
     color: #d50000;
+    transition: ease 0.5s;
 }
 #signup:hover {
     color: #aa176f;
+    transition: ease 0.5s;
 }
 #resources, 
 #contact, #pricing
