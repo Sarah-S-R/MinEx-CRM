@@ -191,7 +191,7 @@ color: #ff6d00
     background-color:#0074D9;;
 }
 .getStarted:hover{
-    color: black;
+    color: #ff6d00;
     transition: 0.5s;
     cursor: pointer;
 }
