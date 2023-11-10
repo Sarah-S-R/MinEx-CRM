@@ -22,7 +22,7 @@ header {
 }
 .navbar-left {
     cursor: pointer;
-    margin-left: 25%;
+    margin-left: 33%;
     margin-right: auto;
 }
 .navbar-right  {
@@ -142,20 +142,30 @@ color: #ff6d00
     /*background-color: #2962ff;*/
     border: #2962ff solid 4px;
 }
-
+.card:first-child:hover{
+    transform: translateY(-5px);
+}
 .card:nth-child(2) {
    /* background-color: #ff6d00;*/
     border: #ff6d00 solid 4px;
+}
+.card:nth-child(2):hover{
+    transform: translateY(-5px);
 }
 
 .card:nth-child(3) {
    /* background-color: #2e7d32;*/
     border:#2e7d32 solid 4px;
-   
+}
+.card:nth-child(3):hover{
+    transform: translateY(-5px);
 }
 .card:nth-child(4) {
     /*background-color:  #d50000;*/
     border:#d50000 solid 4px;
+}
+.card:nth-child(4):hover{
+    transform: translateY(-5px);
 }
 .card-inner{
     display: flex;
