@@ -178,6 +178,9 @@ body{
     border-radius: 5px;
     align-items: center;
 }
+.card:hover{
+    transform: translateY(-5px);
+}
 .card:first-child {
     background-color: #2962ff;
 }
