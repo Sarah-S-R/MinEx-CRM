@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" Sarah Ryan>
+    <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
+    <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>MinEx CRM: Dashboard</title>
+
+    <!--MATERIAL ICONS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!---Header--->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+                <input type="search" autofocus placeholder="Search...">
+            </div>
+            <div class="header-right">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" >  
+                        <span class="material-icons-outlined">notifications</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!--ADD NOTIFICATION CONTENT HERE-->
+                        <ul>
+                            <li><a heref="#">Notification 1</a></li>
+                            <li><a heref="#">Notification 2</a></li>
+                            <li><a heref="#">Notification 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#">
+                        <span class="material-icons-outlined">email</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <!--ADD EMAIL CONTENT HERE-->
+                        <ul>
+                            <li><a href="#">Email 1</a></li>
+                            <li><a href="#">Email 2</a></li>
+                            <li><a href="#">Email 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+               
+
+                <div class="accountSubmenu-dropdown">
+                    <a class="dropdown-toggle" href="#">
+                        <span class="material-icons-outlined">account_circle</span> 
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Account Settings</a></li>
+                            <li><a href="#">Account Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        </header>
+        <!---End Header-->
+
+        <!--Sidebar-->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="#">LOGO</span>
+                </div>
+                <div class="close-icon" onclick="closeSidebar()">
+                    <span class="material-icons-outlined">close</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">dashboard</span>Dashboard
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">map</span>Map
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">groups</span>Clients
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">inventory_2</span>Projects
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">poll</span>Reports
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">settings</span>Settings
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
+                </li>
+ 
+
+            </ul>
+        </aside>
+        <!--End Sidebar-->
+
+
+        <!--Main----->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>DASHBOARD</h2>
+            </div>
+            <div class="welcome-container" id="welcome-container">
+                <h2>Welcome, Sarah</h2>
+                </div>
+
+            
+            </div>
+
+        </main>
+        <!--End Main----->
+
+        <!--------JAVASCRIPTS-------->
+      
+
+    <!--CUSTOM-->
+    <script src="js/scripts.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/init.js"></script>
+</body>
+
+</html>
