@@ -68,6 +68,8 @@ class Login {
                         window.location.href = "/dashboard.html";
                     }, 2000);
 
+            
+
                 } else {
                     // Show alert for invalid email or password
                     alert("Invalid email or password");
@@ -130,6 +132,7 @@ if (form) {
 //Create Account Section
     createAccountForm.addEventListener ('submit', (e) => {
         let messages = []
+        
         if(username.value === '' || username.value == null) {
         messages.push('Username is required')
     } 
@@ -169,7 +172,7 @@ if (form) {
 
     // Redirect after a short delay (e.g., 2 seconds)
         setTimeout(() => {
-            window.location.href = '/dashboard.html'; // Replace with your desired URL
+            window.location.href = 'dashboard.html'; // Replace with your desired URL
         }, 3000);
 
         } else {
