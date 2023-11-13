@@ -194,6 +194,7 @@ color: #ff6d00
     color: #ff6d00;
     transition: 0.5s;
     cursor: pointer;
+    transform: translateY(-5px);
 }
 /*footer section*/
 .footer{
@@ -292,10 +293,12 @@ color: #ff6d00
     font-weight: 700;
     width: auto; /* Adjust the button width as needed */
     margin: 20px;
+  
 }
 
 .login-form button:hover {
     background-color: #0056b3; /* Hover color */
+    transform: translateY(-5px);
 }
 
 .client-name {
@@ -331,6 +334,10 @@ color: #ff6d00
     border-radius: 6px;
     padding: 10px;
     margin: 2px;
+}
+
+.create-account-btn:hover {
+   transform: translateY(-5px);
 }
 /*Ressources Page*/
 .resources-main-body {
