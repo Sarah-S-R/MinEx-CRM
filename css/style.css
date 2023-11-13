@@ -346,6 +346,8 @@ color: #ff6d00
 .create-account-btn:hover {
    transform: translateY(-5px);
 }
+
+
 /*Ressources Page*/
 .resources-main-body {
     height: 65vh;
@@ -358,6 +360,20 @@ body.login {
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.success-message {
+    color: #2e7d32;
+    margin:auto;
+    font-weight: 700;
+    text-align: center;
+}
+#success-message {
+    text-align: center;
+    color: #2e7d32;
+    margin:auto;
+    font-weight: 700;
+    text-align: center;
 }
 
 .container {
