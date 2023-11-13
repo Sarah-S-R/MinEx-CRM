@@ -319,7 +319,14 @@ color: #ff6d00
     margin-left: 10px; /* Increase left margin for spacing */
 }
 
-
+/*CREATE ACCOUNT PAGE*/
+.create-account-container {
+    align-content: center;
+    align-items: center;
+}
+.create-account-form-input {
+    align-items: center;
+}
 .register-link a, 
 .login-link a {
     text-decoration: none;
@@ -343,17 +350,6 @@ color: #ff6d00
 .resources-main-body {
     height: 65vh;
 }
-
-
-
-
-/* Use WebP background image for modern browsers */
-@media (min-width: 768px) {
-    .my-element {
-      background-image: url('/img/eberhard-grossgasteiger-cs0sK0gzqCU-unsplash\ \(2\).jpg');
-    }
-  }
-
 
   /* Add the following styles for the login area */
 body.login {
@@ -380,7 +376,7 @@ h2.text-center {
     margin-bottom: 20px;
 }
 
-.loginForm {
+.loginForm, .create-account-form {
     display: flex;
     flex-direction: column;
 }
@@ -401,10 +397,23 @@ h2.text-center {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin: auto;
 }
 
 .error-message {
     color: red;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#error-message {
+    color: red;
+    font-size: 1rem;
+    font-weight: 700;
+    margin:auto;
+    max-width: 50%;
+    padding: 10px;
+    text-align: center;
 }
 
 .button {

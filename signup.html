@@ -34,40 +34,28 @@
         </header>
         <hr>
         <br>
-    <div class="main-create-account-body" id="main-create-account-body">
-
+        <div id="error-message"></div>
+    <div class="main-create-account-body">
+        
         <div class="create-account-container">
-            <form action "#" class="create-account-form">
+            <form action = "#" method="get" class="create-account-form" id="create-account-form">
                 <h1 class="create-account-form-title">Create Account</h1>
-                <div class="form-message-error"></div>
+                <span class="error-message"></span>
 
-                <div class="client-name">
-                    <span class="icon"><i class='bx bx-user'></i></span>
-                <input type="text" class="fname" id="fname" autofocus placeholder="Enter First Name">
-                </div>
-
-                <div class="client-name">
-                    <span class="icon"><i class='bx bx-user'></i></span>
-                    <input type="text" class="surname" id="surname" autofocus placeholder="Enter Last Name">
-                    </div>
-                
-                <div class="create-account-input-box">
-                    <span class="icon"><i class='bx bx-envelope'></i></span>
-                    <input type="email" class="create-account-form-input" id="email-form-input" autofocus placeholder="Enter email...">
-                    <div class="create-account-form-input-error-message"></div>
+                <div class="input-group">
+                <input type="text" class="input" id="username" autofocus placeholder="Enter username">
                 </div>
                 
-                <div class="create-account-input-box">
-                    <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                    <input type="password" class="create-account-form-input" id="password" autofocus placeholder ="Enter password...">
-                </div>
-                <div class="confirm-password-input-box">
-                    <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                    <input type="password" class="create-account-form-input" id="confirm-password" autofocus placeholder ="Confirm password...">
+                <div class="input-group">
+                    <input type="email" class="input" id="email-form-input" autofocus placeholder="Enter email...">
                 </div>
                 
-                <div class="create-account-form-input-error-message"></div>
-
+                <div class="input-group">
+                    <input type="password" class="input" id="password" autofocus placeholder ="Create password...">
+                </div>
+                <div class="input-group">
+                    <input type="password" class="input" id="passwordTwo" autofocus placeholder ="Confirm password...">
+                </div>
                 <button action= "submit" class="create-account-btn" id="create-account-btn">Submit</button>
                 
                 <div class="login-link">
