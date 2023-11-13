@@ -281,7 +281,7 @@ color: #ff6d00
     padding: 10px;
 }
 .login-form button, 
-.create-account-btn {
+.create-account-btn, .reset-btn {
     background-color: #0074D9; /* Button background color */
     color: #fff; /* Text color */
     border: none;
@@ -296,7 +296,7 @@ color: #ff6d00
   
 }
 
-.login-form button:hover {
+.login-form button, .reset-btn:hover {
     background-color: #0056b3; /* Hover color */
     transform: translateY(-5px);
 }

@@ -158,37 +158,37 @@ if (form) {
         let messages = []
         
         if(username.value === '' || username.value == null) {
-        messages.push('Username is required')
-    } 
+            messages.push('Username is required')
+        } 
 
-    if(password.value.length <= 8) {
-        messages.push('Password must be at least 8 characters')
-    }
+        if(password.value.length <= 8) {
+            messages.push('Password must be at least 8 characters')
+        }
 
-    if(password.value.length >=20) {
-        messages.push('Password must be less than 20 characters')
-    }
+        if(password.value.length >=20) {
+            messages.push('Password must be less than 20 characters')
+        }
 
-    if(password.value === 'password') {
-        messages.push('Password cannot be password')
-    }
+        if(password.value === 'password') {
+            messages.push('Password cannot be password')
+        }
 
-    if(!/\d/.test(password.value)) {
-        messages.push('Password must contain at least one number')
-    }
+        if(!/\d/.test(password.value)) {
+            messages.push('Password must contain at least one number')
+        }
 
-    if(password.value !=passwordTwo.value) {
-        messages.push('Passwords do not match')
-    }
+        if(password.value !=passwordTwo.value) {
+            messages.push('Passwords do not match')
+        }
 
-    if(messages.length > 0) {
-        e.preventDefault()
-        errorElement.innerText = messages.join('; ')
-    }
+        if(messages.length > 0) {
+            e.preventDefault()
+            errorElement.innerText = messages.join('; ')
+        }
 
-    if (messages.length === 0) {
-        // Clear error message
-        errorElement.innerText = '';
+        if (messages.length === 0) {
+            // Clear error message
+            errorElement.innerText = '';
 
         // Display success message
         successMessage.innerText = 'Account created successfully!';
@@ -202,5 +202,28 @@ if (form) {
         } else {
             // Display error messages
             errorElement.innerText = messages.join('; ');
+        }      
+
+});
+//Password re-set
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('forgotPasswordForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+
+        // Simulate the response from the server
+        const simulateResponse = {
+            ok: true, // Set to false to simulate an error response
+            message: 'Password reset email sent successfully', // Optional message
+        };
+
+        if (simulateResponse.ok) {
+            // Provide feedback to the user
+            console.log(simulateResponse.message);
+        } else {
+            // Handle errors, show appropriate messages to the user
+            console.error('Failed to initiate password reset:', simulateResponse.message);
         }
+    });
 });
