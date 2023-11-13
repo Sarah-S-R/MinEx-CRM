@@ -1,4 +1,11 @@
-
+const form = document.querySelector(".login-form");
+const createAccountForm = document.getElementById ("create-account-form");
+const username = document.getElementById ('username');
+const email = document.getElementById ('email');
+const password = document.getElementById ('password');
+const passwordTwo = document.getElementById ('passwordTwo');
+const errorElement = document.getElementById ('error-message');
+const successMessage = document.getElementById ('success-message');
 
 class Login {
 	constructor(form, fields) {
@@ -6,27 +13,69 @@ class Login {
 		this.fields = fields;
 		this.validateonSubmit();
 	}
-
+/*
 	validateonSubmit() {
         let self = this;
     
         this.form.addEventListener("submit", (e) => {
             e.preventDefault();
             var error = 0;
+            
             self.fields.forEach((field) => {
                 const input = document.querySelector(`#${field}`);
                 if (self.validateFields(input) === false) {
                     error++;
                 }
             });
+
             if (error === 0) {
                 //do login api here
 				localStorage.setItem("auth", 1);
                 this.form.submit(); // This should trigger the form submission.
             }
         });
-    }
+    }*/
+
+    validateonSubmit() {
+        let self = this;
     
+        this.form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var error = 0;
+    
+            self.fields.forEach((field) => {
+                const input = document.querySelector(`#${field}`);
+                if (self.validateFields(input) === false) {
+                    error++;
+                }
+            });
+    
+            if (error === 0) {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+    
+                // Check if email and password match desired values for login
+                if (email === 'admin@gmail.com' && password === 'admin1234') {
+                    
+                    // Set authentication status
+                    localStorage.setItem("auth", 1);
+                    
+                     // Show alert for successful login
+                     alert("Login Successful");
+
+                    // Redirect to the dashboard or desired location after a short delay
+                    setTimeout(() => {
+                        window.location.href = "/dashboard.html";
+                    }, 2000);
+
+                } else {
+                    // Show alert for invalid email or password
+                    alert("Invalid email or password");
+                }
+            }
+        });
+    }
+
         validateFields(field) {
             if (field.value.trim() === "") {
                 this.setStatus(
@@ -72,23 +121,14 @@ class Login {
         }
     }
 
-const form = document.querySelector(".login-form");
 if (form) {
     const fields= ["email", "password"];
     const validator = new Login(form, fields);
 }
 
 
-const createAccountForm = document.getElementById ("create-account-form");
-const username = document.getElementById ('username');
-const email = document.getElementById ('email');
-const password = document.getElementById ('password');
-const passwordTwo = document.getElementById ('passwordTwo');
-const errorElement = document.getElementById ('error-message');
-const successMessage = document.getElementById ('success-message');
-
+//Create Account Section
     createAccountForm.addEventListener ('submit', (e) => {
-              
         let messages = []
         if(username.value === '' || username.value == null) {
         messages.push('Username is required')
@@ -127,14 +167,13 @@ const successMessage = document.getElementById ('success-message');
         successMessage.innerText = 'Account created successfully!';
         successMessage.style.color = 'green'; // You can customize the style
 
-        // You may also want to redirect or perform additional actions here
-        // Redirect after a short delay (e.g., 2 seconds)
-    setTimeout(() => {
-        window.location.href = '/dashboard.html'; // Replace with your desired URL
-    }, 3000); // Adjust the delay time as needed
+    // Redirect after a short delay (e.g., 2 seconds)
+        setTimeout(() => {
+            window.location.href = '/dashboard.html'; // Replace with your desired URL
+        }, 3000);
 
-    } else {
-        // Display error messages
-        errorElement.innerText = messages.join('; ');
-    }
+        } else {
+            // Display error messages
+            errorElement.innerText = messages.join('; ');
+        }
 });
