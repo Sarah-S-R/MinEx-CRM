@@ -6,6 +6,31 @@ const password = document.getElementById ('password');
 const passwordTwo = document.getElementById ('passwordTwo');
 const errorElement = document.getElementById ('error-message');
 const successMessage = document.getElementById ('success-message');
+const rememberMeCheckbox = document.getElementById ('rememberMe');
+
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('login-form');
+    const emailInput = document.getElementById('email');
+    
+    // Check if there is a remembered email
+    const rememberedEmail = localStorage.getItem('rememberedEmail');
+    if (rememberedEmail) {
+        emailInput.value = rememberedEmail;
+        rememberMeCheckbox.checked = true;
+    }
+
+    loginForm.addEventListener('submit', function (e) {
+        // If the "Remember me" checkbox is checked, store the email in localStorage
+        if (rememberMeCheckbox.checked) {
+            localStorage.setItem('rememberedEmail', emailInput.value);
+        } else {
+            // If not checked, remove the stored email
+            localStorage.removeItem('rememberedEmail');
+        }
+
+     });
+});
+
 
 class Login {
 	constructor(form, fields) {
@@ -127,7 +152,6 @@ if (form) {
     const fields= ["email", "password"];
     const validator = new Login(form, fields);
 }
-
 
 //Create Account Section
     createAccountForm.addEventListener ('submit', (e) => {
