@@ -242,6 +242,7 @@ color: #ff6d00
     display: flex;
     height: 80vh;
     color: rgb(28, 28, 59);
+    margin: 0;
 }
 
 .main-login-body .login, 
@@ -258,18 +259,15 @@ color: #ff6d00
     max-width: 375px;
     margin: auto;
     padding: 20px;
-    height: 40vh;
     justify-content: space-between;
     text-align: center;
     position: relative;
-
 }
+
 .login-form,
 .create-account-form {
-    margin: auto;
     padding: 10px;
     width: 100%;
-   
 }
 .login-form h1,
 .create-account-form h1 {
@@ -279,9 +277,7 @@ color: #ff6d00
 .login-input-box, 
 .create-account-input-box {
     margin: auto;
-    padding: 5px;
-    width: 1005;
-    background-color: transparent;
+    padding: 10px;
 }
 .login-form button, 
 .create-account-btn {
@@ -295,12 +291,16 @@ color: #ff6d00
     font-size: 1rem;
     font-weight: 700;
     width: auto; /* Adjust the button width as needed */
+    margin: 20px;
 }
 
 .login-form button:hover {
     background-color: #0056b3; /* Hover color */
 }
 
+.client-name {
+    margin: 10px;
+}
 
 .remember-forgot {
     display: flex;
