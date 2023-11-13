@@ -172,7 +172,7 @@ if (form) {
 
     // Redirect after a short delay (e.g., 2 seconds)
         setTimeout(() => {
-            window.location.href = 'dashboard.html'; // Replace with your desired URL
+            window.location.href = '/login.html'; // Replace with your desired URL
         }, 3000);
 
         } else {
