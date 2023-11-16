@@ -258,6 +258,10 @@ color: #ff6d00
     text-align: center;
     position: relative;
 }
+.password-reset-container {
+    height: 60vh;
+    margin: auto;
+}
 
 .login-form,
 .create-account-form, .reset-password-form {
