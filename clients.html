@@ -24,6 +24,7 @@
             <div class="header-left">
                 <span class="material-icons-outlined">search</span>
                 <input type="search" autofocus placeholder="Search...">
+                <div id="datetime"></div> <!-- Container for date and time -->
             </div>
             <div class="header-right">
                 <div class="dropdown">
@@ -121,22 +122,49 @@
                 <h2>Welcome, Sarah</h2>
                 </div>
             <div class="table">
-                <thead>
-                    <td>Company Name</td>
-                    <td>Ticker</td>
-                    <td>Address</td>
-                    <td>Contact Name</td>
-                    <td>Phone No.</td>
-                    <td>email</td>
-                    <td>Status</td>
-                    <td></td>
-                    <td></td>
+                <table>
+                <thead class = client-table-headings>
+                    <tr>
+                    <th>Company Name</th>
+                    <th>Ticker</th>
+                    <th>Address</th>
+                    <th>Contact Name</th>
+                    <th>Phone No.</th>
+                    <th>email</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
                 </thead>
-                <tbody>
-                    <td>ABC Company Ltd.</td>
-
-                </tbody>
-
+                    <tbody class = client-table-body>
+                        <tr>
+                            <td>ABC Company Ltd.</td>
+                            <td> ABC</td>
+                            <td>123 No Name Street</td>
+                            <td>Tom Riddle</td>
+                            <td>709-123-4567</td>
+                            <td>triddle@abc.com</td>
+                            <td>active</td>
+                        <tr>
+                            <td>ABC Company Ltd.</td>
+                            <td> ABC</td>
+                            <td>123 No Name Street</td>
+                            <td>Tom Riddle</td>
+                            <td>709-123-4567</td>
+                            <td>triddle@abc.com</td>
+                            <td>active</td>
+                        </tr>
+                        <tr>
+                            <td>ABC Company Ltd.</td>
+                            <td> ABC</td>
+                            <td>123 No Name Street</td>
+                            <td>Tom Riddle</td>
+                            <td>709-123-4567</td>
+                            <td>triddle@abc.com</td>
+                            <td>active</td>
+                            </tr>
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
             </div>

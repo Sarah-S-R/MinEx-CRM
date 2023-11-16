@@ -239,6 +239,51 @@ body{
     justify-content: center;
 }
 
+/* Style for the client table */
+.table {
+    display: flex;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.client-table-headings {
+    background-color:  #0074D9;
+    color: #fff;
+    font-size: 1rem;
+    padding: 20px;
+    margin: auto;
+}
+
+.client-table-headings td {
+    padding: 10px;
+    text-align: left;
+    color: #9e9ea4;
+    
+}
+
+/* Style for table rows */
+.table tbody td {
+    padding: 10px;
+    margin: auto;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Add zebra-striping for better readability */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Add hover effect on table rows */
+ .client-table-body td:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
