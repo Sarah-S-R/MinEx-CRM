@@ -243,12 +243,6 @@ color: #ff6d00
     display: flex;
     height: 80vh;
     color: rgb(28, 28, 59);
-    margin: 0;
-}
-
-.main-login-body .login, 
-.main-create-account-body {
-    display: flex;
     align-content: center;
     align-items: center;
     margin: auto;
@@ -266,22 +260,18 @@ color: #ff6d00
 }
 
 .login-form,
-.create-account-form {
+.create-account-form, .reset-password-form {
     padding: 10px;
     width: 100%;
 }
 
 .login-form h1,
-.create-account-form h1 {
+.create-account-form h1, .reset-password-form h1 {
     text-align: center;
     font-size: 1rem;
 }
-.login-input-box, 
-.create-account-input-box {
-    margin: auto;
-    padding: 10px;
-}
-.login-form button, 
+
+.login-btn, 
 .create-account-btn, .reset-btn {
     background-color: #0074D9; /* Button background color */
     color: #fff; /* Text color */
@@ -297,7 +287,7 @@ color: #ff6d00
   
 }
 
-.login-form button, .reset-btn:hover {
+.login-btn:hover, .reset-btn:hover, .create-account-btn:hover {
     background-color: #0056b3; /* Hover color */
     transform: translateY(-5px);
 }
@@ -325,9 +315,7 @@ color: #ff6d00
     align-content: center;
     align-items: center;
 }
-.create-account-form-input {
-    align-items: center;
-}
+
 .register-link a, 
 .login-link a {
     text-decoration: none;
@@ -343,11 +331,6 @@ color: #ff6d00
     padding: 10px;
     margin: 2px;
 }
-
-.create-account-btn:hover {
-   transform: translateY(-5px);
-}
-
 
 /*Ressources Page*/
 .resources-main-body {
