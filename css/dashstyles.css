@@ -37,6 +37,11 @@ body{
     display: none;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
 .header-left input {
     background-color: #fff;
     color:rgba(0, 0, 0, 0.35);
@@ -71,7 +76,9 @@ body{
     cursor: pointer;
     color:  #9e9ea4;
   }
-
+#datetime {
+    padding-left: 20px; 
+}
 /*----------------SIDEBAR--------------*/
 #sidebar{
     grid-area: sidebar;
