@@ -269,18 +269,18 @@ body{
     margin: auto;
     background-color: #f9f9f9;
     font-size: 1rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Add zebra-striping for better readability */
-.table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+.client-table-body tr:nth-child(even) {
+    background-color: #9e9ea4;
 }
 
 /* Add hover effect on table rows */
  .client-table-body td:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color:  #9e9ea4;;
     cursor: pointer;
 }
 
