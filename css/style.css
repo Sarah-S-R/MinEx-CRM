@@ -210,7 +210,7 @@ color: #ff6d00
     align-content: center;
 }
 .linkedin,
-.instagram, 
+.instagram,
 .meta,
 .twitter{
     text-decoration: none;
@@ -255,7 +255,7 @@ color: #ff6d00
 }
 
 .login-container,
-.create-account-container {
+.create-account-container, .password-reset-container {
     display: flex;
     max-width: 375px;
     margin: auto;
@@ -270,6 +270,7 @@ color: #ff6d00
     padding: 10px;
     width: 100%;
 }
+
 .login-form h1,
 .create-account-form h1 {
     text-align: center;
