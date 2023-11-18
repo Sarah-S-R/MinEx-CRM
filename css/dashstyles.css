@@ -275,12 +275,12 @@ body{
 
 /* Add zebra-striping for better readability */
 .client-table-body tr:nth-child(even) {
-    background-color: #9e9ea4;
+    background-color: #2c2c2f;
 }
 
 /* Add hover effect on table rows */
  .client-table-body td:hover {
-    background-color:  #9e9ea4;;
+    background-color:  #ececef;;
     cursor: pointer;
 }
 
