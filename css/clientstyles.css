@@ -23,7 +23,7 @@ h1{
 .cm-table-container{
     font-size: 20px;
     margin-top: 35px;
-    width: 80%;
+    width: 90%;
     margin:auto;
 }
 .cm-table-row{
@@ -34,11 +34,7 @@ h1{
     background-color: teal;
     font-family:Comic Sans MS,cursive,sans-serif;
 }
-#Resource{
-    color: wheat;
-    background-color: teal;
-    font-family:Comic Sans MS,cursive,sans-serif;
-}
+
 .cm-table-column{
     background-color: rgba(54, 163, 236, 0.8);
     margin: 2px;
@@ -47,16 +43,8 @@ h1{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cm-name{
+.cm-name, .cm-phone, .cm-address, .cm-email, .cm-ticker, .cm-company{
     flex-basis: 15%;
-}
-
-.cm-phone{
-    flex-basis: 15%;
-}
-
-.cm-address{
-    flex-basis: 30%;
 }
 
 .cm-header {

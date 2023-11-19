@@ -22,7 +22,9 @@ let refreshTable = () => {
     let cmsTableKeys = Object.keys(cmsTable);
     let tableContaier = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
+   
     tableContaier.removeChild(oldTableBody);
+   
     let newTableBody = document.createElement('span');
     newTableBody.id = 'tableBody';
     tableContaier.appendChild(newTableBody);
@@ -49,20 +51,20 @@ let refreshTable = () => {
         currentEditBtn.className = 'cm-table-column cm-edit';
         currentDeleteBtn.className = 'cm-table-column cm-delete';
 
-        currentNameCol.innerHTML = cmsTableKeys[i];
-        currentCompanyCol.innerHTML = cmsTable[cmsTableKeys[i]].company;
+        currentCompanyCol.innerHTML = cmsTableKeys[i];
         currentTickerCol.innerHTML = cmsTable[cmsTableKeys[i]].ticker;
         currentAddressCol.innerHTML = cmsTable[cmsTableKeys[i]].address;
+        currentNameCol.innerHTML = cmsTable[cmsTableKeys[i]].name;
         currentPhoneCol.innerHTML = cmsTable[cmsTableKeys[i]].phone;
         currentEmailCol.innerHTML = cmsTable[cmsTableKeys[i]].email;
 
         currentDeleteBtn.innerHTML = '<i class="fas fa-dumpster"></i>';
         currentEditBtn.innerHTML = '<i class="fas fa-user-edit"></i>';
 
-        currentRow.appendChild(currentNameCol);
         currentRow.appendChild(currentCompanyCol);
         currentRow.appendChild(currentTickerCol);
         currentRow.appendChild(currentAddressCol);
+        currentRow.appendChild(currentNameCol);
         currentRow.appendChild(currentPhoneCol);
         currentRow.appendChild(currentEmailCol);
         currentRow.appendChild(currentEditBtn);
@@ -89,6 +91,7 @@ let refreshTable = () => {
         newPersonModal.className = `${option}-modal`;
         backdrop.className = `${option}-modal`;
     }
+
     let addNewEntryBtn = document.getElementById('cmAddNewEntry');
     let editBtns = document.getElementsByClassName('cm-edit');
     let deleteBtns = document.getElementsByClassName('cm-delete');
@@ -154,14 +157,19 @@ let refreshTable = () => {
             refreshTable();
         }
     });
+   
     newPersonCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');
     });
+    
     addNewEntryBtn.addEventListener('click', () => {
         enableDisableNewUserModal('enable');
     });
+   
     for(let i = 0; i < editBtns.length; i++){
+       
         editBtns[i].addEventListener('click', ($event) => {
+           
             let nameToEdit = $event.target.parentElement.children[0].innerText;
             let personToEdit = cmsTable[nameToEdit];
             
@@ -176,10 +184,10 @@ let refreshTable = () => {
             let newPersonEmail = document.getElementById('newPersonEmail');
            
             
-            newPersonName.value = nameToEdit;
-            newPersonCompany.value = personToEdit.company;
+            newPersonCompany.value = nameToEdit;
             newPersonTicker.value = personToEdit.ticker;
             newPersonAddress.value = personToEdit.address;
+            newPersonName.value = personToEdit.name;
             newPersonPhone.value = personToEdit.phone;
             newPersonEmail.value = personToEdit.email;
             
