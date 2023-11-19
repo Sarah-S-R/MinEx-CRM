@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" Sarah Ryan>
+    <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
+    <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e218809cf.js" crossorigin="anonymous"></script>
+    <title>MinEx CRM: Clients</title>  
+</head>
+<body>
+    <div class="grid-container">
+        <!---Header--->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+                <input type="search" autofocus placeholder="Search...">
+                <div id="datetime"></div> <!-- Container for date and time -->
+            </div>
+            <div class="header-right">
+                <!-- Add the following HTML for the Notifications and Account dropdowns -->
+<div class="dropdown">
+    <a class="dropdown-toggle" href="#">
+        <span class="material-icons-outlined">notifications</span>
+    </a>
+    <div class="dropdown-menu">
+        <ul>
+            <li>Notification</li>
+            <!-- Add more notifications as needed -->
+        </ul>
+    </div>
+</div>
+
+<div class="dropdown">
+    <a class="dropdown-toggle" href="#">
+        <span class="material-icons-outlined">account_circle</span>
+    </a>
+    <div class="dropdown-menu">
+        <ul>
+            <li>Profile</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+</div>
+        </div>
+
+        </header>
+        <!---End Header-->
+
+        <!--Sidebar-->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="#">LOGO</span>
+                </div>
+                <div class="close-icon" onclick="closeSidebar()">
+                    <span class="material-icons-outlined">close</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">dashboard</span>Dashboard
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">map</span>Map
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">groups</span>Clients
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">inventory_2</span>Projects
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">poll</span>Reports
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">settings</span>Settings
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
+                </li>
+            </ul>
+        </aside>
+        <!--End Sidebar-->
+
+        <!--Main----->
+        <main class="main-container">
+            <div class="main-title">
+                <h1>Client Management System</h1>
+            </div>
+            <div class="projects-table">
+                <div class="cm-table-container" id="cmsTableContainer">
+                    <div class="cm-table-row">
+                        <div class="cm-table-column cm-company cm-header">Company</div>
+                        <div class="cm-table-column cm-propertyName cm-header">Property Name</div>
+                        <div class="cm-table-column cm-location cm-header">Location</div>
+                        <div class="cm-table-column cm-claims cm-header">Claims</div>
+                        <div class="cm-table-column cm-area cm-header">Area (ha)</div>
+                        <div class="cm-table-column cm-edit cm-header">Edit</div>
+                        <div class="cm-table-column cm-header cm-add-entry" id="cmAddNewEntry">+</div>
+                    </div>
+                    <span id="tableBody"></span>
+                </div>
+
+            <div class="disable-modal" id="backdrop"></div>
+            
+            <div class="disable-modal" id="newPersonModal">
+                <h1>Add Project Details</h1>
+                <label for="newPersonCompany">Company</label>
+                <input type="text" id="newPersonCompany">
+
+                <label for="newPersonPropertyName">Property Name</label>
+                <input type="text" id="newPersonPropertyName">
+
+                <label for="newPersonLocation">Location</label>
+                <input type="text" id="newPersonLocation">
+
+                <label for="newPersonClaims">Claims</label>
+                <input type="text" id="newPersonClaims">
+
+                <label for="newPersonArea">Area (ha)</label>
+                <input type="text" id="newPersonPhone">
+
+                <button id="newCancelButton">Cancel</button>
+                <button id="newPersonSubmitButton">Submit</button>
+            </div>
+
+            <div>
+                <button id="SortButton">Sort</button>
+            </div>
+
+        </main>
+        <!--End Main----->
+
+        <!--------JAVASCRIPTS-------->
+      
+
+    <!--CUSTOM-->
+    <script src="/js/projects.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/init.js"></script>
+</body>
+
+</html>
