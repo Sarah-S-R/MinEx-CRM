@@ -322,7 +322,7 @@ body{
 
 /*--------------- CLIENTS PAGE---------------*/
 
-.clients-table {
+.clients-table, .projects-table {
     width: 1;
     color: black;
     /* No need to scroll sideways thats why x is hidden*/
@@ -354,7 +354,7 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cm-name, .cm-address, .cm-email, .cm-company{
+.cm-name, .cm-address, .cm-email, .cm-company, .cm-propertyName, .cm-claims, .cm-area{
     flex-basis: 10%;
 }
 
