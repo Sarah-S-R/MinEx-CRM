@@ -313,8 +313,8 @@ body{
 
 .cm-table-column{
     background-color: #fff;
-    margin: 2px;
-    padding: 15px;
+    margin: 0.75px;
+    padding: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -324,14 +324,14 @@ body{
 }
 
 .cm-address, .cm-company {
-    flex-grow: 1.5;
+    flex-grow: 1.15;
 }
 .cm-phone {
-    flex-basis: 7%;
+    flex-basis: 10%;
 }
 
 .cm-ticker {
-    flex-basis: 5%;
+    flex-basis: 4.75%;
 }
 
 .cm-header {
@@ -341,12 +341,12 @@ body{
 }
 
 .cm-edit, .cm-delete{
-    flex-basis: 4%;
+    flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
 }
 .cm-add-entry{
-    flex-basis: 4%;
+    flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
 }
