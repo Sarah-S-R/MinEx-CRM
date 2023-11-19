@@ -90,7 +90,6 @@ let refreshTable = () => {
         let newPersonLocation = document.getElementById('newPersonLocation');
         let newPersonClaims = document.getElementById('newPersonClaims');
         let newPersonArea = document.getElementById('newPersonArea');
-        let newPersonEmail = document.getElementById('newPersonEmail');
         
         newPersonCompany.value = '';
         newPersonPropertyName.value = '';
@@ -135,7 +134,7 @@ let refreshTable = () => {
             document.getElementById('newPersonLocation').className = 'input-err';
         
         else 
-            document.getElementById('newPersonAddress').className = '';
+            document.getElementById('newPersonLocation').className = '';
         
         if(newPersonClaims === '')
             document.getElementById('newPersonClaims').className = 'input-err';
