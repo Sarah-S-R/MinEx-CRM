@@ -8,12 +8,10 @@
     <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
     <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>MinEx CRM: Dashboard</title>
-
-    <!--MATERIAL ICONS-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e218809cf.js" crossorigin="anonymous"></script>
+    <title>MinEx CRM: Dashboard</title>  
 </head>
-
 <body>
     <div class="grid-container">
         <!---Header--->
@@ -35,26 +33,9 @@
                         <!--ADD NOTIFICATION CONTENT HERE-->
                         <ul>
                             <li><a heref="#">Notification 1</a></li>
-                            <li><a heref="#">Notification 2</a></li>
-                            <li><a heref="#">Notification 3</a></li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="#">
-                        <span class="material-icons-outlined">email</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <!--ADD EMAIL CONTENT HERE-->
-                        <ul>
-                            <li><a href="#">Email 1</a></li>
-                            <li><a href="#">Email 2</a></li>
-                            <li><a href="#">Email 3</a></li>
-                        </ul>
-                    </div>
-                </div>
-               
 
                 <div class="accountSubmenu-dropdown">
                     <a class="dropdown-toggle" href="#">
@@ -63,7 +44,6 @@
                     <div class="dropdown-menu">
                         <ul>
                             <li><a href="#">Profile</a></li>
-                            <li><a href="#">Account Settings</a></li>
                             <li><a href="#">Account Settings</a></li>
                         </ul>
                     </div>
@@ -106,74 +86,59 @@
                 <li class="sidebar-list-item">
                     <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
                 </li>
- 
-
             </ul>
         </aside>
         <!--End Sidebar-->
 
-
         <!--Main----->
         <main class="main-container">
             <div class="main-title">
-                <h2>DASHBOARD</h2>
+                <h1>Client Management System</h1>
             </div>
-            <div class="welcome-container" id="welcome-container">
-                <h2>Welcome, Sarah</h2>
-                </div>
-            <div class="table">
-                <table>
-                <thead class = client-table-headings>
-                    <tr>
-                        <th>Company Name</th>
-                        <th>Ticker</th>
-                        <th>Address</th>
-                        <th>Contact Name</th>
-                        <th>Phone No.</th>
-                        <th>email</th>
-                        <th>Status</th>
-                        <th>edit</th>
-                        <th>+</th>
-                </tr>
-                </thead>
-                    <tbody class = client-table-body>
-                        <tr>
-                            <td>ABC Company Ltd.</td>
-                            <td> ABC</td>
-                            <td>123 No Name Street</td>
-                            <td>Tom Riddle</td>
-                            <td>709-123-4567</td>
-                            <td>triddle@abc.com</td>
-                            <td>active</td>
-                            <td><span class="material-icons-outlined">edit</span></td>
-                            <td><span class="material-icons-outlined">delete</span></td>
-                        </tr>
-                            <td>ABC Company Ltd.</td>
-                            <td> ABC</td>
-                            <td>123 No Name Street</td>
-                            <td>Tom Riddle</td>
-                            <td>709-123-4567</td>
-                            <td>triddle@abc.com</td>
-                            <td>active</td>
-                            <td><span class="material-icons-outlined">edit</span></td>
-                            <td><span class="material-icons-outlined">delete</span></td>
-                        </tr>
-                        <tr>
-                            <td>ABC Company Ltd.</td>
-                            <td> ABC</td>
-                            <td>123 No Name Street</td>
-                            <td>Tom Riddle</td>
-                            <td>709-123-4567</td>
-                            <td>triddle@abc.com</td>
-                            <td>active</td>
-                            <td><span class="material-icons-outlined">edit</span></td>
-                            <td><span class="material-icons-outlined">delete</span></td>
-                        </tr>
-                    </tr>
-                    </tbody>
-                </table>
 
+            <div class="clients-table">
+                <div class="cm-table-container" id="cmsTableContainer">
+                    <div class="cm-table-row">
+                        <div class="cm-table-column cm-company cm-header">Company</div>
+                        <div class="cm-table-column cm-ticker cm-header">Ticker</div>
+                        <div class="cm-table-column cm-address cm-header">Address</div>
+                        <div class="cm-table-column cm-name cm-header">Name</div>
+                        <div class="cm-table-column cm-phone cm-header">Phone</div>
+                        <div class="cm-table-column cm-email cm-header">Email</div>
+                        <div class="cm-table-column cm-edit cm-header">Edit</div>
+                        <div class="cm-table-column cm-header cm-add-entry" id="cmAddNewEntry">+</div>
+                    </div>
+                    <span id="tableBody"></span>
+                </div>
+
+            <div class="disable-modal" id="backdrop"></div>
+            
+            <div class="disable-modal" id="newPersonModal">
+                <h1>Add Client Contact</h1>
+                <label for="newPersonCompany">Company</label>
+                <input type="text" id="newPersonCompany">
+
+                <label for="newPersonTicker">Ticker</label>
+                <input type="text" id="newPersonTicker">
+
+                <label for="newPersonAddress">Address</label>
+                <input type="text" id="newPersonAddress">
+
+                <label for="newPersonName">Name</label>
+                <input type="text" id="newPersonName">
+
+                <label for="newPersonPhone">Phone</label>
+                <input type="text" id="newPersonPhone">
+
+                <label for="newPersonEmail">Email</label>
+                <input type="text" id="newPersonEmail">
+                
+                <button id="newCancelButton">Cancel</button>
+                <button id="newPersonSubmitButton">Submit</button>
             </div>
+
+            <div>
+                <button id="SortButton">Sort</button>
             </div>
 
         </main>
@@ -183,7 +148,8 @@
       
 
     <!--CUSTOM-->
-    <script src="js/scripts.js"></script>
+    <script src="/js/client.js"></script>
+    <script src="/js/scripts.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>
     <script src="/init.js"></script>
