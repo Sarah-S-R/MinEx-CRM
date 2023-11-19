@@ -3,6 +3,14 @@ const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
 
+/*document.getElementById('SortButton').addEventListener('click', () => {
+    const sortedKeys = Object.keys(cmsTable).sort();
+    const tempTable = {};
+    sortedKeys.forEach(key => tempTable[key] = cmsTable[key]);
+    cmsTable = tempTable;
+    refreshTable();
+}); */
+
 document.getElementById('SortButton').addEventListener('click', () => {
     const sortedKeys = Object.keys(cmsTable).sort();
     const tempTable = {};
@@ -11,13 +19,26 @@ document.getElementById('SortButton').addEventListener('click', () => {
     refreshTable();
 });
 
-let enableDisableNameInput = (option) => {
-    let newPersonName = document.getElementById('newPersonName');
+//
+/*
+let enableDisableCompanyInput = (option) => {
+    let newPersonCompany = document.getElementById('newPersonCompany');
     if(option === 'enable')
-        newPersonName.disabled = false;
+        newPersonCompany.disabled = false;
     else if (option === 'disable')
-        newPersonName.disabled = true;
+        newPersonCompany.disabled = true;
+
+} */
+
+let enableDisableCompanyInput = (option) => {
+    let newPersonCompany = document.getElementById('newPersonCompany');
+    if (option === 'enable')
+        newPersonCompany.disabled = false;
+    else if (option === 'disable')
+        newPersonCompany.disabled = true;
 }
+
+
 let refreshTable = () => { 
     let cmsTableKeys = Object.keys(cmsTable);
     let tableContaier = document.getElementById('cmsTableContainer');
@@ -160,10 +181,12 @@ let refreshTable = () => {
    
     newPersonCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');
+        enableDisableCompanyInput('disable');
     });
     
     addNewEntryBtn.addEventListener('click', () => {
         enableDisableNewUserModal('enable');
+        enableDisableCompanyInput('enable');
     });
    
     for(let i = 0; i < editBtns.length; i++){
@@ -173,7 +196,7 @@ let refreshTable = () => {
             let nameToEdit = $event.target.parentElement.children[0].innerText;
             let personToEdit = cmsTable[nameToEdit];
             
-            enableDisableNameInput('enable');
+            enableDisableCompanyInput('enable');
             enableDisableNewUserModal('enable');
            
             let newPersonCompany = document.getElementById('newPersonCompany');
@@ -191,7 +214,7 @@ let refreshTable = () => {
             newPersonPhone.value = personToEdit.phone;
             newPersonEmail.value = personToEdit.email;
             
-            enableDisableNameInput('disable');
+            enableDisableCompanyInput('disable');
         })
     }
     for(let i = 0; i < deleteBtns.length; i++){
