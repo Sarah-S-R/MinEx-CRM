@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" Sarah Ryan>
+    <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
+    <link rel="stylesheet" type="text/css" href="./clientstyles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e218809cf.js" crossorigin="anonymous"></script>
+    <title>MinEx CRM: Dashboard</title>
+</head>
+
+<body>        
+            <h1>Contact Management System</h1>
+            <div class="cm-table-container" id =cmTableContainer>
+                <div class= "cm-table-row">
+                    <div class="cm-table-column cm-company cm-header">Company</div>
+                    <div class="cm-table-column cm-name cm-header">Name</div>
+                    <div class="cm-table-column cm-phone cm-header">Phone</div>
+                    <div class="cm-table-column cm-address cm-header">Address</div>
+                    <div class="cm-table-column cm-email cm-header">email</div>
+                    <div class="cm-table-column cm-header cm-add-entry" id="cmAddNewEntry">+</div>
+                </div>
+                <span id = "tableBody"></span>
+            </div>
+
+            <div class = "disable-modal" id = "backdrop"></div>
+            <div class = "disable-modal" id = "newPersonModal">
+
+                <h1>Add New Person</h1>
+
+                <label for = "newPersonCompany">Company</label>
+                <input type = "text" id ="newPersonCompany"></input>
+
+                <label for = "newPersonName">Name</label>
+                <input type = "text" id ="newPersonName"></input>
+
+                <label for = "newPersonPhone">Phone</label>
+                <input type = "text" id ="newPersonPhone"></input>
+
+                <label for = "newPersonAddress">Address</label>
+                <input type = "text" id ="newPersonAddress"></input>
+
+                <button id = "newCancelButton">Cancel</button>
+                <button id ="newPersonSubmitButton">Submit</button>
+
+            </div>
+
+            <button id = "clearBtn" style ="position: absolute; right: 0px; bottom:0px; background-color: rgb(11, 11, 241); color:  white;">Clear Local Storage</button>
+            <button id="SortButton" style="position: absolute; right: 150px; bottom: 0px;">Sort</button>
+            <button id="Resource" style="position: absolute; left: 270px; bottom: 0px;" onclick="window.location.href = 'resources.html'">Resources Used</button>
+    
+    <script src="client.js"></script>  
+</body>
+
+</html>

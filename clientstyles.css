@@ -1,0 +1,178 @@
+  /*Client Page */
+
+  body{
+    background-image: url("/img/bg.jpg");
+    width: 1;
+    color: wheat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* No need to scroll sideways thats why x is hidden*/
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS",cursive,sans-serif;
+}
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 48px;
+    text-shadow: 5px 5px 5px black;
+}
+
+
+  .client-page {
+    background-image: url('bg.jpg');
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    
+  }
+
+  .main-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;;
+    text-shadow: 5px 5px 5px black;
+    color: white;
+  }
+
+  .cm-table-container {
+    font-size: 1rem;
+    margin-top: 35px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .cm-table-row {
+    display: flex;
+  }
+
+  #SortButton{
+    color: wheat;
+    background-color: teal;
+    font-family:Comic Sans MS,cursive,sans-serif;
+}
+    #Resource{
+    color: wheat;
+    background-color: teal;
+    font-family:Comic Sans MS,cursive,sans-serif;
+}
+
+  .cm-table-column {
+    background-color: rgba(236, 54, 68, 0.8);
+    margin: 2px;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+  }
+
+ .cm-name, 
+ .cm-phone, 
+ .cm-email, .cm-company {
+    flex-basis: 20%;
+ }
+
+ .cm-address {
+    flex-grow: 2;
+    flex-basis: 20%;
+ }
+
+ .cm-header {
+    background-color: rgba(236, 54, 68, 1);
+    font-weight: bolder;
+ }
+
+ .cm-edit, .cm-delete,  .cm-add-entry {
+    flex-basis: 5%;
+    text-align: center;
+    cursor: pointer;
+ }
+
+ #newPersonModal {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 99;
+    top: 50px;
+    position: absolute;
+    margin-left: calc(50% - 250);
+    background-color: rgb(168, 44, 44);
+    
+ }
+
+ #newPersonModal input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 95%;
+ }
+
+ .input-err {
+    background-color: red;
+ }
+
+ #backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 50;
+    top: 0;
+    left: 0;
+ }
+
+ #newPersonSubmitButton {
+    background-color: #0074D9;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    float:right;
+    margin: 5px;
+    cursor: pointer;
+ }
+
+ #newCancelButton {
+    background-color: rgb (151, 47, 47);
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    float:right;
+    margin: 5px;
+    cursor: pointer;
+ }
+ 
+ #newPersonCancelButton:hover{
+    padding: 13px;
+ }
+
+ #newPersonSubmitButton:hover{
+    padding: 13px;
+ }
+
+ .disable-modal {
+    visibility: hidden;
+ }
+ .enable-modal {
+    visibility: visible;
+ }
+
+ i {
+    pointer-events: none;
+ }
+
+ @media screen and (max-width: 800px) {
+    .cm-table-container,.cm-table-row,.cm-table-column,::backdrop,.cm-name,.cm-phone,.cm-address,.cm-add-entry,.cm-edit,.cm-delete,.disable-modal,.enable-modal{
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
