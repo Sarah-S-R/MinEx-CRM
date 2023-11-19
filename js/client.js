@@ -32,9 +32,11 @@ let enableDisableCompanyInput = (option) => {
 
 let enableDisableCompanyInput = (option) => {
     let newPersonCompany = document.getElementById('newPersonCompany');
+    
     if (option === 'enable')
         newPersonCompany.disabled = false;
-    else if (option === 'disable')
+   
+        else if (option === 'disable')
         newPersonCompany.disabled = true;
 }
 
@@ -92,7 +94,9 @@ let refreshTable = () => {
         currentRow.appendChild(currentDeleteBtn);
         newTableBody.appendChild(currentRow);
     }
+
     let enableDisableNewUserModal = (option) => {
+       
         let newPersonCompany = document.getElementById('newPersonCompany');
         let newPersonTicker = document.getElementById('newPersonTicker');
         let newPersonAddress = document.getElementById('newPersonAddress');
@@ -109,6 +113,7 @@ let refreshTable = () => {
         
         let newPersonModal = document.getElementById('newPersonModal');
         let backdrop = document.getElementById('backdrop');
+        
         newPersonModal.className = `${option}-modal`;
         backdrop.className = `${option}-modal`;
     }
@@ -165,11 +170,11 @@ let refreshTable = () => {
             document.getElementById('newPersonEmail').className = '';  
         
         if(newPersonCompany !== '' && newPersonTicker !== '' && newPersonAddress !== '' && newPersonName !== '' &&  newPersonPhone !== '' && newPersonEmail !== ''){
-            cmsTable[newPersonName] = {
+            cmsTable[newPersonCompany] = {
                 
-                'company': newPersonCompany,
                 'ticker': newPersonTicker,
                 'address': newPersonAddress,
+                'name': newPersonName,
                 'phone': newPersonPhone,
                 'email': newPersonEmail
             }
@@ -180,13 +185,11 @@ let refreshTable = () => {
     });
    
     newPersonCancelBtn.addEventListener('click', () =>{
-        enableDisableNewUserModal('disable');
-        enableDisableCompanyInput('disable');
+        enableDisableNewUserModal('disable');  
     });
     
     addNewEntryBtn.addEventListener('click', () => {
         enableDisableNewUserModal('enable');
-        enableDisableCompanyInput('enable');
     });
    
     for(let i = 0; i < editBtns.length; i++){
@@ -207,15 +210,13 @@ let refreshTable = () => {
             let newPersonEmail = document.getElementById('newPersonEmail');
            
             
-            newPersonCompany.value = nameToEdit;
+            newPersonCompany.value = nameToEdit; //use company name for editing
             newPersonTicker.value = personToEdit.ticker;
             newPersonAddress.value = personToEdit.address;
             newPersonName.value = personToEdit.name;
             newPersonPhone.value = personToEdit.phone;
-            newPersonEmail.value = personToEdit.email;
-            
-            enableDisableCompanyInput('disable');
-        })
+            newPersonEmail.value = personToEdit.email; 
+        });
     }
     for(let i = 0; i < deleteBtns.length; i++){
         deleteBtns[i].addEventListener('click', ($event) => {
@@ -232,6 +233,7 @@ let refreshTable = () => {
 let deleteUserFromTable = (userName) => {
     let tempTable = {};
     let cmsTableKeys = Object.keys(cmsTable);
+    
     for(let i = 0; i < cmsTableKeys.length; i++){
         if(userName !== cmsTableKeys[i]){
             tempTable[cmsTableKeys[i]] = cmsTable[cmsTableKeys[i]]; 
@@ -242,9 +244,12 @@ let deleteUserFromTable = (userName) => {
     refreshTable();
 }
 let init = () => {
+    
     if(localStorage.getItem(tableKey)){
         cmsTable = JSON.parse(localStorage.getItem(tableKey));
-    } else {
+    }
+    
+    else {
         cmsTable = cmsTableDemo;
         localStorage.setItem(tableKey,JSON.stringify(cmsTable));
     }
