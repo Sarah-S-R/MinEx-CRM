@@ -29,36 +29,61 @@ let refreshTable = () => {
     
     for(let i = 0; i < cmsTableKeys.length;i++){
         let currentRow = document.createElement('div');
+        let currentCompanyCol = document.createElement('div');
+        let currentTickerCol = document.createElement('div');
+        let currentAddressCol = document.createElement('div');
         let currentNameCol = document.createElement('div');
         let currentPhoneCol = document.createElement('div');
-        let currentAddressCol = document.createElement('div');
+        let currentEmailCol = document.createElement('div');
         let currentEditBtn = document.createElement('div');
         let currentDeleteBtn = document.createElement('div');
+
+
         currentRow.className = 'cm-table-row';
+        currentCompanyCol.className = 'cm-table-column cm-company';
+        currentTickerCol.className = 'cm-table-column cm-ticker';
+        currentAddressCol.className = 'cm-table-column cm-address';
         currentNameCol.className = 'cm-table-column cm-name';
         currentPhoneCol.className = 'cm-table-column cm-phone';
-        currentAddressCol.className = 'cm-table-column cm-address';
+        currentEmailCol.className = 'cm-table-column cm-email';
         currentEditBtn.className = 'cm-table-column cm-edit';
         currentDeleteBtn.className = 'cm-table-column cm-delete';
+
         currentNameCol.innerHTML = cmsTableKeys[i];
-        currentPhoneCol.innerHTML = cmsTable[cmsTableKeys[i]].phone;
+        currentCompanyCol.innerHTML = cmsTable[cmsTableKeys[i]].company;
+        currentTickerCol.innerHTML = cmsTable[cmsTableKeys[i]].ticker;
         currentAddressCol.innerHTML = cmsTable[cmsTableKeys[i]].address;
+        currentPhoneCol.innerHTML = cmsTable[cmsTableKeys[i]].phone;
+        currentEmailCol.innerHTML = cmsTable[cmsTableKeys[i]].email;
+
         currentDeleteBtn.innerHTML = '<i class="fas fa-dumpster"></i>';
         currentEditBtn.innerHTML = '<i class="fas fa-user-edit"></i>';
+
         currentRow.appendChild(currentNameCol);
-        currentRow.appendChild(currentPhoneCol);
+        currentRow.appendChild(currentCompanyCol);
+        currentRow.appendChild(currentTickerCol);
         currentRow.appendChild(currentAddressCol);
+        currentRow.appendChild(currentPhoneCol);
+        currentRow.appendChild(currentEmailCol);
         currentRow.appendChild(currentEditBtn);
         currentRow.appendChild(currentDeleteBtn);
         newTableBody.appendChild(currentRow);
     }
     let enableDisableNewUserModal = (option) => {
+        let newPersonCompany = document.getElementById('newPersonCompany');
+        let newPersonTicker = document.getElementById('newPersonTicker');
+        let newPersonAddress = document.getElementById('newPersonAddress');
         let newPersonName = document.getElementById('newPersonName');
         let newPersonPhone = document.getElementById('newPersonPhone');
-        let newPersonAddress = document.getElementById('newPersonAddress');
+        let newPersonEmail = document.getElementById('newPersonEmail');
+        
+        newPersonCompany.value = '';
+        newPersonTicker.value = '';
+        newPersonAddress.value = '';
         newPersonName.value = '';
         newPersonPhone.value = '';
-        newPersonAddress.value = '';
+        newPersonEmail.value = '';
+        
         let newPersonModal = document.getElementById('newPersonModal');
         let backdrop = document.getElementById('backdrop');
         newPersonModal.className = `${option}-modal`;
@@ -69,27 +94,60 @@ let refreshTable = () => {
     let deleteBtns = document.getElementsByClassName('cm-delete');
     let newPersonSubmitBtn = document.getElementById('newPersonSubmitButton');
     let newPersonCancelBtn = document.getElementById('newCancelButton');
+    
     newPersonSubmitBtn.addEventListener('click', () => {
-        let newPersonName = document.getElementById('newPersonName').value.trim();
+        
+        let newPersonCompany = document.getElementById('newPersonCompany').value.trim();
+        let newPersonTicker = document.getElementById('newPersonTicker').value.trim();
         let newPersonAddress = document.getElementById('newPersonAddress').value.trim();
+        let newPersonName = document.getElementById('newPersonName').value.trim();
         let newPersonPhone = document.getElementById('newPersonPhone').value.trim();
-        if(newPersonName === '')
-            document.getElementById('newPersonName').className = 'input-err';
+        let newPersonEmail = document.getElementById('newPersonEmail').value.trim();
+        
+        if(newPersonCompany === '')
+            document.getElementById('newPersonCompany').className = 'input-err';
+        
+            else 
+            document.getElementById('newPersonCompany').className = '';
+
+        if(newPersonTicker === '')
+            document.getElementById('newPersonTicker').className = 'input-err';
+        
         else 
-            document.getElementById('newPersonName').className = '';
-        if(newPersonPhone === '')
-            document.getElementById('newPersonPhone').className = 'input-err';
-        else 
-            document.getElementById('newPersonPhone').className = '';
+            document.getElementById('newPersonTicker').className = '';
+       
         if(newPersonAddress === '')
             document.getElementById('newPersonAddress').className = 'input-err';
+        
         else 
             document.getElementById('newPersonAddress').className = '';
         
-        if(newPersonName !== '' && newPersonAddress !== '' && newPersonPhone !== ''){
+        if(newPersonName === '')
+            document.getElementById('newPersonName').className = 'input-err';
+        
+        else 
+            document.getElementById('newPersonName').className = '';
+       
+         if(newPersonPhone === '')
+            document.getElementById('newPersonPhone').className = 'input-err';
+       
+        else 
+            document.getElementById('newPersonPhone').className = '';
+        
+            if(newPersonEmail === '')
+            document.getElementById('newPersonEmail').className = 'input-err';
+       
+        else 
+            document.getElementById('newPersonEmail').className = '';  
+        
+        if(newPersonCompany !== '' && newPersonTicker !== '' && newPersonAddress !== '' && newPersonName !== '' &&  newPersonPhone !== '' && newPersonEmail !== ''){
             cmsTable[newPersonName] = {
+                
+                'company': newPersonCompany,
+                'ticker': newPersonTicker,
+                'address': newPersonAddress,
                 'phone': newPersonPhone,
-                'address': newPersonAddress
+                'email': newPersonEmail
             }
             localStorage.setItem(tableKey,JSON.stringify(cmsTable));
             enableDisableNewUserModal('disable');
@@ -106,21 +164,34 @@ let refreshTable = () => {
         editBtns[i].addEventListener('click', ($event) => {
             let nameToEdit = $event.target.parentElement.children[0].innerText;
             let personToEdit = cmsTable[nameToEdit];
+            
             enableDisableNameInput('enable');
             enableDisableNewUserModal('enable');
+           
+            let newPersonCompany = document.getElementById('newPersonCompany');
+            let newPersonTicker = document.getElementById('newPersonTicker');
+            let newPersonAddress = document.getElementById('newPersonAddress');
             let newPersonName = document.getElementById('newPersonName');
             let newPersonPhone = document.getElementById('newPersonPhone');
-            let newPersonAddress = document.getElementById('newPersonAddress');
+            let newPersonEmail = document.getElementById('newPersonEmail');
+           
+            
             newPersonName.value = nameToEdit;
-            newPersonPhone.value = personToEdit.phone;
+            newPersonCompany.value = personToEdit.company;
+            newPersonTicker.value = personToEdit.ticker;
             newPersonAddress.value = personToEdit.address;
+            newPersonPhone.value = personToEdit.phone;
+            newPersonEmail.value = personToEdit.email;
+            
             enableDisableNameInput('disable');
         })
     }
     for(let i = 0; i < deleteBtns.length; i++){
         deleteBtns[i].addEventListener('click', ($event) => {
+            
             let nameToDelete = $event.target.parentElement.children[0].innerText;
             let isSure = window.confirm('Are you sure you want to delete ' + nameToDelete + '?');
+            
             if(isSure)
                 // delete user from table
                 deleteUserFromTable(nameToDelete);
