@@ -3,7 +3,7 @@
 body{
     background-image: url("/img/bg.jpg");
     width: 1;
-    color: wheat;
+    color: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -19,11 +19,13 @@ h1{
     margin-top: 20px;
     font-size: 48px;
     text-shadow: 5px 5px 5px black;
+    color: wheat;
 }
 .cm-table-container{
-    font-size: 20px;
+    text-align: center;
+    font-size: 1rem;
     margin-top: 35px;
-    width: 90%;
+    width: 95%;
     margin:auto;
 }
 .cm-table-row{
@@ -36,7 +38,7 @@ h1{
 }
 
 .cm-table-column{
-    background-color: rgba(54, 163, 236, 0.8);
+    background-color: #fff;
     margin: 2px;
     padding: 15px;
     white-space: nowrap;
@@ -48,30 +50,32 @@ h1{
 }
 
 .cm-header {
-    background-color: rgba(54, 163, 236, 1);
+    background-color: rgb(132, 135, 135);
     font-weight: bolder;
+   
 }
 
 .cm-edit, .cm-delete{
-    flex-basis: 5%;
+    flex-basis: 4%;
     text-align: center;
     cursor: pointer;
 }
 .cm-add-entry{
-    flex-basis: 5%;
+    flex-basis: 4%;
     text-align: center;
     cursor: pointer;
 }
 
 #newPersonModal{
-    width: 500px;
+    width: 450px;
     padding: 10px;
     border-radius: 5px;
     z-index: 99;
-    top: 50px;
+    top: 5px;
     position: absolute;
-    margin-left: calc(50% - 250);
-    background-color: rgb(54,163,236);
+    margin-left: 30%;
+    background-color:blur;
+    color: #fff;
 }
 
 #newPersonModal input{
@@ -96,15 +100,8 @@ h1{
     left: 0;
 }
 
-#newPersonSubmitButton{
-    background-color: rgb(47,95,151);
-}
-
-#newCancelButton{
-    background-color: rgb(151, 47, 47);
-}
-
-button{
+#newPersonSubmitButton, #SortButton {
+    background-color: rgb(44, 19, 232);
     padding: 15px;
     border-radius: 5px;
     border: none;
@@ -112,6 +109,17 @@ button{
     margin: 5px;
     cursor: pointer;
 }
+
+#newCancelButton{
+    background-color: rgb(151, 47, 47);
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
 button:hover{
     padding: 13px;
 }
