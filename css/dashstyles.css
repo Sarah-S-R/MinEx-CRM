@@ -79,6 +79,41 @@ body{
 #datetime {
     padding-left: 20px; 
 }
+
+/*-----------DROPDOWN------------*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    min-width: 160px;
+    margin: auto;
+    color:rgba(0, 0, 0, 0.35);
+    border: none;
+    left: -45px;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 5px;
+    display: flex;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    color: #4677c7;
+}
 /*----------------SIDEBAR--------------*/
 #sidebar{
     grid-area: sidebar;
