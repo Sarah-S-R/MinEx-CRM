@@ -3,32 +3,25 @@ const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
 
-/*document.getElementById('SortButton').addEventListener('click', () => {
-    const sortedKeys = Object.keys(cmsTable).sort();
-    const tempTable = {};
-    sortedKeys.forEach(key => tempTable[key] = cmsTable[key]);
-    cmsTable = tempTable;
-    refreshTable();
-}); */
-
 document.getElementById('SortButton').addEventListener('click', () => {
-    const sortedKeys = Object.keys(cmsTable).sort();
+    const sortedKeys = Object.keys(cmsTable).sort((a, b) => {
+        // Convert keys to lowercase for case-insensitive sorting
+        const keyA = a.toLowerCase();
+        const keyB = b.toLowerCase();
+
+        // Compare keys as numbers if both are numeric, otherwise, compare as strings
+        if (!isNaN(keyA) && !isNaN(keyB)) {
+            return parseFloat(keyA) - parseFloat(keyB);
+        } else {
+            return keyA.localeCompare(keyB);
+        }
+    });
+
     const tempTable = {};
-    sortedKeys.forEach(key => tempTable[key] = cmsTable[key]);
+    sortedKeys.forEach(key => (tempTable[key] = cmsTable[key]));
     cmsTable = tempTable;
     refreshTable();
 });
-
-//
-/*
-let enableDisableCompanyInput = (option) => {
-    let newPersonCompany = document.getElementById('newPersonCompany');
-    if(option === 'enable')
-        newPersonCompany.disabled = false;
-    else if (option === 'disable')
-        newPersonCompany.disabled = true;
-
-} */
 
 let enableDisableCompanyInput = (option) => {
     let newPersonCompany = document.getElementById('newPersonCompany');
@@ -39,7 +32,6 @@ let enableDisableCompanyInput = (option) => {
         else if (option === 'disable')
         newPersonCompany.disabled = true;
 }
-
 
 let refreshTable = () => { 
     let cmsTableKeys = Object.keys(cmsTable);
