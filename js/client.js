@@ -35,14 +35,14 @@ let enableDisableCompanyInput = (option) => {
 
 let refreshTable = () => { 
     let cmsTableKeys = Object.keys(cmsTable);
-    let tableContaier = document.getElementById('cmsTableContainer');
+    let tableContainer = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
    
-    tableContaier.removeChild(oldTableBody);
+    tableContainer.removeChild(oldTableBody);
    
     let newTableBody = document.createElement('span');
     newTableBody.id = 'tableBody';
-    tableContaier.appendChild(newTableBody);
+    tableContainer.appendChild(newTableBody);
     
     for(let i = 0; i < cmsTableKeys.length;i++){
         let currentRow = document.createElement('div');
