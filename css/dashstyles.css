@@ -334,7 +334,7 @@ body{
 .main-title h1 {
     margin-left: 10px ;
 }
-.cm-table-container{
+.cm-table-container, .pm-table-container {
     text-align: center;
     font-size: 1rem;
     margin-top: 30px;
@@ -342,11 +342,11 @@ body{
     margin:auto;
 }
 
-.cm-table-row{
+.cm-table-row, .pm-table-row {
     display: flex;
 }
 
-.cm-table-column{
+.cm-table-column, .pm-table-column {
     background-color: #fff;
     margin: 0.75px;
     padding: 10px;
@@ -354,11 +354,12 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cm-name, .cm-address, .cm-email, .cm-company, .cm-propertyName, .cm-claims, .cm-area{
+.cm-name, .cm-address, .cm-email, .cm-company, .cm-propertyName, .cm-claims, .cm-area
+.pm-company, .pm-location, .pm-area, .pm-propertyName {
     flex-basis: 10%;
 }
 
-.cm-address, .cm-company {
+.cm-address, .cm-company, .pm-company {
     flex-grow: 1.15;
 }
 .cm-phone {
@@ -369,24 +370,24 @@ body{
     flex-basis: 4.75%;
 }
 
-.cm-header {
+.cm-header, .pm-header {
     background-color: rgb(132, 135, 135);
     font-weight: bolder;
     color: #2c2c2f;  
 }
 
-.cm-edit, .cm-delete{
+.cm-edit, .cm-delete, .pm-edit, .pm-delete {
     flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
 }
-.cm-add-entry{
+.cm-add-entry, .pm-add-entry {
     flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
 }
 
-#newPersonModal{
+#newPersonModal, #newProjectModal {
     width: 450px;
     padding: 10px;
     border-radius: 5px;
@@ -398,7 +399,7 @@ body{
     color: #fff;
 }
 
-#newPersonModal input{
+#newPersonModal input, #newProjectModal input {
     display: block;
     margin-bottom: 15px;
     padding: 10px;
@@ -410,7 +411,7 @@ body{
     background-color: red;
 }
 
-#backdrop{
+#backdrop, #pmbackdrop {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -420,7 +421,8 @@ body{
     left: 0;
 }
 
-#newPersonSubmitButton, #SortButton {
+#newPersonSubmitButton, #SortButton, 
+#pmSortButton, #newProjectSubmitButton {
     background-color: rgb(44, 19, 232);
     padding: 8px;
     border-radius: 5px;
@@ -432,7 +434,7 @@ body{
     width: 100px;
 }
 
-#newCancelButton{
+#newCancelButton, #newProjectCancelButton {
     background-color: rgb(151, 47, 47);
     padding: 8px;
     border-radius: 5px;
@@ -443,8 +445,9 @@ body{
     width: 100px;
 }
 
-#newCancelButton:hover, #newPersonSubmitButton:hover, 
-#SortButton:hover  {
+#newCancelButton:hover, #newProjectCancelButton:hover,
+ #newPersonSubmitButton:hover, #newProjectSubmitButton:hover,
+#SortButton:hover, #pmSortButton:hover  {
     padding: 10px;
 }
 

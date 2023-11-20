@@ -1,10 +1,10 @@
 
-const tableKey = 'cms-table';
-let cmsTable;
-let cmsTableDemo = {};
+const tableKey = 'pms-table';
+let pmsTable;
+let pmsTableDemo = {};
 
-document.getElementById('SortButton').addEventListener('click', () => {
-    const sortedKeys = Object.keys(cmsTable).sort((a, b) => {
+document.getElementById('pmSortButton').addEventListener('click', () => {
+    const sortedKeys = Object.keys(pmsTable).sort((a, b) => {
         // Convert keys to lowercase for case-insensitive sorting
         const keyA = a.toLowerCase();
         const keyB = b.toLowerCase();
@@ -18,33 +18,33 @@ document.getElementById('SortButton').addEventListener('click', () => {
     });
 
     const tempTable = {};
-    sortedKeys.forEach(key => (tempTable[key] = cmsTable[key]));
-    cmsTable = tempTable;
+    sortedKeys.forEach(key => (tempTable[key] = pmsTable[key]));
+    pmsTable = tempTable;
     refreshTable();
 });
 
 let enableDisableCompanyInput = (option) => {
-    let newPersonCompany = document.getElementById('newPersonCompany');
+    let newProjectCompany = document.getElementById('newProjectCompany');
     
     if (option === 'enable')
-        newPersonCompany.disabled = false;
+        newProjectCompany.disabled = false;
    
         else if (option === 'disable')
-        newPersonCompany.disabled = true;
+        newProjectCompany.disabled = true;
 }
 
 let refreshTable = () => { 
-    let cmsTableKeys = Object.keys(cmsTable);
-    let tableContaier = document.getElementById('cmsTableContainer');
-    let oldTableBody = document.getElementById('tableBody');
+    let pmsTableKeys = Object.keys(pmsTable);
+    let tableContaier = document.getElementById('pmsTableContainer');
+    let oldTableBody = document.getElementById('pmtableBody');
    
     tableContaier.removeChild(oldTableBody);
    
     let newTableBody = document.createElement('span');
-    newTableBody.id = 'tableBody';
+    newTableBody.id = 'pmtableBody';
     tableContaier.appendChild(newTableBody);
     
-    for(let i = 0; i < cmsTableKeys.length;i++){
+    for(let i = 0; i < pmsTableKeys.length;i++){
         let currentRow = document.createElement('div');
         let currentCompanyCol = document.createElement('div');
         let currentPropertyNameCol = document.createElement('div');
@@ -55,20 +55,20 @@ let refreshTable = () => {
         let currentDeleteBtn = document.createElement('div');
 
 
-        currentRow.className = 'cm-table-row';
-        currentCompanyCol.className = 'cm-table-column cm-company';
-        currentPropertyNameCol.className = 'cm-table-column cm-propertyName';
-        currentLocationCol.className = 'cm-table-column cm-location';
-        currentClaimsCol.className = 'cm-table-column cm-claims';
-        currentAreaCol.className = 'cm-table-column cm-area';
-        currentEditBtn.className = 'cm-table-column cm-edit';
-        currentDeleteBtn.className = 'cm-table-column cm-delete';
+        currentRow.className = 'pm-table-row';
+        currentCompanyCol.className = 'pm-table-column pm-company';
+        currentPropertyNameCol.className = 'pm-table-column pm-propertyName';
+        currentLocationCol.className = 'pm-table-column pm-location';
+        currentClaimsCol.className = 'pm-table-column pm-claims';
+        currentAreaCol.className = 'pm-table-column pm-area';
+        currentEditBtn.className = 'pm-table-column pm-edit';
+        currentDeleteBtn.className = 'pm-table-column pm-delete';
 
-        currentCompanyCol.innerHTML = cmsTableKeys[i];
-        currentPropertyNameCol.innerHTML = cmsTable[cmsTableKeys[i]].propertyName;
-        currentLocationCol.innerHTML = cmsTable[cmsTableKeys[i]].location;
-        currentClaimsCol.innerHTML = cmsTable[cmsTableKeys[i]].claims;
-        currentAreaCol.innerHTML = cmsTable[cmsTableKeys[i]].area;
+        currentCompanyCol.innerHTML = pmsTableKeys[i];
+        currentPropertyNameCol.innerHTML = pmsTable[pmsTableKeys[i]].propertyName;
+        currentLocationCol.innerHTML = pmsTable[pmsTableKeys[i]].location;
+        currentClaimsCol.innerHTML = pmsTable[pmsTableKeys[i]].claims;
+        currentAreaCol.innerHTML = pmsTable[pmsTableKeys[i]].area;
 
         currentDeleteBtn.innerHTML = '<i class="fas fa-dumpster"></i>';
         currentEditBtn.innerHTML = '<i class="fas fa-user-edit"></i>';
@@ -85,79 +85,79 @@ let refreshTable = () => {
 
     let enableDisableNewUserModal = (option) => {
        
-        let newPersonCompany = document.getElementById('newPersonCompany');
-        let newPersonPropertyName = document.getElementById('newPersonPropertyName');
-        let newPersonLocation = document.getElementById('newPersonLocation');
-        let newPersonClaims = document.getElementById('newPersonClaims');
-        let newPersonArea = document.getElementById('newPersonArea');
+        let newProjectCompany = document.getElementById('newProjectCompany');
+        let newProjectPropertyName = document.getElementById('newProjectPropertyName');
+        let newProjectLocation = document.getElementById('newProjectLocation');
+        let newProjectClaims = document.getElementById('newProjectClaims');
+        let newProjectArea = document.getElementById('newProjectArea');
         
-        newPersonCompany.value = '';
-        newPersonPropertyName.value = '';
-        newPersonLocation.value = '';
-        newPersonClaims.value = '';
-        newPersonArea.value = '';
+        newProjectCompany.value = '';
+        newProjectPropertyName.value = '';
+        newProjectLocation.value = '';
+        newProjectClaims.value = '';
+        newProjectArea.value = '';
         
-        let newPersonModal = document.getElementById('newPersonModal');
-        let backdrop = document.getElementById('backdrop');
+        let newProjectModal = document.getElementById('newProjectModal');
+        let backdrop = document.getElementById('pmbackdrop');
         
-        newPersonModal.className = `${option}-modal`;
+        newProjectModal.className = `${option}-modal`;
         backdrop.className = `${option}-modal`;
     }
 
-    let addNewEntryBtn = document.getElementById('cmAddNewEntry');
-    let editBtns = document.getElementsByClassName('cm-edit');
-    let deleteBtns = document.getElementsByClassName('cm-delete');
-    let newPersonSubmitBtn = document.getElementById('newPersonSubmitButton');
-    let newPersonCancelBtn = document.getElementById('newCancelButton');
+    let addNewEntryBtn = document.getElementById('pmAddNewEntry');
+    let editBtns = document.getElementsByClassName('pm-edit');
+    let deleteBtns = document.getElementsByClassName('pm-delete');
+    let newProjectSubmitBtn = document.getElementById('newProjectSubmitButton');
+    let newProjectCancelBtn = document.getElementById('newProjectCancelButton');
     
-    newPersonSubmitBtn.addEventListener('click', () => {
+    newProjectSubmitBtn.addEventListener('click', () => {
         
-        let newPersonCompany = document.getElementById('newPersonCompany').value.trim();
-        let newPersonPropertyName = document.getElementById('newPersonPropertyName').value.trim();
-        let newPersonLocation = document.getElementById('newPersonLocation').value.trim();
-        let newPersonClaims = document.getElementById('newPersonClaims').value.trim();
-        let newPersonArea = document.getElementById('newPersonArea').value.trim();
+        let newProjectCompany = document.getElementById('newProjectCompany').value.trim();
+        let newProjectPropertyName = document.getElementById('newProjectPropertyName').value.trim();
+        let newProjectLocation = document.getElementById('newProjectLocation').value.trim();
+        let newProjectClaims = document.getElementById('newProjectClaims').value.trim();
+        let newProjectArea = document.getElementById('newProjectArea').value.trim();
         
-        if(newPersonCompany === '')
-            document.getElementById('newPersonCompany').className = 'input-err';
+        if(newProjectCompany === '')
+            document.getElementById('newProjectCompany').className = 'input-err';
         
             else 
-            document.getElementById('newPersonCompany').className = '';
+            document.getElementById('newProjectCompany').className = '';
 
-        if(newPersonPropertyName === '')
-            document.getElementById('newPersonPropertyName').className = 'input-err';
+        if(newProjectPropertyName === '')
+            document.getElementById('newProjectPropertyName').className = 'input-err';
         
         else 
-            document.getElementById('newPersonPropertyName').className = '';
+            document.getElementById('newProjectPropertyName').className = '';
        
-        if(newPersonLocation === '')
-            document.getElementById('newPersonLocation').className = 'input-err';
+        if(newProjectLocation === '')
+            document.getElementById('newProjectLocation').className = 'input-err';
         
         else 
-            document.getElementById('newPersonLocation').className = '';
+            document.getElementById('newProjectLocation').className = '';
         
-        if(newPersonClaims === '')
-            document.getElementById('newPersonClaims').className = 'input-err';
+        if(newProjectClaims === '')
+            document.getElementById('newProjectClaims').className = 'input-err';
         
         else 
-            document.getElementById('newPersonClaims').className = '';
+            document.getElementById('newProjectClaims').className = '';
        
-         if(newPersonArea === '')
-            document.getElementById('newPersonArea').className = 'input-err';
+         if(newProjectArea === '')
+            document.getElementById('newProjectArea').className = 'input-err';
        
         else 
-            document.getElementById('newPersonArea').className = '';
+            document.getElementById('newProjectArea').className = '';
         
         
-        if(newPersonCompany !== '' && newPersonPropertyName !== '' && newPersonLocation !== '' && newPersonClaims !== ''){
-            cmsTable[newPersonCompany] = {
+        if(newProjectCompany !== '' && newProjectPropertyName !== '' && newProjectLocation !== '' && newProjectClaims !== ''){
+            pmsTable[newProjectCompany] = {
                 
-                'propertyName': newPersonPropertyName,
-                'location': newPersonLocation,
-                'claims': newPersonClaims,
-                'area': newPersonArea,
+                'propertyName': newProjectPropertyName,
+                'location': newProjectLocation,
+                'claims': newProjectClaims,
+                'area': newProjectArea,
             }
-            localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+            localStorage.setItem(tableKey,JSON.stringify(pmsTable));
             enableDisableNewUserModal('disable');
             refreshTable();
         }
@@ -175,24 +175,24 @@ let refreshTable = () => {
        
         editBtns[i].addEventListener('click', ($event) => {
            
-            let nameToEdit = $event.target.parentElement.children[0].innerText;
-            let personToEdit = cmsTable[nameToEdit];
+            let prjnameToEdit = $event.target.parentElement.children[0].innerText;
+            let projectToEdit = pmsTable[prjnameToEdit];
             
             enableDisableCompanyInput('enable');
             enableDisableNewUserModal('enable');
            
-            let newPersonCompany = document.getElementById('newPersonCompany');
-            let newPersonPropertyName = document.getElementById('newPersonPropertyName');
-            let newPersonLocation = document.getElementById('newPersonLocation');
-            let newPersonClaims = document.getElementById('newPersonClaims');
-            let newPersonArea = document.getElementById('newPersonArea');
+            let newProjectCompany = document.getElementById('newProjectCompany');
+            let newProjectPropertyName = document.getElementById('newProjectPropertyName');
+            let newProjectLocation = document.getElementById('newProjectLocation');
+            let newProjectClaims = document.getElementById('newProjectClaims');
+            let newProjectArea = document.getElementById('newProjectArea');
            
             
-            newPersonCompany.value = nameToEdit; //use company name for editing
-            newPersonPropertyName.value = personToEdit.propertyName;
-            newPersonLocation.value = personToEdit.location;
-            newPersonClaims.value = personToEdit.claims;
-            newPersonArea.value = personToEdit.area;
+            newProjectCompany.value = prjnameToEdit; //use company name for editing
+            newProjectPropertyName.value = projectToEdit.propertyName;
+            newProjectLocation.value = projectToEdit.location;
+            newProjectClaims.value = projectToEdit.claims;
+            newProjectArea.value = projectToEdit.area;
         });
     }
     for(let i = 0; i < deleteBtns.length; i++){
@@ -209,26 +209,26 @@ let refreshTable = () => {
 }
 let deleteUserFromTable = (userName) => {
     let tempTable = {};
-    let cmsTableKeys = Object.keys(cmsTable);
+    let pmsTableKeys = Object.keys(pmsTable);
     
-    for(let i = 0; i < cmsTableKeys.length; i++){
-        if(userName !== cmsTableKeys[i]){
-            tempTable[cmsTableKeys[i]] = cmsTable[cmsTableKeys[i]]; 
+    for(let i = 0; i < pmsTableKeys.length; i++){
+        if(userName !== pmsTableKeys[i]){
+            tempTable[pmsTableKeys[i]] = pmsTable[pmsTableKeys[i]]; 
         }
     }
-    cmsTable = tempTable;
-    localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+    pmsTable = tempTable;
+    localStorage.setItem(tableKey,JSON.stringify(pmsTable));
     refreshTable();
 }
 let init = () => {
     
     if(localStorage.getItem(tableKey)){
-        cmsTable = JSON.parse(localStorage.getItem(tableKey));
+        pmsTable = JSON.parse(localStorage.getItem(tableKey));
     }
     
     else {
-        cmsTable = cmsTableDemo;
-        localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+        pmsTable = pmsTableDemo;
+        localStorage.setItem(tableKey,JSON.stringify(pmsTable));
     }
     refreshTable();
 }
