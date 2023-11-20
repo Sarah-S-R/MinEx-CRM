@@ -35,14 +35,14 @@ let enableDisableCompanyInput = (option) => {
 
 let refreshTable = () => { 
     let pmsTableKeys = Object.keys(pmsTable);
-    let tableContaier = document.getElementById('pmsTableContainer');
-    let oldTableBody = document.getElementById('pmtableBody');
+    let tableContainer = document.getElementById('pmsTableContainer');
+    let oldTableBody = document.getElementById('pmTableBody');
    
-    tableContaier.removeChild(oldTableBody);
+    tableContainer.removeChild(oldTableBody);
    
     let newTableBody = document.createElement('span');
-    newTableBody.id = 'pmtableBody';
-    tableContaier.appendChild(newTableBody);
+    newTableBody.id = 'pmTableBody';
+    tableContainer.appendChild(newTableBody);
     
     for(let i = 0; i < pmsTableKeys.length;i++){
         let currentRow = document.createElement('div');
@@ -98,10 +98,10 @@ let refreshTable = () => {
         newProjectArea.value = '';
         
         let newProjectModal = document.getElementById('newProjectModal');
-        let backdrop = document.getElementById('pmbackdrop');
+        let pmbackdrop = document.getElementById('pmbackdrop');
         
         newProjectModal.className = `${option}-modal`;
-        backdrop.className = `${option}-modal`;
+        pmbackdrop.className = `${option}-modal`;
     }
 
     let addNewEntryBtn = document.getElementById('pmAddNewEntry');
@@ -149,7 +149,7 @@ let refreshTable = () => {
             document.getElementById('newProjectArea').className = '';
         
         
-        if(newProjectCompany !== '' && newProjectPropertyName !== '' && newProjectLocation !== '' && newProjectClaims !== ''){
+        if(newProjectCompany !== '' && newProjectPropertyName !== '' && newProjectLocation !== '' && newProjectClaims !== '' && newProjectArea !== ''){
             pmsTable[newProjectCompany] = {
                 
                 'propertyName': newProjectPropertyName,
@@ -163,7 +163,7 @@ let refreshTable = () => {
         }
     });
    
-    newPersonCancelBtn.addEventListener('click', () =>{
+    newProjectCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');  
     });
     
