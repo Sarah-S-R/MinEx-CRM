@@ -1,19 +1,20 @@
 // SIDEBAR TOGGLE
-let sidebarOpen=false;
+let sidebarOpen = false;
 let sidebar = document.getElementById("sidebar");
 
-function openSidebar () {
+function openSidebar() {
     if (!sidebarOpen) {
         sidebar.classList.add("sidebar-responsive");
-        sidebarOpen =true;
+        sidebarOpen = true;
+        console.log("Open sidebar clicked");
     }
 }
 
-function closeSidebar () {
+function closeSidebar() {
     if (sidebarOpen) {
         sidebar.classList.remove("sidebar-responsive");
         sidebarOpen = false;
-        console.log ("Close sidebar clicked");
+        console.log("Close sidebar clicked");
     }
 }
 
@@ -137,12 +138,16 @@ var barChartOptions = {
       },
     },
   };
+
+
   
+  /*
   var barChart = new ApexCharts(
     document.querySelector('#bar-chart'),
     barChartOptions
   );
   barChart.render();
+ 
 
   // AREA CHART
 var areaChartOptions = {
@@ -265,6 +270,6 @@ var areaChartOptions = {
     areaChartOptions
   );
   areaChart.render();
-  
+  */
 
   

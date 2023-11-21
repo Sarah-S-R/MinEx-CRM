@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Sarah Ryan">
+    <meta name="author" Sarah Ryan>
     <meta name="keywords" content="Mineral Exploration, Geology, CRM, Consulting Firm">
     <link rel="stylesheet" type="text/css" href="./css/dashstyles.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <title>MinEx CRM: Dashboard</title>   
+    <script src="https://kit.fontawesome.com/9e218809cf.js" crossorigin="anonymous"></script>
+    <title>MinEx CRM: Clients</title>  
 </head>
-
 <body>
     <div class="grid-container">
         <!---Header--->
@@ -69,26 +69,18 @@
 
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
-                    <a href="dashboard.html">
                     <span class="material-icons-outlined">dashboard</span>Dashboard
-                    </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="clients.html">
                     <span class="material-icons-outlined">groups</span>Clients
-                </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="projects.html">
                     <span class="material-icons-outlined">inventory_2</span>Projects
-                </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="locations.html">
                     <span class="material-icons-outlined">map</span>Locations
-                </a>
                 </li>
-                <!--
+                               <!--
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">poll</span>Reports
                 </li>
@@ -106,116 +98,45 @@
         <!--Main----->
         <main class="main-container">
             <div class="main-title">
-                <h2>DASHBOARD</h2>
+                <h1>Profile</h1>
             </div>
-            <div class="welcome-container" id="welcome-container">
-                <h2>Welcome back</h2>
+           
+            <section id="profile-section">
+                <div id="profile-info">
+                    <img id="profile-picture" src="default-avatar.jpg" alt="Profile Picture">
+                    <h2 id="username">Sarah Ryan</h2>
+                    <p id="bio">Web Developer</p>
                 </div>
-            <div class="main-cards">
+                <br>
+                <button id="edit-profile-btn">Edit Profile</button>
+            </section>
+            <section id="edit-section" style="display: none;">
+                <form id="edit-form">
+                    <label for="new-username">Updated Name:</label>
+                    <input type="text" id="new-username" required>
+                    
+                    <label for="new-bio">New Role Title:</label>
+                    <input type="text" id="new-bio" required>
+                    
+                    <label for="new-profile-picture">New Profile Picture URL:</label>
+                    <input type="url" id="new-profile-picture">
+                    
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
 
-
-               <!--  <a href="clients.html">     --> 
-                <div class="card">
-                    <div class="card-inner">
-                        <span class="material-icons-outlined">groups</span> 
-                        <h3>CLIENTS</h3>
-                    </div>
-                    <h1 id="clientCount">1500</h1>
-                </div>
-           <!-- </a> -->
-
-               <!-- <a href="projects.html">  -->
-                <div class="card">
-                    <div class="card-inner">
-                        <span class="material-icons-outlined">inventory_2</span>
-                        <h3>PROJECTS</h3>   
-                    </div>
-                    <h1 id="projectCount"></h1>
-                </div>
-          <!--  </a> -->
-
-        <!--    <a href="locations.html">   -->
-                <div class="card">
-                    <div class="card-inner">
-                        
-                        <span class="material-icons-outlined">map</span>
-                        <h3>LOCATIONS</h3>
-                    </div>
-                    <h1 id="locationCount"></h1>
-                </div>
-<!--  </a> -->
-
-               <!-- <div class="card">
-                    <div class="card-inner">
-                        <h3>ANALYTICS</h3>
-                        <span class="material-icons-outlined">category</span>
-                    </div>
-                    <h1>25</h1>
-                </div>
-            -->
-
-              <!--
-                <div class="card">
-                    <div class="card-inner">
-                        <h3>PROPERTIES</h3>
-                        <span class="material-icons-outlined">perm_media</span>
-                    </div>
-                    <h1>175</h1>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <h3>ALERTS</h3>
-                        <span class="material-icons-outlined">notification_important</span>
-                    </div>
-                    <h1>56</h1>
-                </div>
-            -->
-            </div>
-
-            <!--CHARTS
-            <div class="charts">
-
-                <div class="charts-card">
-                    <h2 class="chart-title">Top 5 Services</h2>
-                    <div id="bar-chart"></div>
-                </div>
-
-                <div class="charts-card">
-                    <h2 class="chart-title">Purchase and Sales Orders</h2>
-                    <div id="area-chart"></div>
-                </div>
-                -->
-
-            </div>
         </main>
         <!--End Main----->
 
         <!--------JAVASCRIPTS-------->
-        <!--APEX CHARTS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
+      
 
     <!--CUSTOM-->
-    <script src="js/scripts.js"></script>
-    <script src="js/projects.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/scripts.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>
     <script src="/init.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projectCountElement = document.getElementById('projectCount');
-            if (projectCountElement) {
-                const projectCount = getProjectCount(); // Make sure getProjectCount is defined in projects.js
-                projectCountElement.textContent = projectCount;
-            }
-        });
-
-        document.addEventListener('projectUpdated', () => {
-    // Update the project count
-    updateProjectCount();
-});
-    </script>
-
 </body>
 
 </html>

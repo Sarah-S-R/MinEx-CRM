@@ -120,7 +120,7 @@ body{
     height: 100%;
     background-color: #263043;
     overflow-y: auto;
-    transition: all 0.5s;
+
     -webkit-transition: all 0.5s;
         text-decoration: none;
 }
@@ -153,6 +153,21 @@ body{
 .sidebar-list-item {
     padding: 15px 15px 15px 15px;
     font-size: 1rem;
+}
+
+.sidebar-list-item a {
+    color: #9e9ea4; /* Set the color for normal state */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover state */
+.sidebar-list-item a:hover {
+    color: #9e9ea4; /* Set the color for hover state */
+}
+
+/* Visited state */
+.sidebar-list-item a:visited {
+    color: #9e9ea4; /* Set the color for visited state */
 }
 
 .sidebar-list-item span {
