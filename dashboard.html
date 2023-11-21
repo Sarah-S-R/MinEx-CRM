@@ -20,31 +20,37 @@
                 <span class="material-icons-outlined">menu</span>
             </div>
             <div class="header-left">
-                <span class="material-icons-outlined">search</span>
-                <input type="search" autofocus placeholder="Search...">
+               <!-- <span class="material-icons-outlined">search</span>
+                <input type="search" autofocus placeholder="Search..."> -->
                 <div id="datetime"></div> <!-- Container for date and time -->
             </div>
             <div class="header-right">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" >  
-                        <span class="material-icons-outlined">notifications</span>
+                  <!--     
+                     <span class="material-icons-outlined">notifications</span>
                     </a>
                     <div class="dropdown-menu">
                         <ul>
                             <li><a heref="#">Notification 1</a></li>
                         </ul>
                     </div>
-                </div>            
+                    --> 
+                 
+                </div>      
+                
                 <div class="dropdown">
-                    <a class="dropdown-toggle" href="#">
+                    <a class="dropdown-toggle" href="profile.html">
                         <span class="material-icons-outlined">account_circle</span>
                     </a>
-                    <div class="dropdown-menu">
+                   <!-- 
+                     <div class="dropdown-menu">
                         <ul>
                             <li>Profile</li>
                             <li>Settings</li>
                         </ul>
                     </div>
+                    --> 
                 </div>
         </div>
         </header>
@@ -66,20 +72,22 @@
                     <span class="material-icons-outlined">dashboard</span>Dashboard
                 </li>
                 <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">map</span>Map
-                </li>
-                <li class="sidebar-list-item">
                     <span class="material-icons-outlined">groups</span>Clients
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">inventory_2</span>Projects
                 </li>
                 <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">map</span>Locations
+                </li>
+                <!--
+                <li class="sidebar-list-item">
                     <span class="material-icons-outlined">poll</span>Reports
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">settings</span>Settings
                 </li>
+                -->
                 <li class="sidebar-list-item">
                     <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
                 </li>
@@ -93,30 +101,52 @@
                 <h2>DASHBOARD</h2>
             </div>
             <div class="welcome-container" id="welcome-container">
-                <h2>Welcome, Sarah</h2>
+                <h2>Welcome back</h2>
                 </div>
             <div class="main-cards">
+
+
+               <!--  <a href="clients.html">     --> 
                 <div class="card">
                     <div class="card-inner">
-                        <h3>SERVICES</h3>
+                        <span class="material-icons-outlined">groups</span> 
+                        <h3>CLIENTS</h3>
+                    </div>
+                    <h1>1500</h1>
+                </div>
+           <!-- </a> -->
+
+               <!-- <a href="projects.html">  -->
+                <div class="card">
+                    <div class="card-inner">
                         <span class="material-icons-outlined">inventory_2</span>
+                        <h3>PROJECTS</h3>   
                     </div>
                     <h1>249</h1>
                 </div>
+          <!--  </a> -->
+
+        <!--    <a href="locations.html">   -->
                 <div class="card">
+                    <div class="card-inner">
+                        
+                        <span class="material-icons-outlined">map</span>
+                        <h3>LOCATIONS</h3>
+                    </div>
+                    <h1>1500</h1>
+                </div>
+<!--  </a> -->
+
+               <!-- <div class="card">
                     <div class="card-inner">
                         <h3>ANALYTICS</h3>
                         <span class="material-icons-outlined">category</span>
                     </div>
                     <h1>25</h1>
                 </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <h3>CLIENTS</h3>
-                        <span class="material-icons-outlined">groups</span>
-                    </div>
-                    <h1>1500</h1>
-                </div>
+            -->
+
+              <!--
                 <div class="card">
                     <div class="card-inner">
                         <h3>PROPERTIES</h3>
@@ -131,9 +161,10 @@
                     </div>
                     <h1>56</h1>
                 </div>
+            -->
             </div>
 
-            <!--CHARTS-->
+            <!--CHARTS
             <div class="charts">
 
                 <div class="charts-card">
@@ -145,6 +176,7 @@
                     <h2 class="chart-title">Purchase and Sales Orders</h2>
                     <div id="area-chart"></div>
                 </div>
+                -->
 
             </div>
         </main>

@@ -207,7 +207,7 @@ body{
 }
 .main-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     margin: 20px 0;
 }
@@ -220,22 +220,22 @@ body{
     border-radius: 5px;
     align-items: center;
 }
-.card:hover{
+/*.card:hover{
     transform: translateY(-5px);
 }
+*/
 .card:first-child {
     background-color: #2962ff;
 }
-
 .card:nth-child(2) {
-    background-color: #ff6d00;
-}
-
-.card:nth-child(3) {
     background-color: #2e7d32;
+   
+}
+.card:nth-child(3) {
+    background-color: #aa176f;
 }
 .card:nth-child(4) {
-    background-color: #aa176f;
+    background-color:   #ff6d00;
 }
 .card:nth-child(5) {
     background-color: #d50000;
@@ -247,8 +247,8 @@ body{
     justify-content: space-between;
 }
 
-.card.inner > .material-icons-outlined {
-    font-size: 2.5rem;
+.card-inner > .material-icons-outlined {
+padding-right: 10px;
 }
 
 .charts {
@@ -354,20 +354,20 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cm-name, .cm-address, .cm-email, .cm-company, .cm-propertyName, .cm-claims, .cm-area
-.pm-company, .pm-location, .pm-area, .pm-propertyName {
+.cm-name, .cm-address, .cm-email, .cm-company, .cm-propertyName, 
+ .pm-company, .pm-location, .pm-propertyName {
     flex-basis: 10%;
 }
 
-.cm-address, .cm-company, .pm-company {
+.cm-address, .cm-company, .pm-company, .pm-propertyName {
     flex-grow: 1.15;
 }
 .cm-phone {
     flex-basis: 10%;
 }
 
-.cm-ticker {
-    flex-basis: 4.75%;
+.cm-ticker, .pm-area, .pm-claims {
+    flex-basis: 7.5%;
 }
 
 .cm-header, .pm-header {
@@ -470,6 +470,12 @@ i{
   }
 
 
+  #map {
+    height: 400px; /* Adjust the height as needed */
+    width: 100%; /* Use the full width of the container */
+}
+
+
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
@@ -518,5 +524,7 @@ i{
       display: none;
     }
   }
+
+
 
 

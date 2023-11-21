@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9e218809cf.js" crossorigin="anonymous"></script>
-    <title>MinEx CRM: Projects</title>  
+    <title>MinEx CRM: Locations</title>  
 </head>
 <body>
     <div class="grid-container">
@@ -98,49 +98,18 @@
         <!--Main----->
         <main class="main-container">
             <div class="main-title">
-                <h1>Project Management System</h1>
+                <h1>Locations</h1>
             </div>
-            <div class="clients-table">
-                <div class="pm-table-container" id="pmsTableContainer">
-                    <div class="pm-table-row">
-                        <div class="pm-table-column pm-company pm-header">Company</div>
-                        <div class="pm-table-column pm-propertyName pm-header">Property Name</div>
-                        <div class="pm-table-column pm-location pm-header">Location</div>
-                        <div class="pm-table-column pm-claims pm-header">Claims</div>
-                        <div class="pm-table-column pm-area pm-header">Area (ha)</div>
-                        <div class="pm-table-column pm-edit pm-header">Edit</div>
-                        <div class="pm-table-column pm-header pm-add-entry" id="pmAddNewEntry">+</div>
-                    </div>
-                    <span id="tableBody"></span>
-                </div>
+            <body>
+                <div id="map"></div>
 
-                <div class="disable-modal" id="pmbackdrop"></div>
-            
-                <div class="disable-modal" id="newProjectModal">
-                    <h1>Add Project Details</h1>
-    
-                    <label for="newProjectCompany">Company</label>
-                    <input type="text" id="newProjectCompany">
-    
-                    <label for="newProjectPropertyName">Property Name</label>
-                    <input type="text" id="newProjectPropertyName">
-    
-                    <label for="newProjectLocation">Location</label>
-                    <input type="text" id="newProjectLocation">
-    
-                    <label for="newProjectClaims">Claims</label>
-                    <input type="text" id="newProjectClaims">
-    
-                    <label for="newProjectArea">Area (ha)</label>
-                    <input type="text" id="newProjectArea">
-    
-                    <button id="newProjectCancelButton">Cancel</button>
-                    <button id="newProjectSubmitButton">Submit</button>
-                </div>
-    
-                <div>
-                    <button id="pmSortButton">Sort</button>
-                </div>
+                <form id="labelForm">
+                    <label for="labelInput">Add Label:</label>
+                    <input type="text" id="labelInput" placeholder="Enter label">
+                    <button type="button" onclick="addLabel()">Add</button>
+                </form>
+
+            </body>
 
         </main>
         <!--End Main----->
@@ -149,7 +118,9 @@
       
 
     <!--CUSTOM-->
-    <script src="js/projects.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="/js/locations.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
     <script src="/js/scripts.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>

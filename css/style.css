@@ -123,7 +123,7 @@ color: #ff6d00
 
 .img-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     margin: 0;
     width: 100%;
@@ -140,33 +140,47 @@ color: #ff6d00
 }
 .card:first-child {
     /*background-color: #2962ff;*/
-    border: #2962ff solid 4px;
+    border: #2962ff solid 2px;
 }
+/*
 .card:first-child:hover{
     transform: translateY(-5px);
 }
+*/
+
 .card:nth-child(2) {
    /* background-color: #ff6d00;*/
-    border: #ff6d00 solid 4px;
+    border:  #2e7d32 solid 2px;
 }
+
+/*
 .card:nth-child(2):hover{
     transform: translateY(-5px);
 }
+*/
 
 .card:nth-child(3) {
    /* background-color: #2e7d32;*/
-    border:#2e7d32 solid 4px;
+    border:#aa176f solid 2px;
 }
+
+/*
 .card:nth-child(3):hover{
     transform: translateY(-5px);
 }
+*/
+
 .card:nth-child(4) {
     /*background-color:  #d50000;*/
     border:#d50000 solid 4px;
 }
+
+/*
 .card:nth-child(4):hover{
     transform: translateY(-5px);
 }
+*/
+
 .card-inner{
     display: flex;
     align-items: center;
@@ -185,6 +199,11 @@ color: #ff6d00
     width: 150px;
     margin-top: 50px;
     transition: 0.5s;
+}
+
+.getStartedBtn {
+margin-right: 0;
+text-align: right;
 }
 
 .heroContent .getStarted {
