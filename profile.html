@@ -102,29 +102,32 @@
             </div>
            
             <section id="profile-section">
-                <div id="profile-info">
-                    <img id="profile-picture" src="default-avatar.jpg" alt="Profile Picture">
-                    <h2 id="username">Sarah Ryan</h2>
+                <div class = "profile-info" id="profile-info">
+                    <img class="profile-picture" id="profile-picture" src="default-avatar.jpg" alt="Profile Picture">
+                    <h3 id="username">Sarah Ryan</h3>
                     <p id="bio">Web Developer</p>
                 </div>
                 <br>
                 <button id="edit-profile-btn">Edit Profile</button>
             </section>
+            
             <section id="edit-section" style="display: none;">
-                <form id="edit-form">
-                    <label for="new-username">Updated Name:</label>
-                    <input type="text" id="new-username" required>
-                    
-                    <label for="new-bio">New Role Title:</label>
-                    <input type="text" id="new-bio" required>
-                    
-                    <label for="new-profile-picture">New Profile Picture URL:</label>
-                    <input type="url" id="new-profile-picture">
-                    
-                    <button type="submit">Save Changes</button>
-                </form>
+                <div class="edit-form-container">
+                    <form id="edit-form">
+                        <label for="new-username"></label>
+                        <input type="text" id="new-username" autofocus required placeholder="New Username...">
+                        
+                        <label for="new-bio"></label>
+                        <input type="text" id="new-bio" required autofocus placeholder="New Role Title...">
+                        
+                        <label for="new-profile-picture"></label>
+                        <input type="url" id="new-profile-picture" autofocus placeholder="New profile picture URL...">
+                        
+                        <button class="profile-update-btn" type="submit">Save Changes</button>
+                    </form>
+                </div>
             </section>
-
+            
         </main>
         <!--End Main----->
 

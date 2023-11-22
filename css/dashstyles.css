@@ -490,6 +490,40 @@ i{
     width: 100%; /* Use the full width of the container */
 }
 
+/*--------User Profile---------*/
+
+.edit-form-container {
+    margin-left: 0;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.edit-form-container input {
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+    padding: 8px;
+}
+
+#edit-profile-btn {
+    background-color: #0074D9;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px;
+    color: #ececef;
+}
+
+.profile-update-btn {
+    text-align: left;
+    background-color: #0074D9;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px;
+    color: #ececef;
+}
+
 
 /* ---------- MEDIA QUERIES ---------- */
 
