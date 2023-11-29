@@ -282,6 +282,7 @@ text-align: right;
 .login-btn:hover, .reset-btn:hover, .create-account-btn:hover {
     background-color: #0056b3; /* Hover color */
     transform: translateY(-5px);
+    transition: ease 0.3s;
 }
 
 .client-name {
