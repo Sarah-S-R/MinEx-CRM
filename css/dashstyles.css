@@ -24,6 +24,12 @@ body{
 }
 
 /*----------------HEADER--------------*/
+
+#datetime {
+    color: #2e7d32;
+    text-align: left;
+}
+
 .header{
     grid-area: header;
     height: 70px;
@@ -209,6 +215,10 @@ body{
     justify-content: space-between;
 }
 
+.main-title h2 {
+    margin-top: 0;
+}
+
 .welcome-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -234,10 +244,7 @@ body{
     border-radius: 5px;
     align-items: center;
 }
-/*.card:hover{
-    transform: translateY(-5px);
-}
-*/
+
 .card:first-child {
     background-color: #2962ff;
 }
@@ -248,12 +255,13 @@ body{
 .card:nth-child(3) {
     background-color: #aa176f;
 }
+/*
 .card:nth-child(4) {
     background-color:   #ff6d00;
 }
 .card:nth-child(5) {
     background-color: #d50000;
-}
+} */
 
 .card-inner{
     display: flex;
@@ -298,7 +306,6 @@ padding-right: 10px;
 }
 
 .client-table-headings {
-    background-color:  #0074D9;
     color: #fff;
     font-size: 1rem;
     padding: 20px;
@@ -422,7 +429,7 @@ padding-right: 10px;
 }
 
 .input-err{
-    background-color: red;
+    background-color: rgb(151, 47, 47);
 }
 
 #backdrop, #pmbackdrop {
@@ -437,12 +444,12 @@ padding-right: 10px;
 
 #newPersonSubmitButton, #SortButton, 
 #pmSortButton, #newProjectSubmitButton {
-    background-color: rgb(44, 19, 232);
+    background-color:#2962ff;;
     padding: 8px;
     border-radius: 5px;
     border: none;
     float: right;
-    margin: 5px;
+     margin: 5px;
     cursor: pointer;
     color: #ccc;
     width: 100px;
@@ -477,19 +484,7 @@ i{
     pointer-events: none;
 }
 
-@media screen and (max-width: 800px) {
-    .cm-table-container,.cm-table-row,.cm-table-column,::backdrop,.cm-name,.cm-phone,.cm-address,.cm-add-entry,.cm-edit,.cm-delete,.disable-modal,.enable-modal{
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    }
-  }
-
-
-  #map {
-    height: 400px; /* Adjust the height as needed */
-    width: 100%; /* Use the full width of the container */
-}
-
-/*--------User Profile---------*/
+/*--------------------------------User Profile--------------------------------------*/
 
 .edit-form-container {
     margin-left: 0;
@@ -507,7 +502,7 @@ i{
 }
 
 #edit-profile-btn {
-    background-color: #0074D9;
+    background-color: #2962ff;
     border-radius: 10px;
     padding: 8px;
     margin: 10px;
@@ -516,7 +511,7 @@ i{
 
 .profile-update-btn {
     text-align: center;
-    background-color: #0074D9;
+    background-color: #2962ff;
     border-radius: 10px;
     padding: 8px;
     margin: 10px;
@@ -525,8 +520,8 @@ i{
 
 #profile-picture {
     max-width: 100%; /* Set the maximum width to 100% of the parent container */
-    max-height: 200px; /* Set a maximum height to prevent the image from becoming too tall */
-    border-radius: 50%; /* Optional: Make the image round */
+    max-height: 175px; /* Set a maximum height to prevent the image from becoming too tall */
+    border-radius: 50%; /* Make the image round */
 }
 
 #profile-section {
@@ -540,9 +535,24 @@ i{
     display: none;
 }
 
+/* ---------------------------------- LOCATIONS PAGE -------------------------------------- */
 
+.main-container {
+    height: 70vh;
+}
+
+#map {
+    height: 400px; /* Adjust the height as needed */
+    width: 100%; /* Use the full width of the container */
+}
 
 /* ---------- MEDIA QUERIES ---------- */
+
+@media screen and (max-width: 800px) {
+    .cm-table-container,.cm-table-row,.cm-table-column,::backdrop,.cm-name,.cm-phone,.cm-address,.cm-add-entry,.cm-edit,.cm-delete,.disable-modal,.enable-modal{
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
 
 /* Medium <= 992px */
 

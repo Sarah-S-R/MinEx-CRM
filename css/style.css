@@ -20,11 +20,13 @@ header {
     justify-content: space-between;
     color: rgb(28, 28, 59);
 }
+/*
 .navbar-left {
     cursor: pointer;
     margin-left: 28%;
     margin-right: auto;
-}
+} */
+
 .navbar-right  {
     cursor: pointer;
     margin: auto;
@@ -46,26 +48,15 @@ header {
     transition: ease 0.5s;
 }
 
-#resources:hover{
+#login:hover{
     color: #ff6d00;
     transition: ease 0.5s;
 }
-#contact:hover{
-    color: #d50000;
-    transition: ease 0.5s;
-}
-#pricing:hover{
-    color: #2962ff;
-    transition: ease 0.5s;
-}
-#login:hover{
-    color: #d50000;
-    transition: ease 0.5s;
-}
 #signup:hover {
-    color: #aa176f;
+    color: #ff6d00;
     transition: ease 0.5s;
 }
+/*
 #resources, 
 #contact, #pricing
 {
@@ -77,7 +68,7 @@ font-weight: 700;
 color: #2e7d32;
 padding: 20px;
 justify-content: space-between;
-}
+} */
 
 #login, 
 #signup {
@@ -87,7 +78,7 @@ cursor: pointer;
 margin: auto;
 font-weight: 700;
 padding: 20px;
-color: #ff6d00
+color: #aa176f;
 }
 
 .heroSection {
@@ -142,22 +133,11 @@ color: #ff6d00
     /*background-color: #2962ff;*/
     border: #2962ff solid 2px;
 }
-/*
-.card:first-child:hover{
-    transform: translateY(-5px);
-}
-*/
 
 .card:nth-child(2) {
    /* background-color: #ff6d00;*/
     border:  #2e7d32 solid 2px;
 }
-
-/*
-.card:nth-child(2):hover{
-    transform: translateY(-5px);
-}
-*/
 
 .card:nth-child(3) {
    /* background-color: #2e7d32;*/
@@ -165,21 +145,8 @@ color: #ff6d00
 }
 
 /*
-.card:nth-child(3):hover{
-    transform: translateY(-5px);
-}
-*/
-
 .card:nth-child(4) {
     /*background-color:  #d50000;*/
-    border:#d50000 solid 4px;
-}
-
-/*
-.card:nth-child(4):hover{
-    transform: translateY(-5px);
-}
-*/
 
 .card-inner{
     display: flex;
@@ -207,7 +174,7 @@ text-align: right;
 }
 
 .heroContent .getStarted {
-    background-color:#0074D9;;
+    background-color:#2962ff;
 }
 .getStarted:hover{
     transition: 0.5s;
@@ -220,8 +187,8 @@ text-align: right;
     width: 100%;
     justify-content: space-between;
     margin: auto;
-    align-items: last baseline;
 }
+/*
 .socialIcons{
     display:flex;
     justify-content: space-between;
@@ -253,13 +220,13 @@ text-align: right;
     width: 300px;
     padding: 8px;
     color: rgb(28, 28, 59);
-}
+}*/
 
-/* login page----*/
+/*----------------------------- LOGIN PAGE----------------------------*/
 .main-login-body,
 .main-create-account-body {
     display: flex;
-    height: 80vh;
+    height: 75vh;
     color: rgb(28, 28, 59);
     align-content: center;
     align-items: center;
@@ -295,8 +262,8 @@ text-align: right;
 
 .login-btn, 
 .create-account-btn, .reset-btn {
-    background-color: #0074D9; /* Button background color */
-    color: #fff; /* Text color */
+    background-color:#2962ff; /* Button background color */
+    color: #fff; /*  Text color */
     border: none;
     border-radius: 10px;
     padding: 10px 20px; /* Increase padding for a larger button */
@@ -332,10 +299,17 @@ text-align: right;
     margin-left: 10px; /* Increase left margin for spacing */
 }
 
-/*CREATE ACCOUNT PAGE*/
+/*----------------------CREATE ACCOUNT PAGE--------------------*/
 .create-account-container {
     align-content: center;
     align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: 50vh;
+}
+.main-create-account-body {
+    height: 40vh;
+    margin-top: 0;
 }
 
 .register-link a, 
@@ -354,20 +328,18 @@ text-align: right;
     margin: 2px;
 }
 
-/*Ressources Page*/
-.resources-main-body {
-    height: 65vh;
-}
-
   /* Add the following styles for the login area */
 body.login {
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
+.main-create-account-body {
+    height: 75vh;
+    margin-top: 0;
+}
 .success-message {
     color: #2e7d32;
     margin:auto;
@@ -390,13 +362,13 @@ body.login {
     max-width: 400px;
     text-align: center;
 }
-
+/*
 h2.text-center {
     font-size: 1.5rem;
     font-weight: 700;
     color: #0074D9;
     margin-bottom: 20px;
-}
+} */
 
 .loginForm, .create-account-form {
     display: flex;
