@@ -515,13 +515,31 @@ i{
 }
 
 .profile-update-btn {
-    text-align: left;
+    text-align: center;
     background-color: #0074D9;
     border-radius: 10px;
     padding: 8px;
     margin: 10px;
     color: #ececef;
 }
+
+#profile-picture {
+    max-width: 100%; /* Set the maximum width to 100% of the parent container */
+    max-height: 200px; /* Set a maximum height to prevent the image from becoming too tall */
+    border-radius: 50%; /* Optional: Make the image round */
+}
+
+#profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#edit-section {
+    display: none;
+}
+
 
 
 /* ---------- MEDIA QUERIES ---------- */
