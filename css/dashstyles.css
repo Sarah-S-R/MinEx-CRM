@@ -4,6 +4,7 @@ body{
     background-color: #1d2634;
     color: #9e9ea4;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
     
 }
 
@@ -23,7 +24,7 @@ body{
     height: 100vh;
 }
 
-/*----------------HEADER--------------*/
+/*--------------------------------------------HEADER-----------------------------------------*/
 
 #datetime {
     color: #2e7d32;
@@ -86,7 +87,7 @@ body{
     padding-left: 20px; 
 }
 
-/*-----------DROPDOWN------------*/
+/*-------------------------------------DROPDOWN--------------------------------------*/
 
 .dropdown {
     position: relative;
@@ -120,7 +121,7 @@ body{
 .dropdown-menu li:hover {
     color: #4677c7;
 }
-/*----------------SIDEBAR--------------*/
+/*---------------------------------SIDEBAR------------------------------------*/
 #sidebar{
     grid-area: sidebar;
     height: 100%;
@@ -177,7 +178,6 @@ body{
 
 .sidebar-list-item span {
     margin-right: 10px;
-
 }
 
 .sidebar-list-item:hover {
@@ -202,7 +202,7 @@ body{
     color: red;
 }
 
-/*----------------MAIN--------------*/
+/*---------------------------------------MAIN-------------------------------------------*/
 .main-container{
     grid-area: main;
     overflow-y: auto;
@@ -341,10 +341,9 @@ padding-right: 10px;
 }
 
 
-/*--------------- CLIENTS PAGE---------------*/
+/*------------------------------------ CLIENTS PAGE-----------------------------------------*/
 
 .clients-table, .projects-table {
-    width: 1;
     color: black;
     /* No need to scroll sideways thats why x is hidden*/
     overflow-x: hidden;
@@ -352,7 +351,7 @@ padding-right: 10px;
     margin: 0;
 }
 
-.main-title h1 {
+.main-title h2 {
     margin-left: 10px ;
 }
 .cm-table-container, .pm-table-container {
@@ -484,7 +483,14 @@ i{
     pointer-events: none;
 }
 
-/*--------------------------------User Profile--------------------------------------*/
+.clients-table {
+    margin: auto;
+    margin-bottom: 0;
+    border: white solid;
+    padding: 10px;
+}
+
+/*------------------------------------User Profile--------------------------------------*/
 
 .edit-form-container {
     margin-left: 0;
@@ -509,7 +515,7 @@ i{
     color: #ececef;
 }
 
-.profile-update-btn {
+.profile-update-btn, #addLocationBtn {
     text-align: center;
     background-color: #2962ff;
     border-radius: 10px;
@@ -520,7 +526,7 @@ i{
 
 #profile-picture {
     max-width: 100%; /* Set the maximum width to 100% of the parent container */
-    max-height: 175px; /* Set a maximum height to prevent the image from becoming too tall */
+    max-height: 150px; /* Set a maximum height to prevent the image from becoming too tall */
     border-radius: 50%; /* Make the image round */
 }
 
@@ -542,8 +548,19 @@ i{
 }
 
 #map {
-    height: 400px; /* Adjust the height as needed */
+    height: 47vh; /* Adjust the height as needed */
     width: 100%; /* Use the full width of the container */
+}
+
+#labelForm {
+    padding: 10px;
+}
+
+#labelInput {
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 0;
 }
 
 /* ---------- MEDIA QUERIES ---------- */

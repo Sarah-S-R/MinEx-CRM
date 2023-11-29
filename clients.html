@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,43 +19,44 @@
                 <span class="material-icons-outlined">menu</span>
             </div>
             <div class="header-left">
+
                <!-- <span class="material-icons-outlined">search</span>
                 <input type="search" autofocus placeholder="Search..."> -->
+
                 <div id="datetime"></div> <!-- Container for date and time -->
             </div>
             <div class="header-right">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" >  
+                    <a class="dropdown-toggle" href="#" >
+
                   <!--     
-                     <span class="material-icons-outlined">notifications</span>
+                    <span class="material-icons-outlined">notifications</span>
                     </a>
                     <div class="dropdown-menu">
                         <ul>
                             <li><a heref="#">Notification 1</a></li>
                         </ul>
-                    </div>
-                    --> 
+                    </div>--> 
                  
                 </div>      
-                
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="profile.html">
                         <span class="material-icons-outlined">account_circle</span>
                     </a>
+
                    <!-- 
                      <div class="dropdown-menu">
                         <ul>
                             <li>Profile</li>
                             <li>Settings</li>
                         </ul>
-                    </div>
-                    --> 
+                    </div>  --> 
                 </div>
         </div>
         </header>
-        <!---End Header-->
+        <!---------------------------------End Header---------------------------------->
 
-        <!--Sidebar-->
+        <!-----------------------------------Sidebar------------------------------------>
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
@@ -88,25 +88,26 @@
                     <span class="material-icons-outlined">map</span>Locations
                 </a>
                 </li>
-                               <!--
+
+                <!--
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">poll</span>Reports
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">settings</span>Settings
-                </li>
-                -->
+                </li>  -->
+
                 <li class="sidebar-list-item">
                     <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
                 </li>
             </ul>
         </aside>
-        <!--End Sidebar-->
+        <!-----------------------------------End Sidebar----------------------------------->
 
-        <!--Main----->
+        <!---------------------------------------Main--------------------------------------->
         <main class="main-container">
             <div class="main-title">
-                <h1>Client Management System</h1>
+                <h2>Client Management</h2>
             </div>
             <div class="clients-table">
                 <div class="cm-table-container" id="cmsTableContainer">
@@ -122,7 +123,6 @@
                     </div>
                     <span id="tableBody"></span>
                 </div>
-
             <div class="disable-modal" id="backdrop"></div>
             
             <div class="disable-modal" id="newPersonModal">
@@ -149,23 +149,18 @@
                 <button id="newCancelButton">Cancel</button>
                 <button id="newPersonSubmitButton">Submit</button>
             </div>
-
             <div>
                 <button id="SortButton">Sort</button>
             </div>
-
         </main>
-        <!--End Main----->
+        <!------------------------------------End Main-------------------------------------->
 
-        <!--------JAVASCRIPTS-------->
-      
+        <!-----------------------------------JAVASCRIPTS------------------------------------>
 
-    <!--CUSTOM-->
     <script src="/js/client.js"></script>
     <script src="/js/scripts.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>
     <script src="/init.js"></script>
 </body>
-
 </html>
