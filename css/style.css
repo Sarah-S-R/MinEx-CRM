@@ -82,9 +82,10 @@ color: #aa176f;
 }
 
 .heroSection {
-    height: 80vh;
     width: 100%;
     margin: auto;
+    border:  black solid;
+    height: 80vh;
 }
 .heroContent {
     display:block;
@@ -92,6 +93,8 @@ color: #aa176f;
     max-width: 75%;
     height:auto;
     padding: 1%;
+    border: black solid;
+    height: 75vh;
 }
  
 .heroContent h1{
@@ -226,7 +229,7 @@ text-align: right;
 .main-login-body,
 .main-create-account-body {
     display: flex;
-    height: 75vh;
+    height: 78vh;
     color: rgb(28, 28, 59);
     align-content: center;
     align-items: center;
