@@ -11,22 +11,24 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <title>MinEx CRM: Dashboard</title>   
 </head>
-
 <body>
     <div class="grid-container">
-        <!---Header--->
+        <!----------------------------------Header----------------------------------------------->
         <header class="header">
             <div class="menu-icon" onclick="openSidebar()">
                 <span class="material-icons-outlined">menu</span>
             </div>
             <div class="header-left">
+
                <!-- <span class="material-icons-outlined">search</span>
                 <input type="search" autofocus placeholder="Search..."> -->
+
                 <div id="datetime"></div> <!-- Container for date and time -->
             </div>
             <div class="header-right">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" href="#" >  
+                    <a class="dropdown-toggle" href="#" >
+
                   <!--     
                      <span class="material-icons-outlined">notifications</span>
                     </a>
@@ -34,29 +36,26 @@
                         <ul>
                             <li><a heref="#">Notification 1</a></li>
                         </ul>
-                    </div>
-                    --> 
-                 
+                    </div>--> 
+
                 </div>      
-                
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="profile.html">
-                        <span class="material-icons-outlined userAccountCircle">account_circle</span>
-                    </a>
+                        <span class="material-icons-outlined userAccountCircle">account_circle</span></a>
                    <!-- 
                      <div class="dropdown-menu">
                         <ul>
                             <li>Profile</li>
                             <li>Settings</li>
                         </ul>
-                    </div>
-                    --> 
+                    </div>-->
+
                 </div>
         </div>
         </header>
-        <!---End Header-->
+        <!-------------------------------------End Header-------------------------------------->
 
-        <!--Sidebar-->
+        <!--------------------------------------Sidebar----------------------------------------->
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
@@ -88,22 +87,23 @@
                     <span class="material-icons-outlined">map</span>Locations
                 </a>
                 </li>
+
                 <!--
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">poll</span>Reports
                 </li>
                 <li class="sidebar-list-item">
                     <span class="material-icons-outlined">settings</span>Settings
-                </li>
-                -->
+                </li>-->
+
                 <li class="sidebar-list-item">
                     <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
                 </li>
             </ul>
         </aside>
-        <!--End Sidebar-->
+        <!---------------------------------------End Sidebar------------------------------------>
 
-        <!--Main----->
+        <!-------------------------------------------Main---------------------------------------->
         <main class="main-container">
             <div class="main-title">
                 <h2>DASHBOARD</h2>
@@ -119,7 +119,7 @@
                         <span class="material-icons-outlined">groups</span> 
                         <h3>CLIENTS</h3>
                     </div>
-                    <h1 id="clientCount">1500</h1>
+                    <h1 id="clientCount"></h1>
                 </div>
            <!-- </a> -->
 
@@ -168,8 +168,7 @@
                     </div>
                     <h1>56</h1>
                 </div>
-            -->
-            </div>
+            </div>-->
 
             <!--CHARTS
             <div class="charts">
@@ -182,39 +181,20 @@
                 <div class="charts-card">
                     <h2 class="chart-title">Purchase and Sales Orders</h2>
                     <div id="area-chart"></div>
-                </div>
-                -->
+                </div>  
+            </div>-->
 
-            </div>
         </main>
-        <!--End Main----->
+        <!---------------------------------End Main--------------------------------------->
 
-        <!--------JAVASCRIPTS-------->
-        <!--APEX CHARTS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
+        <!----------------------------------JAVASCRIPTS----------------------------------->
+        <!--APEX CHARTS
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script> -->
 
-    <!--CUSTOM-->
     <script src="js/scripts.js"></script>
     <script src="js/projects.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/auth.js"></script>
     <script src="/init.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projectCountElement = document.getElementById('projectCount');
-            if (projectCountElement) {
-                const projectCount = getProjectCount(); // Make sure getProjectCount is defined in projects.js
-                projectCountElement.textContent = projectCount;
-            }
-        });
-
-        document.addEventListener('projectUpdated', () => {
-    // Update the project count
-    updateProjectCount();
-});
-    </script>
-
 </body>
-
 </html>

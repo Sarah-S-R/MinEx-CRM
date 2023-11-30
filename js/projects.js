@@ -2,12 +2,12 @@ const tableKey = 'pms-table';
 let pmsTable;
 let pmsTableDemo = {};
 
-// Function to fetch project count
+// ------------Function to fetch project count-------------------------
 function getProjectCount() {
     return Object.keys(pmsTable).length;
 }
 
-// Function to update project count element
+//  -------------------Function to update project count element --------------------
 function updateProjectCount() {
     const projectCountElement = document.getElementById('projectCount');
     if (projectCountElement) {
@@ -38,6 +38,7 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
 });
   */
 
+// ---------------Add New Company-------------------------
 let enableDisableCompanyInput = (option) => {
     let newProjectCompany = document.getElementById('newProjectCompany');
     

@@ -3,6 +3,23 @@ const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
 
+
+// ----------------------------Function to fetch client count-------------------------
+function getClientCount() {
+    return Object.keys(cmsTable).length;
+}
+
+//  -------------------------Function to update client count element --------------------
+function updateClientCount() {
+    const clientCountElement = document.getElementById('clientCount');
+    if (clientCountElement) {
+        const clientCount = getClientCount();
+        clientCountElement.textContent = clientCount;
+    }
+}
+
+
+
 document.getElementById('SortButton').addEventListener('click', () => {
     const sortedKeys = Object.keys(cmsTable).sort((a, b) => {
         // Convert keys to lowercase for case-insensitive sorting
@@ -234,7 +251,11 @@ let deleteUserFromTable = (userName) => {
     cmsTable = tempTable;
     localStorage.setItem(tableKey,JSON.stringify(cmsTable));
     refreshTable();
+
+    // ----------------- Update the client count------------------------------
+    updateClientCount();
 }
+
 let init = () => {
     
     if(localStorage.getItem(tableKey)){

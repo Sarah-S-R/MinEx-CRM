@@ -84,7 +84,6 @@ color: #aa176f;
 .heroSection {
     width: 100%;
     margin: auto;
-    border:  black solid;
     height: 80vh;
 }
 .heroContent {
@@ -93,7 +92,6 @@ color: #aa176f;
     max-width: 75%;
     height:auto;
     padding: 1%;
-    border: black solid;
     height: 75vh;
 }
  
@@ -225,7 +223,7 @@ text-align: right;
     color: rgb(28, 28, 59);
 }*/
 
-/*----------------------------- LOGIN PAGE----------------------------*/
+/*------------------------------------- LOGIN PAGE--------------------------------------*/
 .main-login-body,
 .main-create-account-body {
     display: flex;
