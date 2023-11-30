@@ -1,4 +1,3 @@
-
 const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
@@ -11,6 +10,7 @@ function getClientCount() {
 //  -------------------------Function to update client count element ---------------------------------
 function updateClientCount() {
     const clientCountElement = document.getElementById('clientCount');
+    
     if (clientCountElement) {
         const clientCount = getClientCount();
         clientCountElement.textContent = clientCount;
@@ -41,11 +41,9 @@ document.getElementById('SortButton').addEventListener('click', () => {
     refreshTable();
 });
 */
-
 //--------------------------------------SORT BUTTON END-----------------------------------------
 
 //-------------------------------------ADD NEW CLIENT-------------------------------------------
-
 let enableDisableCompanyInput = (option) => {
     let newPersonCompany = document.getElementById('newPersonCompany');
     
@@ -199,7 +197,7 @@ let refreshTable = () => {
     //STORE AND SORT DATA AUTOMATICALLY-
 
       // Dispatch a storage event
-      const event = new Event('CLIENTUpdated');
+      const event = new Event('ClientUpdated');
       window.dispatchEvent(event);
   
           // Sort the company names alphabetically

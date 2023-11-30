@@ -40,8 +40,6 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
   */
 //--------------------------------------------SORT BUTTON END----------------------------------------
 
-
-
 // -------------------------------------------Add New Company----------------------------------------
 let enableDisableCompanyInput = (option) => {
     let newProjectCompany = document.getElementById('newProjectCompany');
@@ -169,6 +167,7 @@ newProjectSubmitBtn.addEventListener('click', () => {
         if (newProjectCompany !== '' && newProjectPropertyName !== '' && newProjectLocation !== '' && newProjectClaims !== '' && newProjectArea !== '') {
             // Add the new project to pmsTable
             pmsTable[newProjectCompany] = {
+                
                 'propertyName': newProjectPropertyName,
                 'location': newProjectLocation,
                 'claims': newProjectClaims,

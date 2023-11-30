@@ -413,7 +413,7 @@ padding-right: 10px;
     cursor: pointer;
     color: #2e7d32;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.rem;
 }
 
 #newPersonModal, #newProjectModal {
