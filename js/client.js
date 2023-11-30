@@ -4,12 +4,12 @@ let cmsTable;
 let cmsTableDemo = {};
 
 
-// ----------------------------Function to fetch client count-------------------------
+// ----------------------------Function to fetch client count---------------------------------------
 function getClientCount() {
     return Object.keys(cmsTable).length;
 }
 
-//  -------------------------Function to update client count element --------------------
+//  -------------------------Function to update client count element ---------------------------------
 function updateClientCount() {
     const clientCountElement = document.getElementById('clientCount');
     if (clientCountElement) {
@@ -17,7 +17,7 @@ function updateClientCount() {
         clientCountElement.textContent = clientCount;
     }
 }
-
+//----------------------------------Function to update client count element end----------------------
 
 
 document.getElementById('SortButton').addEventListener('click', () => {
@@ -252,20 +252,34 @@ let deleteUserFromTable = (userName) => {
     localStorage.setItem(tableKey,JSON.stringify(cmsTable));
     refreshTable();
 
+   
+
+
+
     // ----------------- Update the client count------------------------------
     updateClientCount();
 }
 
 let init = () => {
-    
-    if(localStorage.getItem(tableKey)){
+    if (localStorage.getItem(tableKey)) {
         cmsTable = JSON.parse(localStorage.getItem(tableKey));
-    }
-    
-    else {
+    } else {
         cmsTable = cmsTableDemo;
-        localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+        localStorage.setItem(tableKey, JSON.stringify(cmsTable));
     }
+
+    // Sort the keys alphabetically
+    const sortedKeys = Object.keys(cmsTable).sort((a, b) => a.localeCompare(b));
+
+    // Create a sorted table based on the keys
+    const sortedTable = {};
+    sortedKeys.forEach(key => (sortedTable[key] = cmsTable[key]));
+
+    // Update the cmsTable with the sorted version
+    cmsTable = sortedTable;
+
     refreshTable();
-}
+};
+
+
 init();

@@ -15,6 +15,7 @@ function updateProjectCount() {
         projectCountElement.textContent = projectCount;
     }
 }
+
 /*
 document.getElementById('pmSortButton').addEventListener('click', () => {
     const sortedKeys = Object.keys(pmsTable).sort((a, b) => {
@@ -38,7 +39,7 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
 });
   */
 
-// ---------------Add New Company-------------------------
+// -------------------------------------------Add New Company----------------------------------------
 let enableDisableCompanyInput = (option) => {
     let newProjectCompany = document.getElementById('newProjectCompany');
     
@@ -188,7 +189,7 @@ newProjectSubmitBtn.addEventListener('click', () => {
             enableDisableNewUserModal('disable');
             refreshTable();
     
-            // Update the project count
+            // ------------------------ Update the project count------------------------------
             updateProjectCount();
         }
     });
@@ -283,10 +284,9 @@ let deleteUserFromTable = (userName) => {
     localStorage.setItem(tableKey, JSON.stringify(pmsTable));
     refreshTable();
 
-    // Update the project count
+    // ------------------------ Update the project count------------------------------
     updateProjectCount();
 }
-
 
 
 let init = () => {
@@ -301,7 +301,5 @@ let init = () => {
     }
     refreshTable();
 }
-
-
 
 init();
