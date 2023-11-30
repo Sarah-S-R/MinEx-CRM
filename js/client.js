@@ -3,7 +3,6 @@ const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
 
-
 // ----------------------------Function to fetch client count---------------------------------------
 function getClientCount() {
     return Object.keys(cmsTable).length;
@@ -20,6 +19,8 @@ function updateClientCount() {
 //----------------------------------Function to update client count element end----------------------
 
 
+//------------------------------------ CLIENT TABLE SORT BUTTON-----------------------------------------------------
+/*
 document.getElementById('SortButton').addEventListener('click', () => {
     const sortedKeys = Object.keys(cmsTable).sort((a, b) => {
         // Convert keys to lowercase for case-insensitive sorting
@@ -39,6 +40,11 @@ document.getElementById('SortButton').addEventListener('click', () => {
     cmsTable = tempTable;
     refreshTable();
 });
+*/
+
+//--------------------------------------SORT BUTTON END-----------------------------------------
+
+//-------------------------------------ADD NEW CLIENT-------------------------------------------
 
 let enableDisableCompanyInput = (option) => {
     let newPersonCompany = document.getElementById('newPersonCompany');
@@ -179,6 +185,7 @@ let refreshTable = () => {
             document.getElementById('newPersonEmail').className = '';  
         
         if(newPersonCompany !== '' && newPersonTicker !== '' && newPersonAddress !== '' && newPersonName !== '' &&  newPersonPhone !== '' && newPersonEmail !== ''){
+            // Add the new project to cmsTable
             cmsTable[newPersonCompany] = {
                 
                 'ticker': newPersonTicker,
@@ -186,13 +193,39 @@ let refreshTable = () => {
                 'name': newPersonName,
                 'phone': newPersonPhone,
                 'email': newPersonEmail
-            }
+            };
+
+    // ----------------------- ADDING NEW CODE START-------------------------------
+    //STORE AND SORT DATA AUTOMATICALLY-
+
+      // Dispatch a storage event
+      const event = new Event('CLIENTUpdated');
+      window.dispatchEvent(event);
+  
+          // Sort the company names alphabetically
+          const sortedKeys = Object.keys(cmsTable).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  
+          // Create a new object with sorted data
+          const tempTable = {};
+          sortedKeys.forEach(key => (tempTable[key] = cmsTable[key]));
+  
+          // Update pmsTable with the sorted data
+          cmsTable = tempTable;
+
+//---------------------------ADDING NEW CODE END---------------------------------------
+
             localStorage.setItem(tableKey,JSON.stringify(cmsTable));
             enableDisableNewUserModal('disable');
             refreshTable();
+
+//---------------------------------NEW CODE ADDED---------------------------------
+ // ------------------------ Update the project count------------------------------
+             updateProjectCount();
         }
     });
-   
+// -----------------------------------NEW CODE END --------------------------------
+    
+   // ---------------CANCEL AND SUBMIT BUTTONS----------------------------------------
     newPersonCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');  
     });
@@ -208,6 +241,7 @@ let refreshTable = () => {
             let nameToEdit = $event.target.parentElement.children[0].innerText;
             let personToEdit = cmsTable[nameToEdit];
             
+            // Enable input fields for editing
             enableDisableCompanyInput('enable');
             enableDisableNewUserModal('enable');
            
@@ -218,15 +252,33 @@ let refreshTable = () => {
             let newPersonPhone = document.getElementById('newPersonPhone');
             let newPersonEmail = document.getElementById('newPersonEmail');
            
-            
+            // Populate input fields with existing client data
             newPersonCompany.value = nameToEdit; //use company name for editing
             newPersonTicker.value = personToEdit.ticker;
             newPersonAddress.value = personToEdit.address;
             newPersonName.value = personToEdit.name;
             newPersonPhone.value = personToEdit.phone;
             newPersonEmail.value = personToEdit.email; 
+
+//--------AM I MISSING SOME CODE HERE?
+
+
+
+            
         });
     }
+    //-------------------NEW CODE ADDED---------------------------
+
+
+
+
+//THIS SECTION DIFF TO PROJECTS JS
+
+
+
+
+
+    //------------------------NEW CODE ADDED END------------
     for(let i = 0; i < deleteBtns.length; i++){
         deleteBtns[i].addEventListener('click', ($event) => {
             
@@ -239,6 +291,7 @@ let refreshTable = () => {
         })
     }
 }
+
 let deleteUserFromTable = (userName) => {
     let tempTable = {};
     let cmsTableKeys = Object.keys(cmsTable);
@@ -252,11 +305,7 @@ let deleteUserFromTable = (userName) => {
     localStorage.setItem(tableKey,JSON.stringify(cmsTable));
     refreshTable();
 
-   
-
-
-
-    // ----------------- Update the client count------------------------------
+    // ----------------------------- UPDATE THE CLIENT COUNT------------------------------
     updateClientCount();
 }
 
@@ -268,18 +317,8 @@ let init = () => {
         localStorage.setItem(tableKey, JSON.stringify(cmsTable));
     }
 
-    // Sort the keys alphabetically
-    const sortedKeys = Object.keys(cmsTable).sort((a, b) => a.localeCompare(b));
-
-    // Create a sorted table based on the keys
-    const sortedTable = {};
-    sortedKeys.forEach(key => (sortedTable[key] = cmsTable[key]));
-
-    // Update the cmsTable with the sorted version
-    cmsTable = sortedTable;
-
     refreshTable();
-};
+}
 
 
 init();

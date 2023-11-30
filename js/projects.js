@@ -15,7 +15,7 @@ function updateProjectCount() {
         projectCountElement.textContent = projectCount;
     }
 }
-
+//------------------------------------SORT BUTTON---------------------------------
 /*
 document.getElementById('pmSortButton').addEventListener('click', () => {
     const sortedKeys = Object.keys(pmsTable).sort((a, b) => {
@@ -38,6 +38,9 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
     refreshTable();
 });
   */
+//--------------------------------------------SORT BUTTON END----------------------------------------
+
+
 
 // -------------------------------------------Add New Company----------------------------------------
 let enableDisableCompanyInput = (option) => {
@@ -131,6 +134,7 @@ let refreshTable = () => {
     let newProjectCancelBtn = document.getElementById('newProjectCancelButton');
     
 newProjectSubmitBtn.addEventListener('click', () => {
+
     let newProjectCompany = document.getElementById('newProjectCompany').value.trim();
     let newProjectPropertyName = document.getElementById('newProjectPropertyName').value.trim();
     let newProjectLocation = document.getElementById('newProjectLocation').value.trim();
@@ -193,6 +197,9 @@ newProjectSubmitBtn.addEventListener('click', () => {
             updateProjectCount();
         }
     });
+    //------------------ALPHABETICAL SORTING END----------------------------------------
+
+    // ---------------CANCEL AND SUBMIT BUTTONS----------------------------------------
    
     newProjectCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');  
@@ -258,6 +265,7 @@ newProjectSubmitBtn.addEventListener('click', () => {
             newProjectSubmitBtn.addEventListener('click', editProjectSubmitListener);
         });
     }
+
     for(let i = 0; i < deleteBtns.length; i++){
         deleteBtns[i].addEventListener('click', ($event) => {
             
