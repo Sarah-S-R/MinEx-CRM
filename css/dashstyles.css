@@ -498,11 +498,14 @@ i{
 /*------------------------------------User Profile--------------------------------------*/
 
 .edit-form-container {
-    margin-left: 0;
     display: flex;
-    width: 300px;
-    justify-content: space-between;
-    height: 200px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.edit-form {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .edit-form-container input {
@@ -510,6 +513,7 @@ i{
     border-radius: 10px;
     margin: auto;
     padding: 8px;
+    width: 250px;
 }
 
 #edit-profile-btn {
@@ -529,6 +533,17 @@ i{
     color: #ececef;
 }
 
+#new-username,
+#new-bio
+                {
+    width: 100%; /* Make the inputs take up the full width of the container */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ced4da; /* Add a border for better visibility */
+    border-radius: 4px;
+}
+
 #profile-picture {
     max-width: 100%; /* Set the maximum width to 100% of the parent container */
     max-height: 150px; /* Set a maximum height to prevent the image from becoming too tall */
@@ -544,6 +559,12 @@ i{
 
 #edit-section {
     display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    padding: 20px;
+    border-radius: 8px;
 }
 
 /* ---------------------------------- LOCATIONS PAGE -------------------------------------- */
