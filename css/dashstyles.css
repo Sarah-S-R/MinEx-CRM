@@ -478,12 +478,19 @@ padding-right: 10px;
 }
 
 .disable-modal{
-    visibility: hidden;
+    display: none;
 }
 
 .enable-modal{
     visibility: visible;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+    top: 0;
+    position: fixed;
+    left: 25%;
 }
+
+
 
 i{
     pointer-events: none;
@@ -589,7 +596,7 @@ i{
     margin: 0;
 }
 
-/* ---------- MEDIA QUERIES ---------- */
+/* ---------------------------------------- MEDIA QUERIES ---------------------------------- */
 
 @media screen and (max-width: 800px) {
     .cm-table-container,.cm-table-row,.cm-table-column,::backdrop,.cm-name,.cm-phone,.cm-address,.cm-add-entry,.cm-edit,.cm-delete,.disable-modal,.enable-modal{
