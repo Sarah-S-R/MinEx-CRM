@@ -411,6 +411,9 @@ padding-right: 10px;
     flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 #newPersonModal, #newProjectModal {
