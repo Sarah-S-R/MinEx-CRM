@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     init();
 });
 
-const tableKey = 'cms-table';
+const tableKeyClient = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
 
@@ -213,7 +213,7 @@ let refreshTable = () => {
 
 //---------------------------ADDING NEW CODE END---------------------------------------
 
-            localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+            localStorage.setItem(tableKeyClient,JSON.stringify(cmsTable));
             enableDisableNewUserModal('disable');
             refreshTable();
 
@@ -282,7 +282,7 @@ let refreshTable = () => {
                 }
     
                 // Update localStorage
-                localStorage.setItem(tableKey, JSON.stringify(cmsTable));
+                localStorage.setItem(tableKeyClient, JSON.stringify(cmsTable));
     
                 // Disable the modal and refresh the table
                 enableDisableNewUserModal('disable');
@@ -324,7 +324,7 @@ let deleteUserFromTable = (userName) => {
         }
     }
     cmsTable = tempTable;
-    localStorage.setItem(tableKey,JSON.stringify(cmsTable));
+    localStorage.setItem(tableKeyClient,JSON.stringify(cmsTable));
     refreshTable();
 
     // ----------------------------- UPDATE THE CLIENT COUNT------------------------------
@@ -332,11 +332,11 @@ let deleteUserFromTable = (userName) => {
 }
 
 let init = () => {
-    if (localStorage.getItem(tableKey)) {
-        cmsTable = JSON.parse(localStorage.getItem(tableKey));
+    if (localStorage.getItem(tableKeyClient)) {
+        cmsTable = JSON.parse(localStorage.getItem(tableKeyClient));
     } else {
         cmsTable = cmsTableDemo;
-        localStorage.setItem(tableKey, JSON.stringify(cmsTable));
+        localStorage.setItem(tableKeyClient, JSON.stringify(cmsTable));
     }
 
     refreshTable();
