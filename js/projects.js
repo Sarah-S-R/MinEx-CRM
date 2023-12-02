@@ -1,6 +1,10 @@
-const tableKey = 'pms-table';
-let pmsTable;
-let pmsTableDemo = {};
+document.addEventListener('DOMContentLoaded', function () {
+    init();
+});
+
+    let tableKey = 'pms-table';
+    let pmsTable;
+    let pmsTableDemo = {};
 
 // ------------Function to fetch project count-------------------------
 function getProjectCount() {
@@ -31,7 +35,6 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
         }
     });
   
-
     const tempTable = {};
     sortedKeys.forEach(key => (tempTable[key] = pmsTable[key]));
     pmsTable = tempTable;
@@ -40,7 +43,7 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
   */
 //--------------------------------------------SORT BUTTON END----------------------------------------
 
-// -------------------------------------------Add New Company----------------------------------------
+// -------------------------------------------Add New Project----------------------------------------
 let enableDisableCompanyInput = (option) => {
     let newProjectCompany = document.getElementById('newProjectCompany');
     
@@ -72,7 +75,6 @@ let refreshTable = () => {
         let currentEditBtn = document.createElement('div');
         let currentDeleteBtn = document.createElement('div');
 
-
         currentRow.className = 'pm-table-row';
         currentCompanyCol.className = 'pm-table-column pm-company';
         currentPropertyNameCol.className = 'pm-table-column pm-propertyName';
@@ -87,7 +89,6 @@ let refreshTable = () => {
         currentLocationCol.innerHTML = pmsTable[pmsTableKeys[i]].location;
         currentClaimsCol.innerHTML = pmsTable[pmsTableKeys[i]].claims;
         currentAreaCol.innerHTML = pmsTable[pmsTableKeys[i]].area;
-
 
         currentDeleteBtn.innerHTML = '<i class="fas fa-dumpster"></i>';
         currentEditBtn.innerHTML = '<i class="fas fa-user-edit"></i>';
@@ -295,18 +296,20 @@ let deleteUserFromTable = (userName) => {
     updateProjectCount();
 }
 
-
 let init = () => {
-    
-    if(localStorage.getItem(tableKey)){
+    if (localStorage.getItem(tableKey)) {
         pmsTable = JSON.parse(localStorage.getItem(tableKey));
-    }
-    
-    else {
+    } else {
         pmsTable = pmsTableDemo;
-        localStorage.setItem(tableKey,JSON.stringify(pmsTable));
+        localStorage.setItem(tableKey, JSON.stringify(pmsTable));
     }
+
     refreshTable();
 }
+
+document.addEventListener('projectUpdated', () => {
+    // Update the project count
+    updateProjectCount();
+});
 
 init();

@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+    init();
+});
+
 const tableKey = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
@@ -10,15 +14,11 @@ function getClientCount() {
 //  -------------------------Function to update client count element ---------------------------------
 function updateClientCount() {
     const clientCountElement = document.getElementById('clientCount');
-    
     if (clientCountElement) {
         const clientCount = getClientCount();
         clientCountElement.textContent = clientCount;
     }
 }
-//----------------------------------Function to update client count element end----------------------
-
-
 //------------------------------------ CLIENT TABLE SORT BUTTON-----------------------------------------------------
 /*
 document.getElementById('SortButton').addEventListener('click', () => {
@@ -59,6 +59,8 @@ let refreshTable = () => {
     let tableContainer = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
    
+
+
     tableContainer.removeChild(oldTableBody);
    
     let newTableBody = document.createElement('span');
@@ -75,7 +77,6 @@ let refreshTable = () => {
         let currentEmailCol = document.createElement('div');
         let currentEditBtn = document.createElement('div');
         let currentDeleteBtn = document.createElement('div');
-
 
         currentRow.className = 'cm-table-row';
         currentCompanyCol.className = 'cm-table-column cm-company';
@@ -197,7 +198,7 @@ let refreshTable = () => {
     //STORE AND SORT DATA AUTOMATICALLY-
 
       // Dispatch a storage event
-      const event = new Event('ClientUpdated');
+      const event = new Event('clientDataUpdated');
       window.dispatchEvent(event);
   
           // Sort the company names alphabetically
@@ -207,7 +208,7 @@ let refreshTable = () => {
           const tempTable = {};
           sortedKeys.forEach(key => (tempTable[key] = cmsTable[key]));
   
-          // Update pmsTable with the sorted data
+          // Update cmsTable with the sorted data
           cmsTable = tempTable;
 
 //---------------------------ADDING NEW CODE END---------------------------------------
@@ -218,7 +219,7 @@ let refreshTable = () => {
 
 //---------------------------------NEW CODE ADDED---------------------------------
  // ------------------------ Update the project count------------------------------
-             updateProjectCount();
+             updateClientCount();
         }
     });
 // -----------------------------------NEW CODE END --------------------------------
@@ -258,21 +259,45 @@ let refreshTable = () => {
             newPersonPhone.value = personToEdit.phone;
             newPersonEmail.value = personToEdit.email; 
 
-//--------AM I MISSING SOME CODE HERE?
+            // Update button event listener for submission
+            newPersonSubmitBtn.removeEventListener('click', newPersonSubmitListener);
+    
+            // Define a new event listener for submission
+            const editPersonSubmitListener = () => {
+                // Get updated values
+                let updatedCompany = newPersonCompany.value.trim();
+    
+                // Update the existing item in cmsTable
+                cmsTable[updatedCompany] = {
+                    'ticker': newPersonTicker.value.trim(),
+                    'address': newPersonAddress.value.trim(),
+                    'name': newPersonName.value.trim(),
+                    'phone': newPersonPhone.value.trim(),
+                    'email': newPersonEmail.value.trim(),
+                };
+    
+                // Remove the old item if the company name is changed
+                if (updatedCompany !== nameToEdit) {
+                    delete cmsTable[nameToEdit];
+                }
+    
+                // Update localStorage
+                localStorage.setItem(tableKey, JSON.stringify(cmsTable));
+    
+                // Disable the modal and refresh the table
+                enableDisableNewUserModal('disable');
+                refreshTable();
+            };
+    
+            // Attach the new event listener
+            newPersonSubmitBtn.addEventListener('click', editPersonSubmitListener);
+        
 
 
 
-            
+
         });
     }
-    //-------------------NEW CODE ADDED---------------------------
-
-
-
-
-//THIS SECTION DIFF TO PROJECTS JS
-
-
 
 
 
@@ -289,7 +314,6 @@ let refreshTable = () => {
         })
     }
 }
-
 let deleteUserFromTable = (userName) => {
     let tempTable = {};
     let cmsTableKeys = Object.keys(cmsTable);
@@ -316,7 +340,15 @@ let init = () => {
     }
 
     refreshTable();
+
 }
+
+
+document.addEventListener('clientDataUpdated', () => {
+    console.log('clientDataUpdated event triggered.');
+    // Update the client count
+    updateClientCount();
+});
 
 
 init();
