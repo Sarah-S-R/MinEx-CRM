@@ -44,7 +44,7 @@ document.getElementById('SortButton').addEventListener('click', () => {
 //--------------------------------------SORT BUTTON END-----------------------------------------
 
 //-------------------------------------ADD NEW CLIENT-------------------------------------------
-let enableDisableCompanyInput = (option) => {
+let enableDisableClientInput = (option) => {
     let newPersonCompany = document.getElementById('newPersonCompany');
     
     if (option === 'enable')
@@ -241,7 +241,7 @@ let refreshTable = () => {
             let personToEdit = cmsTable[nameToEdit];
             
             // Enable input fields for editing
-            enableDisableCompanyInput('enable');
+            enableDisableClientInput('enable');
             enableDisableNewUserModal('enable');
            
             let newPersonCompany = document.getElementById('newPersonCompany');
