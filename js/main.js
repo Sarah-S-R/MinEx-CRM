@@ -1,31 +1,49 @@
-const form = document.querySelector(".login-form");
-const createAccountForm = document.getElementById ("create-account-form");
-const username = document.getElementById ('username');
-const email = document.getElementById ('email');
-const password = document.getElementById ('password');
-const passwordTwo = document.getElementById ('passwordTwo');
-const errorElement = document.getElementById ('error-message');
-const successMessage = document.getElementById ('success-message');
-const rememberMeCheckbox = document.getElementById ('rememberMe');
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    const form = document.querySelector(".login-form");
+    const createAccountForm = document.getElementById ("create-account-form");
+    const username = document.getElementById ('username');
+    const email = document.getElementById ('email');
+    const password = document.getElementById ('password');
+    const passwordTwo = document.getElementById ('passwordTwo');
+    const errorElement = document.getElementById ('error-message');
+    const successMessage = document.getElementById ('success-message');
+    const rememberMeCheckbox = document.getElementById ('rememberMe');
+    const rememberedEmail = localStorage.getItem('rememberedEmail');
     const loginForm = document.getElementById('login-form');
     const emailInput = document.getElementById('email');
+
+    console.log('DOMContentLoaded event listener executed');
     
-    // Check if there is a remembered email
-    const rememberedEmail = localStorage.getItem('rememberedEmail');
+    //--------------------- Check if there is a remembered email-----------------------------------
+
+    console.log('Remember Me Checkbox:', rememberMeCheckbox); // Add this line
+    console.log('Remembered Email:', rememberedEmail); // Log the remembered email for debugging
+
     if (rememberedEmail) {
         emailInput.value = rememberedEmail;
         rememberMeCheckbox.checked = true;
+        console.log('Email input and checkbox updated:', emailInput.value, rememberMeCheckbox.checked);
     }
 
+    console.log('loginForm:', loginForm);
+    console.log('emailInput:', emailInput);
+    console.log('rememberMeCheckbox:', rememberMeCheckbox);
+
     loginForm.addEventListener('submit', function (e) {
+
         // If the "Remember me" checkbox is checked, store the email in localStorage
+
         if (rememberMeCheckbox.checked) {
             localStorage.setItem('rememberedEmail', emailInput.value);
+            console.log('Email stored in localStorage:', emailInput.value);
+
         } else {
+
             // If not checked, remove the stored email
             localStorage.removeItem('rememberedEmail');
+            console.log('Remembered email removed from localStorage');
         }
 
      });
@@ -93,8 +111,6 @@ class Login {
                         window.location.href = "/dashboard.html";
                     }, 2000);
 
-            
-
                 } else {
                     // Show alert for invalid email or password
                     alert("Invalid email or password");
@@ -148,12 +164,13 @@ class Login {
         }
     }
 
-if (form) {
-    const fields= ["email", "password"];
-    const validator = new Login(form, fields);
-}
+            if (form) {
+                const fields= ["email", "password"];
+                const validator = new Login(form, fields);
+            };
 
-//Create Account Section
+//----------------------------Create Account Section---------------------------------------------------
+
     createAccountForm.addEventListener ('submit', (e) => {
         let messages = []
         
@@ -205,7 +222,8 @@ if (form) {
         }      
 
 });
-//Password re-set
+
+//------------------------------------Password re-set-----------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('forgotPasswordForm').addEventListener('submit', async function (e) {
         e.preventDefault();
