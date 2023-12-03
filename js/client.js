@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     init();
-});
+
 
 const tableKeyClient = 'cms-table';
 let cmsTable;
@@ -344,3 +344,4 @@ document.addEventListener('clientDataUpdated', () => {
 
 
 init();
+});

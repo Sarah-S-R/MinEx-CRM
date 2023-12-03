@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     init();
-});
+
 
     let tableKey = 'pms-table';
     let pmsTable;
@@ -313,3 +313,4 @@ document.addEventListener('projectUpdated', () => {
 });
 
 init();
+});
