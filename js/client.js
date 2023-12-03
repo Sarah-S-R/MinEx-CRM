@@ -40,7 +40,7 @@ document.getElementById('SortButton').addEventListener('click', () => {
     const tempTable = {};
     sortedKeys.forEach(key => (tempTable[key] = cmsTable[key]));
     cmsTable = tempTable;
-    refreshTable();
+    refreshClientTable();
 });
 */
 //--------------------------------------SORT BUTTON END-----------------------------------------
@@ -56,7 +56,7 @@ let enableDisableClientInput = (option) => {
         newPersonCompany.disabled = true;
 }
 
-let refreshTable = () => { 
+let refreshClientTable = () => { 
     let cmsTableKeys = Object.keys(cmsTable);
     let tableContainer = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
@@ -213,7 +213,7 @@ let refreshTable = () => {
 
             localStorage.setItem(tableKeyClient,JSON.stringify(cmsTable));
             enableDisableNewUserModal('disable');
-            refreshTable();
+            refreshClientTable();
 
 
  // ------------------------ Update the project count------------------------------
@@ -283,7 +283,7 @@ let refreshTable = () => {
     
                 // Disable the modal and refresh the table
                 enableDisableNewUserModal('disable');
-                refreshTable();
+                refreshClientTable();
             };
     
             // Attach the new event listener
@@ -317,7 +317,7 @@ let deleteUserFromTable = (userName) => {
     }
     cmsTable = tempTable;
     localStorage.setItem(tableKeyClient,JSON.stringify(cmsTable));
-    refreshTable();
+    refreshClientTable();
 
     // ----------------------------- UPDATE THE CLIENT COUNT------------------------------
     updateClientCount();
@@ -331,7 +331,7 @@ let init = () => {
         localStorage.setItem(tableKeyClient, JSON.stringify(cmsTable));
     }
 
-    refreshTable();
+    refreshClientTable();
 
 }
 
