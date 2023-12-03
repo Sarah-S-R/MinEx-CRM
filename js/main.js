@@ -1,3 +1,6 @@
+let form;
+let createAccountForm;
+let username;
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
      });
-});
+
 
 
 class Login {
@@ -244,4 +247,5 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Failed to initiate password reset:', simulateResponse.message);
         }
     });
+});
 });

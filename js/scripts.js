@@ -1,4 +1,4 @@
-// SIDEBAR TOGGLE
+//----------------------------------- SIDEBAR TOGGLE----------------------------------------------------
 
 let sidebarOpen = false;
 const sidebar = document.getElementById('sidebar');
@@ -44,7 +44,8 @@ updateDateTime();
         });
 
         document.addEventListener('projectUpdated', () => {
-    // Update the project count
+    
+          // Update the project count
     updateProjectCount();
 });
 
@@ -72,8 +73,11 @@ updateClientCount();
  
 
 
+
+
+
 /*
-//-------------------------------------------CHARTS-------------------------------------------------------
+//-------------------------------------------CHARTS COMING SOON-------------------------------------------------------
 // BAR CHART
 var barChartOptions = {
     series: [

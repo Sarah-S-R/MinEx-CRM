@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 const tableKeyClient = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
+let tableContainer = document.getElementById('cmsTableContainer');
+let oldTableBody = document.getElementById('tableBody');
 
 // ----------------------------Function to fetch client count---------------------------------------
 function getClientCount() {
@@ -58,8 +60,6 @@ let refreshTable = () => {
     let cmsTableKeys = Object.keys(cmsTable);
     let tableContainer = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
-   
-
 
     tableContainer.removeChild(oldTableBody);
    
@@ -194,8 +194,7 @@ let refreshTable = () => {
                 'email': newPersonEmail
             };
 
-    // ----------------------- ADDING NEW CODE START-------------------------------
-    //STORE AND SORT DATA AUTOMATICALLY-
+      //STORE AND SORT DATA AUTOMATICALLY-
 
       // Dispatch a storage event
       const event = new Event('clientDataUpdated');
@@ -211,18 +210,16 @@ let refreshTable = () => {
           // Update cmsTable with the sorted data
           cmsTable = tempTable;
 
-//---------------------------ADDING NEW CODE END---------------------------------------
 
             localStorage.setItem(tableKeyClient,JSON.stringify(cmsTable));
             enableDisableNewUserModal('disable');
             refreshTable();
 
-//---------------------------------NEW CODE ADDED---------------------------------
+
  // ------------------------ Update the project count------------------------------
              updateClientCount();
         }
     });
-// -----------------------------------NEW CODE END --------------------------------
     
    // ---------------CANCEL AND SUBMIT BUTTONS----------------------------------------
     newPersonCancelBtn.addEventListener('click', () =>{
@@ -291,14 +288,9 @@ let refreshTable = () => {
     
             // Attach the new event listener
             newPersonSubmitBtn.addEventListener('click', editPersonSubmitListener);
-        
-
-
-
-
+  
         });
     }
-
 
 
     //------------------------NEW CODE ADDED END------------
