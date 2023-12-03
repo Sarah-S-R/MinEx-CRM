@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const tableKeyClient = 'cms-table';
 let cmsTable;
 let cmsTableDemo = {};
-let tableContainer = document.getElementById('cmsTableContainer');
-let oldTableBody = document.getElementById('tableBody');
+
 
 // ----------------------------Function to fetch client count---------------------------------------
 function getClientCount() {
@@ -57,9 +56,10 @@ let enableDisableClientInput = (option) => {
 }
 
 let refreshClientTable = () => { 
-    let cmsTableKeys = Object.keys(cmsTable);
     let tableContainer = document.getElementById('cmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
+    let cmsTableKeys = Object.keys(cmsTable);
+    
 
     tableContainer.removeChild(oldTableBody);
    
