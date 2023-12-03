@@ -38,7 +38,7 @@ document.getElementById('pmSortButton').addEventListener('click', () => {
     const tempTable = {};
     sortedKeys.forEach(key => (tempTable[key] = pmsTable[key]));
     pmsTable = tempTable;
-    refreshTable();
+    refreshProjectTable();
 });
   */
 //--------------------------------------------SORT BUTTON END----------------------------------------
@@ -54,7 +54,7 @@ let enableDisableCompanyInput = (option) => {
         newProjectCompany.disabled = true;
 }
 
-let refreshTable = () => { 
+let refreshProjectTable = () => { 
     let pmsTableKeys = Object.keys(pmsTable);
     let tableContainer = document.getElementById('pmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
@@ -191,7 +191,7 @@ newProjectSubmitBtn.addEventListener('click', () => {
     
             localStorage.setItem(tableKey, JSON.stringify(pmsTable));
             enableDisableNewUserModal('disable');
-            refreshTable();
+            refreshProjectTable();
     
             // ------------------------ Update the project count------------------------------
             updateProjectCount();
@@ -258,7 +258,7 @@ newProjectSubmitBtn.addEventListener('click', () => {
     
                 // Disable the modal and refresh the table
                 enableDisableNewUserModal('disable');
-                refreshTable();
+                refreshProjectTable();
             };
     
             // Attach the new event listener
@@ -290,7 +290,7 @@ let deleteUserFromTable = (userName) => {
 
     pmsTable = tempTable;
     localStorage.setItem(tableKey, JSON.stringify(pmsTable));
-    refreshTable();
+    refreshProjectTable();
 
     // ------------------------ Update the project count------------------------------
     updateProjectCount();
@@ -304,7 +304,7 @@ let init = () => {
         localStorage.setItem(tableKey, JSON.stringify(pmsTable));
     }
 
-    refreshTable();
+    refreshProjectTable();
 }
 
 document.addEventListener('projectUpdated', () => {
