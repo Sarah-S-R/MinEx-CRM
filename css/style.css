@@ -5,6 +5,7 @@
 
 body{
   height: 100vh;
+  padding-top: 0px;
   background-color: rgb(0, 0, 0);
   margin: 0;
 }
@@ -29,12 +30,15 @@ body{
 
 header {
     position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     position: relative;
     margin: auto;
     justify-content: space-between;
+    z-index: 1000; /* Ensure the header stays above other content */
 }
+
 .navbar {
     display: flex;
     align-items: baseline;
@@ -93,70 +97,64 @@ color:rgb(99, 220, 225);
     width: 100%;
     margin: auto;
     height: 100vh;
-    background-image:  center;
-    background-size: cover;
     background-color: rgb(0, 0, 0);
-        /* Set background image */
-        background-image: url('/img/mountains.png');
-        /* Set background size to cover the entire body */
-        background-size: cover;
-        /* Set background to fixed position */
-        background-attachment: fixed;
-        /* Set background to no-repeat */
-        background-repeat: no-repeat;
-        background-position: center;
-        
+    position: relative;
 }
+
+
 .heroContent {
-    display:block;
-    margin: auto;
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 75%;
-    height:auto;
+    margin: auto;
+    margin-top: 3%;
+    min-height: 75vh;
     padding: 1%;
-    height: 75vh;
+    max-width: 900px;
+    text-align: center; /* Center text within the container */
 }
- 
-.heroContent h1{
+
+.heroContent h1 {
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.75;
     margin-top: 0;
-    margin-bottom: auto;
-    text-align: center;
-    color:  rgb(99, 220, 225);;
+    margin-bottom: 10px; /* Add space below the heading */
+    color: rgb(99, 220, 225);
 }
-.heroContent p{
+
+.heroContent p {
     font-size: 1.25rem;
     line-height: 1.5;
     font-weight: 400;
     text-align: center;
     width: 65%;
     margin: auto;
-    color:  rgb(99, 220, 225);
+    color: rgb(99, 220, 225);
 }
 
+
 .img-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0; /* Adjust margin as needed */
     width: 100%;
-    max-width: 800px;
-    margin: auto;
+    max-width: 780px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding:  25px;
-    border-radius: 5px;
     align-items: center;
-    margin: 0;
+    padding: 25px;
+    border-radius: 5px;
     max-width: 175px;
     max-height: 50px;
 }
+
 .card:first-child {
         background: rgb(99, 220, 225);
 }
@@ -195,7 +193,6 @@ margin-right: 0;
 text-align: right;
 max-width: 800px;
 margin: auto;
-
 }
 
 .heroContent .getStarted {
@@ -439,59 +436,90 @@ body.login {
 
 /* Add the following media query for small screens */
 @media (max-width: 768px) {
-
     #login,
     #signup {
         font-size: 12px;
     }
 
+    body {
+        padding-top: 0px; /* Adjust padding as needed to create space for the fixed header */
+    }
 
-    .img-container .card {
-        width: 100%; /* Make cards take full width on small screens */
-        margin-bottom: 5px; /* Add space between stacked cards */
+    header {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        position: relative;
+        margin: auto;
+        justify-content: space-between;
+        z-index: 1000; /* Ensure the header stays above other content */
     }
 
     .img-container {
-        grid-template-columns: 1fr; /* Set grid to one column on small screens */
-        gap: 5px; /* Adjust gap between stacked cards */
-        align-items: center; /* Center the cards */
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center cards horizontally on smaller screens */
+        margin: 0px 0; /* Adjust margin as needed */
     }
-
     
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding:  25px;
-    border-radius: 5px;
-    align-items: center;
-    margin: auto;
-    max-width: 175px;
-    max-height: 30px;
-}
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding:  25px;
+        border-radius: 5px;
+        align-items: center;
+        margin: auto;
+        max-width: 175px;
+        max-height: 30px;
+        margin-bottom: 10px; /* Add space between stacked cards */
+    }
 
     .getStartedBtn {
         text-align: center; /* Center the "Get Started" button */
         margin-top: 0;
     }
 
-.heroContent h1{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: auto;
-    text-align: center;
-    color:  rgb(99, 220, 225);;
+    .heroContent {
+        margin-top: 20px; /* Adjust margin as needed, ensuring it doesn't overlap the header */
+        padding: 0%; /* Add padding to the top and bottom */
+        text-align: center; /* Center text on smaller screens */
+        min-height: 50vh;
+    }
+
+    .heroContent h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: auto;
+        text-align: center;
+        color: rgb(99, 220, 225);
+        width: 85%;
+    }
+
+    .heroContent p {
+        font-size: .9rem;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: center;
+        width: 65%;
+        margin: auto;
+        color: rgb(99, 220, 225);
+    }
 }
-.heroContent p{
-    font-size: .9rem;
-    line-height: 1.5;
-    font-weight: 400;
-    text-align: center;
-    width: 65%;
+
+@media (min-width: 1000px) {
+
+    .navbar {
+    max-width: 1000px;
     margin: auto;
-    color:  rgb(99, 220, 225);
-}
+    }
+
+    .heroContent {
+        margin-top: 3%; /* Adjust as needed */
+        min-height: 25vh;
+    }
+
+    
 }
 
