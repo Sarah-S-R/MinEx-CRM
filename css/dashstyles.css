@@ -424,6 +424,7 @@ padding-right: 10px;
     text-align: center;
     cursor: pointer;
     color: rgb(99, 220, 225);
+    -webkit-text-stroke: rgb(0,0,0) 0.35px;
     font-weight: 700;
     font-size: 1rem;
 }
