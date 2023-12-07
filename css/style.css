@@ -6,8 +6,10 @@
 body{
   height: 100vh;
   background-color: rgb(0, 0, 0);
+  margin: 0;
 }
 
+/*
 .background-container {
     position: fixed;
     object-fit: cover;
@@ -21,8 +23,9 @@ body{
     width: 100%;
     object-position: center;
     object-fit: cover;
-    z-index: -1; /* Send the image to the background */
+    z-index: -1; /* Send the image to the background 
 }
+*/
 
 header {
     position: fixed;
@@ -32,7 +35,7 @@ header {
     margin: auto;
     justify-content: space-between;
 }
-.navbar{
+.navbar {
     display: flex;
     align-items: baseline;
     width: 100%;
@@ -93,10 +96,21 @@ color:rgb(99, 220, 225);
     background-image:  center;
     background-size: cover;
     background-color: rgb(0, 0, 0);
+        /* Set background image */
+        background-image: url('/img/mountains.png');
+        /* Set background size to cover the entire body */
+        background-size: cover;
+        /* Set background to fixed position */
+        background-attachment: fixed;
+        /* Set background to no-repeat */
+        background-repeat: no-repeat;
+        background-position: center;
+        
 }
 .heroContent {
     display:block;
     margin: auto;
+    margin-top: 5%;
     max-width: 75%;
     height:auto;
     padding: 1%;
@@ -128,6 +142,8 @@ color:rgb(99, 220, 225);
     gap: 15px;
     margin: 0;
     width: 100%;
+    max-width: 800px;
+    margin: auto;
 }
 
 .card {
@@ -138,6 +154,8 @@ color:rgb(99, 220, 225);
     border-radius: 5px;
     align-items: center;
     margin: 0;
+    max-width: 175px;
+    max-height: 50px;
 }
 .card:first-child {
         background: rgb(99, 220, 225);
@@ -175,6 +193,8 @@ color:rgb(99, 220, 225);
 .getStartedBtn {
 margin-right: 0;
 text-align: right;
+max-width: 800px;
+margin: auto;
 
 }
 
@@ -419,6 +439,13 @@ body.login {
 
 /* Add the following media query for small screens */
 @media (max-width: 768px) {
+
+    #login,
+    #signup {
+        font-size: 12px;
+    }
+
+
     .img-container .card {
         width: 100%; /* Make cards take full width on small screens */
         margin-bottom: 5px; /* Add space between stacked cards */
@@ -430,10 +457,41 @@ body.login {
         align-items: center; /* Center the cards */
     }
 
-    .getStartedBtn {
-        text-align: center; /* Center the "Get Started" button */
-    }
+    
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:  25px;
+    border-radius: 5px;
+    align-items: center;
+    margin: auto;
+    max-width: 175px;
+    max-height: 30px;
 }
 
+    .getStartedBtn {
+        text-align: center; /* Center the "Get Started" button */
+        margin-top: 0;
+    }
 
+.heroContent h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: auto;
+    text-align: center;
+    color:  rgb(99, 220, 225);;
+}
+.heroContent p{
+    font-size: .9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    color:  rgb(99, 220, 225);
+}
+}
 
