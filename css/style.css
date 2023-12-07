@@ -3,29 +3,27 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+  background: url(/img/mountains.png)
+    no-repeat center;
+  background-size: cover;
+  background-color: rgb(0, 0, 0);
+}
+
 header {
     position: fixed;
     width: 100%;
     display: flex;
     position: relative;
-    background-color: #fff;
     margin: auto;
     justify-content: space-between;
 }
 .navbar{
     display: flex;
-    background-color: #fff;
     align-items: baseline;
     width: 100%;
     justify-content: space-between;
-    color: rgb(28, 28, 59);
 }
-/*
-.navbar-left {
-    cursor: pointer;
-    margin-left: 28%;
-    margin-right: auto;
-} */
 
 .navbar-right  {
     cursor: pointer;
@@ -35,40 +33,33 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    color: #2962ff;;
+    color: rgb(99, 220, 225);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     transition: .5s ease;
     padding: 10px;
     justify-content: space-between;
 }
 .logo:hover{
-    color:#ff6d00;
+    color: rgb(16, 82, 86);
     transition: ease 0.5s;
 }
 
 #login:hover{
-    color: #ff6d00;
+    color: rgb(16, 82, 86);
     transition: ease 0.5s;
 }
 #signup:hover {
-    color: #ff6d00;
+    color: rgb(16, 82, 86);
     transition: ease 0.5s;
 }
-/*
-#resources, 
-#contact, #pricing
-{
-font-size: 1rem;
-text-decoration: none;
-cursor: pointer;
-margin: auto;
-font-weight: 700;
-color: #2e7d32;
-padding: 20px;
-justify-content: space-between;
-} */
+
+.logo img {
+    width: 35px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
 
 #login, 
 #signup {
@@ -76,15 +67,15 @@ font-size: 1rem;
 text-decoration: none;
 cursor: pointer;
 margin: auto;
-font-weight: 700;
+font-weight: 500;
 padding: 20px;
-color: #aa176f;
+color:rgb(99, 220, 225);
 }
 
 .heroSection {
     width: 100%;
     margin: auto;
-    height: 80vh;
+    height: 85vh;
 }
 .heroContent {
     display:block;
@@ -97,12 +88,12 @@ color: #aa176f;
  
 .heroContent h1{
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.75;
-    margin-top: 5%;
+    margin-top: 0;
     margin-bottom: auto;
     text-align: center;
-
+    color:  rgb(99, 220, 225);;
 }
 .heroContent p{
     font-size: 1.25rem;
@@ -111,6 +102,7 @@ color: #aa176f;
     text-align: center;
     width: 65%;
     margin: auto;
+    color:  rgb(99, 220, 225);
 }
 
 .img-container {
@@ -131,23 +123,16 @@ color: #aa176f;
     margin: 0;
 }
 .card:first-child {
-    /*background-color: #2962ff;*/
-    border: #2962ff solid 2px;
+        background: rgb(99, 220, 225);
 }
 
 .card:nth-child(2) {
-   /* background-color: #ff6d00;*/
-    border:  #2e7d32 solid 2px;
+   background: rgb(99, 220, 225);
 }
 
 .card:nth-child(3) {
-   /* background-color: #2e7d32;*/
-    border:#aa176f solid 2px;
+   background: rgb(99, 220, 225);
 }
-
-/*
-.card:nth-child(4) {
-    /*background-color:  #d50000;*/
 
 .card-inner{
     display: flex;
@@ -162,8 +147,8 @@ color: #aa176f;
 .getStarted {
     border-radius: 20px;
     padding: 8px;
-    color: #fff;
-    font-weight: 700;
+    color: rgb(99, 220, 225);
+    font-weight: 500;
     width: 150px;
     margin-top: 50px;
     transition: 0.5s;
@@ -175,12 +160,13 @@ text-align: right;
 }
 
 .heroContent .getStarted {
-    background-color:#2962ff;
+    background-color: rgb(0, 0, 0);
 }
 .getStarted:hover{
     transition: 0.5s;
     cursor: pointer;
     transform: translateY(-5px);
+    color: rgb(16, 82, 86);
 }
 /*footer section*/
 .footer{
@@ -189,46 +175,13 @@ text-align: right;
     justify-content: space-between;
     margin: auto;
 }
-/*
-.socialIcons{
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-}
-.linkedin,
-.instagram,
-.meta,
-.twitter{
-    text-decoration: none;
-    font-size: 1rem;
-    color: rgb(28, 28, 59);
-    font-weight: 700;
-    padding: 20px;
-} 
-.newsletter h4{
-    font-size: 1rem;
-    margin-bottom: 0;
-    text-align: center;
-}
-.subscriptionForm{
-    width: 100%;
-    margin-right: 20px;
-}
-.subscriptionForm input{
-    border: 2px solid rgb(28, 28, 59);
-    border-radius: 10px;
-    justify-content: space-between;
-    width: 300px;
-    padding: 8px;
-    color: rgb(28, 28, 59);
-}*/
 
 /*------------------------------------- LOGIN PAGE--------------------------------------*/
 .main-login-body,
 .main-create-account-body {
     display: flex;
-    height: 78vh;
-    color: rgb(28, 28, 59);
+    height: 85vh;
+    color: rgb(99, 220, 225);
     align-content: center;
     align-items: center;
     margin: auto;
@@ -263,22 +216,22 @@ text-align: right;
 
 .login-btn, 
 .create-account-btn, .reset-btn {
-    background-color:#2962ff; /* Button background color */
-    color: #fff; /*  Text color */
+    background-color: rgb(99, 220, 225);
+    color: rgb(0, 0, 0); 
     border: none;
     border-radius: 10px;
     padding: 10px 20px; /* Increase padding for a larger button */
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     width: auto; /* Adjust the button width as needed */
     margin: 20px;
   
 }
 
 .login-btn:hover, .reset-btn:hover, .create-account-btn:hover {
-    background-color: #0056b3; /* Hover color */
+    background-color: rgb(16, 82, 86); /* Hover color */
     transform: translateY(-5px);
     transition: ease 0.3s;
 }
@@ -293,10 +246,13 @@ text-align: right;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0; /* Increase margin for spacing */
+    color: rgb(0,0,0);
+    font-weight: 400;
 }
 
 .remember-forgot a {
     text-decoration: none;
+    color:  rgb(99, 220, 225);
     font-size: 0.9rem; /* Adjust the font size as needed */
     margin-left: 10px; /* Increase left margin for spacing */
 }
@@ -345,14 +301,14 @@ body.login {
 .success-message {
     color: #2e7d32;
     margin:auto;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
 }
 #success-message {
     text-align: center;
     color: #2e7d32;
     margin:auto;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
 }
 
@@ -364,13 +320,6 @@ body.login {
     max-width: 400px;
     text-align: center;
 }
-/*
-h2.text-center {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #0074D9;
-    margin-bottom: 20px;
-} */
 
 .loginForm, .create-account-form {
     display: flex;
@@ -399,13 +348,13 @@ h2.text-center {
 .error-message {
     color: red;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 #error-message {
     color: red;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     margin:auto;
     max-width: 50%;
     padding: 10px;
@@ -413,7 +362,7 @@ h2.text-center {
 }
 
 .button {
-    background-color: #0074D9;
+    background-color: rgb(99, 220, 225);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -421,9 +370,9 @@ h2.text-center {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: rgb(99, 220, 225);
 }

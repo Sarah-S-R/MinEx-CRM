@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Remember Me Checkbox:', rememberMeCheckbox); // Add this line
     console.log('Remembered Email:', rememberedEmail); // Log the remembered email for debugging
 
+    
+    //------------------
     if (rememberedEmail) {
         emailInput.value = rememberedEmail;
         rememberMeCheckbox.checked = true;
@@ -50,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
      });
-
-
 
 class Login {
 	constructor(form, fields) {

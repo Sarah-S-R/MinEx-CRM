@@ -1,50 +1,136 @@
 document.addEventListener('DOMContentLoaded', function () {
-    init();
+    // Check if the script has already been loaded
+    if (!document.getElementById('pmsTableContainer')) {
+        console.log('Project script loaded.');
+       projectsInit();
+    }
+});
 
-
-    let tableKey = 'pms-table';
-    let pmsTable;
-    let pmsTableDemo = {};
+const tableKey = 'projects';
+let pmsTable;
+let pmsTableDemo = {};
 
 // ------------Function to fetch project count-------------------------
 function getProjectCount() {
     return Object.keys(pmsTable).length;
 }
 
-//  -------------------Function to update project count element --------------------
+//--------- Update the project count on the dashboard----------------
 function updateProjectCount() {
-    const projectCountElement = document.getElementById('projectCount');
-    if (projectCountElement) {
-        const projectCount = getProjectCount();
-        projectCountElement.textContent = projectCount;
+    try {
+        const projectCountElement = document.getElementById("projectCount");
+
+        if (projectCountElement) {
+            const count = countProjects();
+            console.log("Project count:", count);
+
+            if (typeof count === "number" && !isNaN(count)) {
+                projectCountElement.textContent = `${count}`;
+            } else {
+                console.error("Invalid project count:", count);
+                projectCountElement.textContent = "Error: Invalid count";
+            }
+        } else {
+            console.error("Project count element not found!");
+        }
+    } catch (error) {
+        console.error("Error updating project count:", error);
     }
 }
-//------------------------------------SORT BUTTON---------------------------------
-/*
-document.getElementById('pmSortButton').addEventListener('click', () => {
-    const sortedKeys = Object.keys(pmsTable).sort((a, b) => {
-        // Convert keys to lowercase for case-insensitive sorting
-        const keyA = a.toLowerCase();
-        const keyB = b.toLowerCase();
 
-        // Compare keys as numbers if both are numeric, otherwise, compare as strings
-        if (!isNaN(keyA) && !isNaN(keyB)) {
-            return parseFloat(keyA) - parseFloat(keyB);
-        } else {
-            return keyA.localeCompare(keyB);
-        }
-    });
-  
-    const tempTable = {};
-    sortedKeys.forEach(key => (tempTable[key] = pmsTable[key]));
-    pmsTable = tempTable;
-    refreshProjectTable();
+// Add event listener for the 'projectUpdated' event
+document.addEventListener("projectUpdated", () => {
+    console.log("projectUpdated event triggered in projects.js.");
+    
+    // Update the project count
+    updateProjectCount();
 });
-  */
-//--------------------------------------------SORT BUTTON END----------------------------------------
 
-// -------------------------------------------Add New Project----------------------------------------
-let enableDisableCompanyInput = (option) => {
+//-------------------- Function to update project count element-----------------
+
+// Modify updateProjectCount function to update count only on the dashboard
+function updateProjectCount() {
+    console.log('Updating project count...');
+
+    const projectCountElement = document.getElementById('projectCount');
+   
+    if (projectCountElement) {
+        console.log('Project count element found:', projectCountElement);        
+        
+        const projectCount = getProjectCount();
+        console.log('Project count:', projectCount);
+
+        projectCountElement.textContent = projectCount;
+    } else {
+        console.log('Project count element not found!');
+    }
+}
+
+
+// Function to count projects
+ function countProjects() {
+    try {
+      const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
+      console.log("Stored projects:", storedProjects); // Add this line
+      return storedProjects.length;
+    } catch (error) {
+      console.error("Error counting projects:", error);
+      return 0;
+    }
+  }
+
+  // Function to update project count on the dashboard
+  function updateProjectCount() {
+    try {
+      const projectCountElement = document.getElementById("projectCount");
+
+      if (projectCountElement) {
+        const count = countProjects(); // Call the countProjects function
+        console.log("Project count:", count); // Log the count to the console for debugging
+
+        if (typeof count === "number" && !isNaN(count)) {
+          projectCountElement.textContent = `${count}`;
+        } else {
+          console.error("Invalid project count:", count);
+          projectCountElement.textContent = "Error: Invalid count";
+        }
+      } else {
+        console.error("Project count element not found!");
+      }
+    } catch (error) {
+      console.error("Error updating project count:", error);
+      projectCountElement.textContent = "Error updating count";
+    }
+  }
+
+//--------ADDED THIS FROM SCRIPTS.JS FILE AND COMMENTED IT OUT OF THE OTHER FILE----------
+  document.addEventListener('DOMContentLoaded', function () {
+    const projectCountElement = document.getElementById('projectCount');
+    if (projectCountElement) {
+        console.log('Project script loaded.');  // This line should now be executed
+        const projectCount = getProjectCount(); // Make sure getProjectCount is defined in projects.js
+        projectCountElement.textContent = projectCount;
+    }
+  });
+  
+  document.addEventListener('projectUpdated', () => {
+    // Update the project count
+    updateProjectCount();
+  });
+//-----------------------------------FROM SCRIPTS-------------------------------------------
+
+/*
+  // Add event listener for the 'projectUpdated' event
+  document.addEventListener("projectUpdated", () => {
+    console.log("projectUpdated event triggered in dashboard.html.");
+    
+//------------------ Update the project count--------------------------------
+    updateProjectCount();
+  }); */
+
+  
+//-------------------------------------ADD NEW PROJECTS-----------------------------------
+let enableDisableProjectInput = (option) => {
     let newProjectCompany = document.getElementById('newProjectCompany');
     
     if (option === 'enable')
@@ -55,12 +141,21 @@ let enableDisableCompanyInput = (option) => {
 }
 
 let refreshProjectTable = () => { 
+    console.log('Refreshing project table...');
+
     let pmsTableKeys = Object.keys(pmsTable);
     let tableContainer = document.getElementById('pmsTableContainer');
     let oldTableBody = document.getElementById('tableBody');
    
-    tableContainer.removeChild(oldTableBody);
-   
+ //   tableContainer.removeChild(oldTableBody);
+
+ //---------NEW CODE TO CHECK FOR ERRORS--------
+ // Check if oldTableBody is a valid element and has a parent before attempting to remove it
+ if (oldTableBody && oldTableBody.parentNode) {
+    oldTableBody.parentNode.removeChild(oldTableBody);
+}
+ //---------NEW CODE TO CHECK FOR ERRORS END--------   
+
     let newTableBody = document.createElement('span');
     newTableBody.id = 'tableBody';
     tableContainer.appendChild(newTableBody);
@@ -74,6 +169,7 @@ let refreshProjectTable = () => {
         let currentAreaCol = document.createElement('div');
         let currentEditBtn = document.createElement('div');
         let currentDeleteBtn = document.createElement('div');
+
 
         currentRow.className = 'pm-table-row';
         currentCompanyCol.className = 'pm-table-column pm-company';
@@ -89,6 +185,7 @@ let refreshProjectTable = () => {
         currentLocationCol.innerHTML = pmsTable[pmsTableKeys[i]].location;
         currentClaimsCol.innerHTML = pmsTable[pmsTableKeys[i]].claims;
         currentAreaCol.innerHTML = pmsTable[pmsTableKeys[i]].area;
+
 
         currentDeleteBtn.innerHTML = '<i class="fas fa-dumpster"></i>';
         currentEditBtn.innerHTML = '<i class="fas fa-user-edit"></i>';
@@ -133,7 +230,6 @@ let refreshProjectTable = () => {
     let newProjectCancelBtn = document.getElementById('newProjectCancelButton');
     
 newProjectSubmitBtn.addEventListener('click', () => {
-
     let newProjectCompany = document.getElementById('newProjectCompany').value.trim();
     let newProjectPropertyName = document.getElementById('newProjectPropertyName').value.trim();
     let newProjectLocation = document.getElementById('newProjectLocation').value.trim();
@@ -166,16 +262,19 @@ newProjectSubmitBtn.addEventListener('click', () => {
         document.getElementById('newProjectArea').className = '';
 
         if (newProjectCompany !== '' && newProjectPropertyName !== '' && newProjectLocation !== '' && newProjectClaims !== '' && newProjectArea !== '') {
-            // Add the new project to pmsTable
+           
+//--------------------- Add the new project to pmsTable-------------------
             pmsTable[newProjectCompany] = {
-                
+
                 'propertyName': newProjectPropertyName,
                 'location': newProjectLocation,
                 'claims': newProjectClaims,
                 'area': newProjectArea,
             };
 
-                 // Dispatch a storage event
+//----------------------STORE AND SORT DATA AUTOMATICALLY------------------
+        
+        // Dispatch a storage event
         const event = new Event('projectUpdated');
         window.dispatchEvent(event);
     
@@ -193,14 +292,13 @@ newProjectSubmitBtn.addEventListener('click', () => {
             enableDisableNewUserModal('disable');
             refreshProjectTable();
     
-            // ------------------------ Update the project count------------------------------
+//-------------------- Update the project count---------------------------
             updateProjectCount();
         }
     });
-    //------------------ALPHABETICAL SORTING END----------------------------------------
-
-    // ---------------CANCEL AND SUBMIT BUTTONS----------------------------------------
    
+// -----------------------CANCEL AND SUBMIT BUTTONS----------------------------------------
+
     newProjectCancelBtn.addEventListener('click', () =>{
         enableDisableNewUserModal('disable');  
     });
@@ -212,11 +310,12 @@ newProjectSubmitBtn.addEventListener('click', () => {
     for(let i = 0; i < editBtns.length; i++){
        
         editBtns[i].addEventListener('click', ($event) => {
+
             let nameToEdit = $event.target.parentElement.children[0].innerText;
             let projectToEdit = pmsTable[nameToEdit];
     
             // Enable input fields for editing
-            enableDisableCompanyInput('enable');
+            enableDisableProjectInput('enable');
             enableDisableNewUserModal('enable');
     
             let newProjectCompany = document.getElementById('newProjectCompany');
@@ -274,11 +373,11 @@ newProjectSubmitBtn.addEventListener('click', () => {
             
             if(isSure)
                 // delete user from table
-                deleteUserFromTable(nameToDelete);
+                deleteProjectFromTable(nameToDelete);
         })
     }
 }
-let deleteUserFromTable = (userName) => {
+let deleteProjectFromTable = (userName) => {
     let tempTable = {};
     let pmsTableKeys = Object.keys(pmsTable);
     
@@ -292,25 +391,79 @@ let deleteUserFromTable = (userName) => {
     localStorage.setItem(tableKey, JSON.stringify(pmsTable));
     refreshProjectTable();
 
-    // ------------------------ Update the project count------------------------------
+  // ----------------------------- UPDATE THE PROJECT COUNT--------------
     updateProjectCount();
-}
+};
 
-let init = () => {
-    if (localStorage.getItem(tableKey)) {
+let projectsInit = () => {
+    console.log('Initializing projects.js');
+
+    if(localStorage.getItem(tableKey)){
         pmsTable = JSON.parse(localStorage.getItem(tableKey));
-    } else {
-        pmsTable = pmsTableDemo;
-        localStorage.setItem(tableKey, JSON.stringify(pmsTable));
     }
-
+    
+    else {
+        pmsTable = pmsTableDemo;
+        localStorage.setItem(tableKey,JSON.stringify(pmsTable));
+    }
     refreshProjectTable();
 }
 
-document.addEventListener('projectUpdated', () => {
-    // Update the project count
-    updateProjectCount();
+
+//--------------------------------Function to count projects-------------------
+/*function countProjects() {
+    try {
+        // Retrieve the project count from localStorage or any other logic you are using
+        // Ensure that this logic matches your implementation in projects.js
+        const storedProjects = pmsTable || {};
+        return Object.keys(storedProjects).length;
+    } catch (error) {
+        console.error("Error counting projects:", error);
+        return 0; // Return 0 in case of an error
+    }
+}
+*/
+
+//  -------------------------Function to update project count element ---------------------------------
+
+// Function to update project count on the dashboard
+function updateProjectCount() {
+    try {
+        const projectCountElement = document.getElementById("projectCount");
+
+         // Retrieve the client count using the countProjects function
+         const count = countProjects();
+
+        if (projectCountElement) {
+            const count = countProjects(); // Call the countProjects function
+            console.log("Project count:", count); // Log the count to the console for debugging
+
+            if (typeof count === "number" && !isNaN(count)) {
+                projectCountElement.textContent = `${count}`;
+
+                 // Dispatch the event after updating the count
+                 const event = new Event('projectsUpdated');
+                 window.dispatchEvent(event);
+
+            } else {
+                console.error("Invalid project count:", count);
+                projectCountElement.textContent = "Error: Invalid count";
+            }
+        } else {
+            console.error("Project count element not found!");
+            projectCountElement.textContent = "Error: Invalid count";
+        }
+    } catch (error) {
+        console.error("Error updating project count:", error);
+        projectCountElement.textContent = "Error updating count";
+    }
+}
+
+document.addEventListener('clientDataUpdated', () => {
+    console.log('clientDataUpdated event triggered in projects.js.');
+    
+    // Update the client count
+    updateClientCount();
 });
 
-init();
-});
+projectsInit();

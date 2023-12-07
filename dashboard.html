@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,38 +19,18 @@
             </div>
             <div class="header-left">
 
-               <!-- <span class="material-icons-outlined">search</span>
-                <input type="search" autofocus placeholder="Search..."> -->
-
                 <div id="datetime"></div> <!-- Container for date and time -->
             </div>
             <div class="header-right">
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" >
 
-                  <!--     
-                     <span class="material-icons-outlined">notifications</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <ul>
-                            <li><a heref="#">Notification 1</a></li>
-                        </ul>
-                    </div>--> 
-
                 </div>      
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="profile.html">
                         <span class="material-icons-outlined userAccountCircle">account_circle</span></a>
-                   <!-- 
-                     <div class="dropdown-menu">
-                        <ul>
-                            <li>Profile</li>
-                            <li>Settings</li>
-                        </ul>
-                    </div>-->
-
                 </div>
-        </div>
+            </div>
         </header>
         <!-------------------------------------End Header-------------------------------------->
 
@@ -59,7 +38,7 @@
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                    <span class="logoIcon">LOGO</span>
+                    <span class="logoIcon"><img src="/icons/minex.png">MinEx</span>
                 </div>
                 <div class="close-icon" onclick="closeSidebar()">
                     <span class="material-icons-outlined">close</span>
@@ -87,15 +66,6 @@
                     <span class="material-icons-outlined">map</span>Locations
                 </a>
                 </li>
-
-                <!--
-                <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">poll</span>Reports
-                </li>
-                <li class="sidebar-list-item">
-                    <span class="material-icons-outlined">settings</span>Settings
-                </li>-->
-
                 <li class="sidebar-list-item">
                     <a href="#" class="logout">  <span class="material-icons-outlined">logout</span> Log Out</a>
                 </li>
@@ -113,91 +83,86 @@
                 </div>
             <div class="main-cards">
 
-               <!--  <a href="clients.html">     --> 
+               <button onclick="window.location.href='clients.html'" class="card"> 
                 <div class="card">
                     <div class="card-inner">
                         <span class="material-icons-outlined">groups</span> 
                         <h3>CLIENTS</h3>
                     </div>
-                    <h1 id="clientCount"></h1>
+                 <h1 id="clientCount"></h1> 
                 </div>
-           <!-- </a> -->
-
-               <!-- <a href="projects.html">  -->
+                </button>
+           
+                <button onclick="window.location.href='projects.html'" class="card"> 
                 <div class="card">
                     <div class="card-inner">
                         <span class="material-icons-outlined">inventory_2</span>
                         <h3>PROJECTS</h3>   
                     </div>
-                    <h1 id="projectCount"></h1>
+                  <h1 id="projectCount"></h1> 
                 </div>
-          <!--  </a> -->
-
-        <!--    <a href="locations.html">   -->
+            </button>
+            <button onclick="window.location.href='locations.html'" class="card">
                 <div class="card">
-                    <div class="card-inner">
-                        
+                    <div class="card-inner"> 
                         <span class="material-icons-outlined">map</span>
                         <h3>LOCATIONS</h3>
                     </div>
-                    <h1 id="locationCount"></h1>
+                    <h1 id="markerCount"></h1>
                 </div>
-<!--  </a> -->
-
-               <!-- <div class="card">
-                    <div class="card-inner">
-                        <h3>ANALYTICS</h3>
-                        <span class="material-icons-outlined">category</span>
-                    </div>
-                    <h1>25</h1>
-                </div>
-            -->
-
-              <!--
-                <div class="card">
-                    <div class="card-inner">
-                        <h3>PROPERTIES</h3>
-                        <span class="material-icons-outlined">perm_media</span>
-                    </div>
-                    <h1>175</h1>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <h3>ALERTS</h3>
-                        <span class="material-icons-outlined">notification_important</span>
-                    </div>
-                    <h1>56</h1>
-                </div>
-            </div>-->
-
-            <!--CHARTS
-            <div class="charts">
-
-                <div class="charts-card">
-                    <h2 class="chart-title">Top 5 Services</h2>
-                    <div id="bar-chart"></div>
-                </div>
-
-                <div class="charts-card">
-                    <h2 class="chart-title">Purchase and Sales Orders</h2>
-                    <div id="area-chart"></div>
-                </div>  
-            </div>-->
-
+            </button>
         </main>
         <!---------------------------------End Main--------------------------------------->
 
         <!----------------------------------JAVASCRIPTS----------------------------------->
-        <!--APEX CHARTS
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script> -->
-
-    <script src="/js/auth.js"></script>
-    <script src="/init.js"></script>
-    <script src="/js/scripts.js"></script>
-    <script src="/js/client.js"></script>
-    <script src="/js/projects.js"></script>  
-    <script src="/js/main.js"></script>
-    
-
+        
+        <script src="/js/auth.js"></script>
+        <script src="/init.js"></script>
+        <script src="/js/scripts.js"></script>
+        <script src="/js/client.js"></script>
+        <script src="/js/projects.js"></script>
+        <script src="/js/locations.js"></script>
+        
+        <script>
+          // Function to count markers
+          function countMarkers() {
+            try {
+              // Retrieve the marker count from localStorage or any other logic you are using
+              // Ensure that this logic matches your implementation in locations.js
+              const storedLocations = JSON.parse(localStorage.getItem("locations")) || [];
+              return storedLocations.length;
+            } catch (error) {
+              console.error("Error counting markers:", error);
+              return 0; // Return 0 in case of an error
+            }
+          }
+        
+          // Function to update marker count on the dashboard
+          function updateMarkerCount() {
+            try {
+              const markerCountElement = document.getElementById("markerCount");
+        
+              if (markerCountElement) {
+                const count = countMarkers(); // Call the countMarkers function
+                console.log("Marker count:", count); // Log the count to the console for debugging
+        
+                if (typeof count === "number" && !isNaN(count)) {
+                  markerCountElement.textContent = `${count}`;
+                } else {
+                  console.error("Invalid marker count:", count);
+                  markerCountElement.textContent = "Error: Invalid count";
+                }
+              } else {
+                console.error("Marker count element not found!");
+              }
+            } catch (error) {
+              console.error("Error updating marker count:", error);
+              markerCountElement.textContent = "Error updating count";
+            }
+          }
+        
+          // Call functions in the correct order
+          updateMarkerCount();
+        </script>
 </body>
 </html>

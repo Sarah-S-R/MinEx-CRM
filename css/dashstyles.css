@@ -37,7 +37,8 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0 30px 0 30px;
-    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 6px 7px -3px  rgb(99, 220, 225);;
+    
 }
 .menu-icon{
     display: none;
@@ -83,14 +84,14 @@ body{
     color:  #9e9ea4;
   }
 #datetime {
-    padding-left: 20px; 
+    padding-left: 1px; 
 }
 
 .userAccountCircle {
-    color:#aa176f;
+    color: rgb(99, 220, 225);
 }
 .logoIcon {
-    color: #2962ff;
+    color: rgb(99, 220, 225);
 }
 
 /*-------------------------------------DROPDOWN--------------------------------------*/
@@ -131,12 +132,21 @@ body{
 #sidebar{
     grid-area: sidebar;
     height: 100%;
-    background-color: #263043;
+    background-color: rgb(0,0,0);
     overflow-y: auto;
     transition: all 0.5s;
     text-decoration: none;
 }
 
+.logoIcon{
+    font-size: 1rem;
+}
+.logoIcon img{
+    width: 35px;
+    padding-right: 10px;
+    vertical-align: middle;
+    
+}
 .sidebar-title {
     display: flex;
     justify-content: space-between;
@@ -152,7 +162,7 @@ body{
 .sidebar-brand{
     margin-top: 15px;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .sidebar-list{
@@ -187,7 +197,7 @@ body{
 }
 
 .sidebar-list-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.104);
     cursor: pointer;
 }
 
@@ -232,6 +242,11 @@ body{
     padding: 20px;
     border-radius: 10px;
 }
+
+.welcome-container h2{
+    font-weight: 500;
+}
+
 .material-icons-outlined {
     padding-left: 10px;
 }
@@ -240,6 +255,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     margin: 20px 0;
+    color: rgb(0,0,0);
 }
 
 .card {
@@ -251,23 +267,21 @@ body{
     align-items: center;
 }
 
+.card a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 .card:first-child {
-    background-color: #2962ff;
+    background-color:  rgb(99, 220, 225);
 }
 .card:nth-child(2) {
-    background-color: #2e7d32;
+    background-color:  rgb(99, 220, 225);
    
 }
 .card:nth-child(3) {
-    background-color: #aa176f;
+    background-color: rgb(99, 220, 225);
 }
-/*
-.card:nth-child(4) {
-    background-color:   #ff6d00;
-}
-.card:nth-child(5) {
-    background-color: #d50000;
-} */
 
 .card-inner{
     display: flex;
@@ -275,9 +289,10 @@ body{
     justify-content: space-between;
 }
 
-.card-inner > .material-icons-outlined {
+.card-inner > .material-icons-outlined  {
 padding-right: 10px;
 }
+
 
 .charts {
     display: grid;
@@ -347,7 +362,7 @@ padding-right: 10px;
 }
 
 
-/*------------------------------------ CLIENTS PAGE-----------------------------------------*/
+/*------------------------------------ CLIENTS/PROJECTS PAGE-----------------------------------------*/
 
 .clients-table, .projects-table {
     color: black;
@@ -397,9 +412,9 @@ padding-right: 10px;
 }
 
 .cm-header, .pm-header {
-    background-color: rgb(132, 135, 135);
+    background-color: rgb(208, 211, 211);
     font-weight: bolder;
-    color: #2c2c2f;  
+    color: #2c2c2f; 
 }
 
 .cm-edit, .cm-delete, .pm-edit, .pm-delete {
@@ -407,13 +422,14 @@ padding-right: 10px;
     text-align: center;
     cursor: pointer;
 }
+
 .cm-add-entry, .pm-add-entry {
     flex-basis: 3.75%;
     text-align: center;
     cursor: pointer;
-    color: #2e7d32;
+    color: rgb(99, 220, 225);
     font-weight: 700;
-    font-size: 1.rem;
+    font-size: 1rem;
 }
 
 #newPersonModal, #newProjectModal {
@@ -423,7 +439,7 @@ padding-right: 10px;
     z-index: 99;
     top: 5px;
     position: absolute;
-    margin-left: 10%;
+    margin-left: 12%;
     background-color:blur;
     color: #fff;
 }
@@ -432,7 +448,7 @@ padding-right: 10px;
     display: block;
     margin-bottom: 15px;
     padding: 10px;
-    border: 3px;
+    border: 1px;
     width: 95%;
 }
 
@@ -452,19 +468,20 @@ padding-right: 10px;
 
 #newPersonSubmitButton, #SortButton, 
 #pmSortButton, #newProjectSubmitButton {
-    background-color:#2962ff;;
+    background-color:rgb(99, 220, 225);
     padding: 8px;
     border-radius: 5px;
     border: none;
     float: right;
-     margin: 5px;
+    margin: 5px;
     cursor: pointer;
-    color: #ccc;
+    color: rgb(0,0,0);
     width: 100px;
 }
 
+
 #newCancelButton, #newProjectCancelButton {
-    background-color: rgb(151, 47, 47);
+    background-color: rgb(99, 220, 225);
     padding: 8px;
     border-radius: 5px;
     border: none;
@@ -492,8 +509,6 @@ padding-right: 10px;
     position: fixed;
     left: 25%;
 }
-
-
 
 i{
     pointer-events: none;
@@ -527,20 +542,20 @@ i{
 }
 
 #edit-profile-btn {
-    background-color: #2962ff;
+    background-color: rgb(99, 220, 225);
     border-radius: 10px;
     padding: 8px;
     margin: 10px;
-    color: #ececef;
+    color:rgb(0,0,0);
 }
 
-.profile-update-btn, #addLocationBtn {
+.profile-update-btn, #addLocationBtn, #deleteAllBtn {
     text-align: center;
-    background-color: #2962ff;
+    background-color:rgb(99, 220, 225);
     border-radius: 10px;
     padding: 8px;
     margin: 10px;
-    color: #ececef;
+    color: rgb(0,0,0)
 }
 
 #new-username,
@@ -565,6 +580,8 @@ i{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: auto;
+    color: rgb(99, 220, 225);
 }
 
 #edit-section {
@@ -580,11 +597,11 @@ i{
 /* ---------------------------------- LOCATIONS PAGE -------------------------------------- */
 
 .main-container {
-    height: 70vh;
+    height: 75vh;
 }
 
 #map {
-    height: 47vh; /* Adjust the height as needed */
+    height: 50vh; /* Adjust the height as needed */
     width: 100%; /* Use the full width of the container */
 }
 
@@ -598,6 +615,25 @@ i{
     border-radius: 5px;
     margin: 0;
 }
+
+
+#addLocationBtn, #deleteAllBtn {
+    text-align: center;
+    background-color: rgb(99, 220, 225);
+    border-radius: 10px;
+    padding: 8px;
+    margin: 10px;
+    color: rgb(0,0,0);
+}
+
+#addLocationBtn:hover, #deleteAllBtn:hover {
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
 
 /* ---------------------------------------- MEDIA QUERIES ---------------------------------- */
 
