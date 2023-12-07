@@ -6,11 +6,21 @@
 body{
   height: 100vh;
   background-color: rgb(0, 0, 0);
+  background-size: cover;
 }
-.backgroundImage{
+
+.background-container {
     position: fixed;
     width: 100%;
-    z-index: 1; /* Send the image to the background */
+    height: 100%;
+    overflow: hidden;
+}
+
+.backgroundImage{
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    z-index: -1; /* Send the image to the background */
 }
 
 header {
@@ -78,7 +88,7 @@ color:rgb(99, 220, 225);
 .heroSection {
     width: 100%;
     margin: auto;
-    height: 85vh;
+    height: 100vh;
     background-image:  center;
     background-size: cover;
     background-color: rgb(0, 0, 0);
