@@ -415,14 +415,24 @@ body.login {
 }
 
 /* ------------------------Media query for small screens--------------------------------- */
+
+/* Add the following media query for small screens */
 @media (max-width: 768px) {
+    .img-container .card {
+        width: 100%; /* Make cards take full width on small screens */
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
+
     .img-container {
-        flex-direction: column; /* Stack cards in a column on small screens */
+        grid-template-columns: 1fr; /* Set grid to one column on small screens */
+        gap: 20px; /* Adjust gap between stacked cards */
         align-items: center; /* Center the cards */
     }
 
-    .card {
-        margin-bottom: 20px; /* Add some space between stacked cards */
-        /* You may need additional styling adjustments for smaller screens */
+    .getStartedBtn {
+        text-align: center; /* Center the "Get Started" button */
     }
 }
+
+
+
