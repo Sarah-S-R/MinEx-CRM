@@ -265,11 +265,7 @@ body{
     padding:  25px;
     border-radius: 5px;
     align-items: center;
-}
-
-.card a {
-    text-decoration: none !important;
-    color: inherit !important;
+    cursor: pointer;
 }
 
 .card:first-child {
