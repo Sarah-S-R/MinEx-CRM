@@ -4,7 +4,13 @@
 }
 
 body{
-  height: 97vh;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+.backgroundImage{
+    position: fixed;
+    width: 100%;
+    z-index: 1; /* Send the image to the background */
 }
 
 header {
