@@ -420,12 +420,12 @@ body.login {
 @media (max-width: 768px) {
     .img-container .card {
         width: 100%; /* Make cards take full width on small screens */
-        margin-bottom: 20px; /* Add space between stacked cards */
+        margin-bottom: 5px; /* Add space between stacked cards */
     }
 
     .img-container {
         grid-template-columns: 1fr; /* Set grid to one column on small screens */
-        gap: 20px; /* Adjust gap between stacked cards */
+        gap: 5px; /* Adjust gap between stacked cards */
         align-items: center; /* Center the cards */
     }
 
