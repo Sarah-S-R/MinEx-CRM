@@ -413,3 +413,16 @@ body.login {
 .pw-reset-form-title {
     color:  rgb(99, 220, 225);
 }
+
+/* ------------------------Media query for small screens--------------------------------- */
+@media (max-width: 768px) {
+    .img-container {
+        flex-direction: column; /* Stack cards in a column on small screens */
+        align-items: center; /* Center the cards */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Add some space between stacked cards */
+        /* You may need additional styling adjustments for smaller screens */
+    }
+}
