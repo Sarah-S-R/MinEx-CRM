@@ -441,13 +441,15 @@ a {
 }
 
 #newPersonModal, #newProjectModal {
-    width: 450px;
-    padding: 10px;
+    max-width: 450px;
+    padding: 0px 50px 0 50px;
     border-radius: 5px;
     z-index: 99;
-    top: 5px;
-    position: absolute;
-    margin-left: 12%;
+    top: 50%; /* Updated to center vertically */
+    left: 50%; /* Updated to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    position: fixed;
+    margin: auto;
     background-color:blur;
     color: #fff;
 }
@@ -457,7 +459,7 @@ a {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px;
-    width: 95%;
+    width: 90%;
 }
 
 .input-err{
@@ -676,6 +678,31 @@ i{
     .sidebar-title > span {
       display: inline;
     }
+
+    
+#newPersonModal, #newProjectModal {
+    max-width: 450px;
+    padding: 0px 50px 0 50px;
+    border-radius: 5px;
+    z-index: 99;
+    top: 50%; /* Updated to center vertically */
+    left: 50%; /* Updated to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    position: fixed;
+    margin: auto;
+    background-color:blur;
+    color: #fff;
+    border: #ccc solid;
+}
+
+#newPersonModal input, #newProjectModal input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px;
+    width: 90%;
+}
+
   }
   
   /* Small <= 768px */
@@ -691,6 +718,30 @@ i{
       grid-template-columns: 1fr;
       margin-top: 30px;
     }
+
+    
+#newPersonModal, #newProjectModal {
+    max-width: 350px;
+    padding: 0px 50px 0 50px;
+    border-radius: 5px;
+    z-index: 99;
+    top: 50%; /* Updated to center vertically */
+    left: 50%; /* Updated to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    position: fixed;
+    margin: auto;
+    background-color:blur;
+    color: #fff;
+    border: #ccc solid;
+}
+
+#newPersonModal input, #newProjectModal input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px;
+    width: 90%;
+}
   }
   
   /* Extra Small <= 576px */
@@ -699,6 +750,31 @@ i{
     .header-left {
       display: none;
     }
+
+    
+#newPersonModal, #newProjectModal {
+    max-width: 250px;
+    padding: 0px 50px 0 50px;
+    border-radius: 5px;
+    z-index: 99;
+    top: 50%; /* Updated to center vertically */
+    left: 50%; /* Updated to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    position: fixed;
+    margin: auto;
+    background-color:blur;
+    color: #fff;
+    border: #ccc solid;
+}
+
+#newPersonModal input, #newProjectModal input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px;
+    width: 90%;
+}
+
   }
 
 
