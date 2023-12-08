@@ -8,7 +8,7 @@ body{
 }
 
 a {
-    color: rgb(99, 220, 225);
+    color: rgb(0,0,0);
 }
 
 .material-icons-outlined{
@@ -270,6 +270,15 @@ a {
     border-radius: 5px;
     align-items: center;
     cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.card-inner{
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
 }
 
 .card:first-child {
@@ -283,15 +292,8 @@ a {
     background-color: rgb(99, 220, 225);
 }
 
-.card-inner{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.card-inner > .material-icons-outlined  {
-padding-right: 10px;
-}
+
 
 
 .charts {
