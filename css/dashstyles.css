@@ -273,13 +273,18 @@ a {
     color: rgb(0, 0, 0);
 }
 
-.card-inner{
+.card-inner {
     color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 10px;
 }
+
+
+.card-inner > .material-icons-outlined  {
+    padding-right: 10px;
+    }
 
 .card:first-child {
     background-color:  rgb(99, 220, 225);
@@ -293,7 +298,7 @@ a {
 }
 
 
-
+    
 
 
 .charts {
