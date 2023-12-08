@@ -324,48 +324,89 @@ a {
     justify-content: center;
 }
 
+
 /* Style for the client table */
 .table {
     display: flex;
+    flex-direction: column;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a lifted appearance */
 }
 
-.client-table-headings {
-    color: #fff;
-    font-size: 1rem;
-    padding: 20px;
-    margin: auto;
-}
-
-.client-table-headings td {
-    padding: 10px;
+.client-table-headings, .table tbody td {
+    padding: 15px;
     text-align: left;
-    color: #9e9ea4;
-    
 }
 
 /* Style for table rows */
-.table tbody td {
-    padding: 10px;
-    margin: auto;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Add zebra-striping for better readability */
 .client-table-body tr:nth-child(even) {
-    background-color: #2c2c2f;
+    background-color: #f2f2f2; /* Zebra striping for better readability */
 }
 
 /* Add hover effect on table rows */
- .client-table-body td:hover {
-    background-color:  #ececef;;
-    cursor: pointer;
+.client-table-body td:hover {
+    background-color: #e0e0e0; /* Hover effect */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .table {
+        border-radius: 0; /* Remove rounded corners for small screens */
+        box-shadow: none; /* Remove box shadow for small screens */
+    }
+
+    .client-table-headings, .table tbody td {
+        padding: 10px;
+    }
+}
+
+
+.clients-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pm-table-container, .cm-table-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pm-table-row, .cm-table-row {
+    display: flex;
+    background-color: #f2f2f2;
+}
+
+.pm-table-column, .cm-table-column {
+    flex-grow: 1;
+    padding: 15px;
+    text-align: left;
+}
+
+.pm-header, .cm-header{
+    font-weight: bold;
+}
+
+.pm-table-row:hover {
+    background-color: #e0e0e0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .pm-table-container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .pm-table-column {
+        padding: 10px;
+    }
 }
 
 
@@ -433,9 +474,6 @@ a {
 .cm-add-entry, .pm-add-entry {
     flex-basis: 3.75%;
     text-align: center;
-    cursor: pointer;
-    color: rgb(99, 220, 225);
-    -webkit-text-stroke: rgb(0,0,0) 0.35px;
     font-weight: 700;
     font-size: 1rem;
 }
@@ -477,7 +515,7 @@ a {
 }
 
 #newPersonSubmitButton, #SortButton, 
-#pmSortButton, #newProjectSubmitButton {
+#pmSortButton, #newProjectSubmitButton, #cmAddNewEntry, #pmAddNewEntry {
     background-color:rgb(99, 220, 225);
     padding: 8px;
     border-radius: 5px;
