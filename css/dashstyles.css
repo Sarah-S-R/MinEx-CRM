@@ -7,6 +7,10 @@ body{
     overflow: hidden;    
 }
 
+a {
+    color: rgb(99, 220, 225);
+}
+
 .material-icons-outlined{
     vertical-align: middle;
     line-height: 1px;

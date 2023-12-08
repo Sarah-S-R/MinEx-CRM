@@ -57,16 +57,16 @@ header {
 }
 .logo:hover{
     color: rgb(3, 242, 251);
-    transition: ease 0.5s;
+    transition: ease 0.1s;
 }
 
 #login:hover{
     color: rgb(3, 242, 251);
-    transition: ease 0.5s;
+    transition: ease 0.1s;
 }
 #signup:hover {
     color: rgb(3, 242, 251);
-    transition: ease 0.5s;
+    transition: ease 0.1s;
 }
 
 .logo img {
@@ -233,7 +233,8 @@ margin: auto;
 .password-reset-container {
     height: auto;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 0%;
+    max-width:250px;
 }
 
 .login-form,
@@ -265,9 +266,9 @@ margin: auto;
 }
 
 .login-btn:hover, .reset-btn:hover, .create-account-btn:hover {
-    color: rgb(3, 242, 251);
-    transform: translateY(-5px);
-    transition: ease 0.3s;
+    color: rgb(0, 0, 0);
+    transform: translateY(-1px);
+    transition: ease 0.1s;
 }
 
 .client-name {
@@ -373,7 +374,8 @@ body.login {
 
 .input-group {
     margin: 10px 0;
-    text-align: left;
+    text-align: center;
+    width: 100%;
 }
 
 .label {
@@ -383,7 +385,7 @@ body.login {
 }
 
 .input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -424,6 +426,11 @@ body.login {
 
 .pw-reset-form-title {
     color:  rgb(99, 220, 225);
+}
+
+.reset-password-input-group {
+    margin:auto;
+    min-width: 200px;
 }
 
 /* ------------------------Media query for small screens--------------------------------- */

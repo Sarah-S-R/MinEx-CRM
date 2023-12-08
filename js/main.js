@@ -112,7 +112,7 @@ class Login {
                     // Redirect to the dashboard or desired location after a short delay
                     setTimeout(() => {
                         window.location.href = "/MinEx-CRM/dashboard.html";
-                    }, 2000);
+                    }, 1000);
 
                 } else {
                     // Show alert for invalid email or password
