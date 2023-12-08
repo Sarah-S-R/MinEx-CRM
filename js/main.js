@@ -59,6 +59,9 @@ class Login {
 		this.fields = fields;
 		this.validateonSubmit();
 	}
+
+
+    
 /*
 	validateonSubmit() {
         let self = this;
@@ -96,24 +99,29 @@ class Login {
                 }
             });
     
+            console.log('Error count:', error); // Log the error count
+    
             if (error === 0) {
+                console.log('Validation passed'); // Log validation success
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
     
+                console.log('Email:', email); // Log the email for debugging
+                console.log('Password:', password); // Log the password for debugging
+    
                 // Check if email and password match desired values for login
                 if (email === 'admin@gmail.com' && password === 'admin1234') {
-                    
+    
                     // Set authentication status
                     localStorage.setItem("auth", 1);
-                    
-                     // Show alert for successful login
-                     alert("Login Successful");
-
+    
+                    // Show alert for successful login
+                    alert("Login Successful");
+    
                     // Redirect to the dashboard or desired location after a short delay
                     setTimeout(() => {
                         window.location.href = "/MinEx-CRM/dashboard.html";
                     }, 1000);
-
                 } else {
                     // Show alert for invalid email or password
                     alert("Invalid email or password");

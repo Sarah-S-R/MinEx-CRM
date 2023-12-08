@@ -25,13 +25,16 @@ function updateDateTime() {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
   const formattedDate = now.toLocaleDateString('en-US', options);
   datetimeContainer.textContent = formattedDate;
-} */
+} 
 
 // Update date and time every minute
 setInterval(updateDateTime, 60000);
 
 // Initial update
 updateDateTime();
+
+*/
+
 
 /* --------------------------------------PROJECT COUNT --------------------------------------------------*/
 /*
