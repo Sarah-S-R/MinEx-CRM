@@ -572,6 +572,7 @@ i{
 
 .edit-form-container {
     display: flex;
+    flex-direction: column;
     max-width: 400px;
     text-align: center;
 }
